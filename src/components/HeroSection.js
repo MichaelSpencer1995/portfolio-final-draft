@@ -23,10 +23,65 @@ class HeroSection extends Component {
     window.addEventListener('scroll', handleScroll)
     
     function handleScroll(){
+      if(isSafari) {
+        return
+      }
+
       let lessThanOrEqualTo1000 = false
-        
+      
       if(window.innerWidth <= 1000){
         lessThanOrEqualTo1000 = true
+      }
+      
+      const heroImg = document.getElementsByClassName('hero-image')[0]
+      const overlay = document.getElementsByClassName('overlay')[0]
+      const hireButtons = document.getElementsByClassName('hire-buttons')[0]
+      const paragraph = document.getElementsByClassName('hero-paragraph')[0]
+      
+      const y = window.scrollY
+      
+      let heroHeight = parseInt(window.getComputedStyle(heroImg).height)
+      let navbarTargetHeight = heroHeight - 82
+      let buttonsTargetHeight = heroHeight - 177
+      let buttonsShiftAmount = 122
+
+      if(window.innerWidth <= 1000) {
+        buttonsTargetHeight = heroHeight - 155
+        buttonsShiftAmount = 99
+        navbarTargetHeight = heroHeight - 132
+      }
+      
+      if(y >= navbarTargetHeight){
+        heroImg.classList.add('fixed-nav-items')
+        overlay.classList.add('fixed-nav-items')
+        heroImg.style.bottom = navbarTargetHeight + 'px'
+        overlay.style.bottom = navbarTargetHeight + 'px'
+
+      } else if(y < navbarTargetHeight){
+          heroImg.classList.remove('fixed-nav-items')
+          overlay.classList.remove('fixed-nav-items')
+          heroImg.style.bottom = '0px'
+          overlay.style.bottom = '0px'
+      }
+
+      if(y >= buttonsTargetHeight){
+          if(lessThanOrEqualTo1000){
+              hireButtons.classList.add('keep-width')
+          }
+          
+          hireButtons.classList.add('fixed-nav-items')
+          hireButtons.style.bottom = buttonsTargetHeight + buttonsShiftAmount + 'px'
+          paragraph.classList.add('shift-paragraph-off-screen')
+
+      } else if(y < buttonsTargetHeight){
+          if(lessThanOrEqualTo1000){
+              hireButtons.classList.remove('keep-width')
+          }
+          
+          paragraph.classList.remove('shift-paragraph-off-screen')
+          hireButtons.classList.remove('fixed-nav-items')
+          hireButtons.style.bottom = '0px'
+
       }
     }
  
@@ -48,23 +103,23 @@ class HeroSection extends Component {
           </NavItemsContainer>
         </NavBarContainer>
 
-        <HeroImg />
+        <HeroImg className="hero-image" />
         
-        <HeroImgOverlay />
+        <HeroImgOverlay className="overlay" />
 
         <HeroContentContainer>
           <HeroH1>
             My name is <br /><span>Michael Spencer</span>          
           </HeroH1>
 
-          <HeroP>
+          <HeroP className="hero-paragraph">
             I am a full stack web developer near Austin,
             Texas with very little professional experience,
             eager to help any corporate or personal business
             do better.
           </HeroP>
 
-          <HireButtonsContainer>
+          <HireButtonsContainer className="hire-buttons">
             <HireButton>
               Hire Me
             </HireButton>
@@ -142,7 +197,7 @@ const HeroImg = styled.div`
 `
 
 const HeroImgOverlay = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 1));
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 96%);
   border-bottom: rgb(28, 28, 28)1px solid;
   width: 100%;
   height: 100vh;
@@ -209,6 +264,9 @@ const HireButtonsContainer = styled.div`
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `
 
 const HireButton = styled.button`
@@ -225,6 +283,9 @@ const HireButton = styled.button`
   border-radius: 4px;
   width: 142px;
   height: 31px;
+  @media (max-width: 1000px) {
+    width: 49.5%;
+  }
 `
 
 const HireButtonTransparent = styled(HireButton)`

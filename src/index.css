@@ -37,3 +37,13 @@ p{
 a{
   font-family: lato;
 }
+.keep-width{
+  width: inherit !important;
+}
+.fixed-nav-items{
+  position: fixed !important;
+  z-index: 2000 !important;
+}
+.shift-paragraph-off-screen{
+  margin-bottom: 50px !important;
+}
