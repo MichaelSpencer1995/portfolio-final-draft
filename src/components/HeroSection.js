@@ -1,30 +1,53 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
-import { isSafari } from "react-device-detect";
+import { isMobile, isSafari } from "react-device-detect"
 
-let test = 'purple'
+// let navStyles = 'background'
 
-if(isSafari){
-  test = 'green'
+// if(isSafari){
+//   test = 'green'
+// }
+
+
+let fixedBackground = 'fixed'
+let safariNavBackgroundColor = 'transparent'
+let safariButtonMargin = '62px'
+
+if(isMobile) {
+  fixedBackground = 'none'
+}
+
+if(isSafari) {
+  safariNavBackgroundColor = '#111'
+  safariButtonMargin = '120px'
+}
+
+window.addEventListener('scroll', handleScroll)
+
+function handleScroll(){
+  const y = window.scrollY
+  console.log(y)
 }
 
 class HeroSection extends Component {
   render() {
     return (
       <HeroSectionView>
-        <NavItemsContainer>
-          <NavItem>
-            About
-          </NavItem>
-          
-          <NavItem>
-            Recent Work
-          </NavItem>
+        <NavBarContainer>
+          <NavItemsContainer>
+            <NavItem>
+              About
+            </NavItem>
+            
+            <NavItem>
+              Recent Work
+            </NavItem>
 
-          <NavItem>
-          Get In Touch
-          </NavItem>
-        </NavItemsContainer>
+            <NavItem>
+            Get In Touch
+            </NavItem>
+          </NavItemsContainer>
+        </NavBarContainer>
 
         <HeroImg />
         
@@ -64,15 +87,25 @@ const HeroSectionView = styled.div`
   align-items: flex-end;
 `
 
-const NavItemsContainer = styled.div`
+const NavBarContainer = styled.div`
+  width: 100%;
+  height: 82px;
+  background: ${ safariNavBackgroundColor };
   position: fixed;
   top: 0;
   right: 0;
-  padding: 40px 12% 0px 0px;
+  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+`
+
+const NavItemsContainer = styled.div`
+  padding: 0px 12% 0px 0px;
   width: 288px;
   display: flex;
   justify-content: space-between;
-  z-index: 100000;
 `
 
 const NavItem = styled.button`
@@ -90,7 +123,7 @@ const HeroImg = styled.div`
   background: url(/assets/img/hero1.png) no-repeat;;
   background-size: cover;
   background-position: 20% 0%;
-  background-attachment: fixed;
+  background-attachment: ${ fixedBackground };
   width: 100%;
   height: 100vh;
   display: flex;
@@ -100,7 +133,7 @@ const HeroImg = styled.div`
 `
 
 const HeroImgOverlay = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1));
+  background: linear-gradient(rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 1));
   border-bottom: rgb(28, 28, 28)1px solid;
   width: 100%;
   height: 100vh;
@@ -113,12 +146,16 @@ const HeroContentContainer = styled.div`
   letter-spacing: 0.2rem;
   color: white;
   margin-left: 12%;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
   width: 45%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   position: relative;
+  @media (max-width: 1000px) {
+    margin-bottom: ${ safariButtonMargin };
+    width: 76%;
+  }
 `
 
 const HeroH1 = styled.h1`
@@ -134,6 +171,16 @@ const HeroH1 = styled.h1`
     position: relative;
     bottom: 7px;
   }
+  @media (max-width: 1000px) {
+    line-height: 40px;
+    poisition: relative;
+    bottom: 10px;
+    font-size: 20px;
+    span{
+      font-size: 30px;
+      bottom: 12px;
+    }
+  }
 `
 
 const HeroP = styled.p`
@@ -142,12 +189,15 @@ const HeroP = styled.p`
   letter-spacing: -.01rem;
   line-height: 1.8em;
   color: #dededef0;
-  margin-top: -18px;
+  margin-top: 8px;
+  @media (max-width: 1000px) {
+    font-size: 14px;
+  }
 `
 
 const HireButtonsContainer = styled.div`
   width: 291px;
-  margin-top: 0px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
 `

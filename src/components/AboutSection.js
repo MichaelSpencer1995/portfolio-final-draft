@@ -101,46 +101,46 @@ class AboutSection extends Component {
 }
 
 const AboutSectionView = styled.div`
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-padding-bottom: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 100px;
 `
 
 const AboutSectionViewContainer = styled.div`
-margin-top: 120px;
-width: 50%;
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
+  margin-top: 120px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 `
 
 const AboutH1 = styled.h1`
 `
 
 const AboutP = styled.p`
-margin-top: 15px;
+  margin-top: 15px;
 `
 
 const AboutSkillsContainer = styled.div`
-width: 200px;
-margin-top: 10px;
+  width: 200px;
+  margin-top: 10px;
 `
 
 const Row = styled.div`
-display: flex;
-justify-content: space-between;
-margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
 `
 
 const ItemContainer = styled.div`
-width: 60px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `
 
 const Item = styled.div`
@@ -150,14 +150,13 @@ const Item = styled.div`
 `
 
 const SubHeader = styled.h3`
-font-size: 15px;
-font-weight: 700;
-margin-top: 0px;
-
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 0px;
 `
 
 const AboutMeReassurance = styled.p`
-margin-top: 42px;
+  margin-top: 42px;
 `
 
 export default AboutSection

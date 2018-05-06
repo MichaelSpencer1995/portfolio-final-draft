@@ -36,14 +36,14 @@ class RecentWorkSection extends Component {
                   React, Styled Components, Node
                 </ProjectTechsUsed>
                     
-                <a href="#" class="visit-website">
+                <a href="#">
                   Visit Website
                 </a>
               </ProjectInfoContainer>
             </WorkItemContainer>
 
             <WorkItemContainer>
-              <img class="work-img-2" alt="photos of various javascript projects" src="/assets/img/codecampchallenges.svg" />
+              <img alt="photos of various javascript projects" src="/assets/img/codecampchallenges.svg" />
                 
               <ProjectInfoContainer>
                 <ProjectSubHeader>
@@ -58,14 +58,14 @@ class RecentWorkSection extends Component {
                   React, Sass, Node and logic-intensive vanilla JS
                 </ProjectTechsUsed>
                 
-                <a href="#" className="visit-website">
+                <a href="#">
                   Visit Website
                 </a>
               </ProjectInfoContainer>
             </WorkItemContainer>
 
             <WorkItemContainer3>
-              <img class="work-img-3" alt="photo of my free code camp certification" src="/assets/img/certificate.png" />
+              <img alt="photo of my free code camp certification" src="/assets/img/certificate.png" />
                 
               <ProjectInfoContainer>
                 <ProjectSubHeader>
@@ -80,7 +80,7 @@ class RecentWorkSection extends Component {
                   Javascript fundamentals and logic-intensive algorithms
                 </ProjectTechsUsed>
                     
-                <a href="#" class="visit-website-3">
+                <a href="#">
                   Visit Website
                 </a>
               </ProjectInfoContainer>
