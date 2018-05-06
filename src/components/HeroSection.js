@@ -7,6 +7,7 @@ let safariNavBackgroundColor = 'transparent'
 let safariNavBorder = 'none';
 let safariButtonMargin = '62px'
 let safariNavItemsColor = 'rgba(230, 230, 230, .9)'
+let safariNavHeight = '82px'
 
 if(isMobile) {
   fixedBackground = 'none'
@@ -16,7 +17,8 @@ if(isSafari) {
   safariNavBackgroundColor = '#fff'
   safariButtonMargin = '120px'
   safariNavItemsColor = 'rgb(11, 23, 40)'
-  safariNavBorder = 'rgb(11, 23, 40) 1px solid'
+  safariNavBorder = '#777 1px solid'
+  safariNavHeight = '70px'
 }
 
 
@@ -145,7 +147,7 @@ const HeroSectionView = styled.div`
 
 const NavBarContainer = styled.div`
   width: 100%;
-  height: 82px;
+  height: ${ safariNavHeight };
   background: ${ safariNavBackgroundColor };
   border-bottom: ${ safariNavBorder };
   position: fixed;
