@@ -90,7 +90,7 @@ const HeroImg = styled.div`
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
   background: url(/assets/img/hero1.png) no-repeat;;
   background-size: cover;
-  background-position: 20% 90%;
+  background-position: 20% 0%;
   background-attachment: fixed;
   width: 100%;
   height: 100vh;
@@ -101,7 +101,7 @@ const HeroImg = styled.div`
 `
 
 const HeroImgOverlay = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .95));
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1));
   border-bottom: rgb(28, 28, 28)1px solid;
   width: 100%;
   height: 100vh;
