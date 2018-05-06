@@ -1,104 +1,163 @@
 import React, { Component } from 'react'
-import '../App.css'
-
+import styled from "styled-components"
 
 class AboutSection extends Component {
   render() {
     return (
-      <div className="about-section-view">
-        <div className="about-section-view-container">
-          <h1 className="about-section-h1">
+      <AboutSectionView>
+        <AboutSectionViewContainer>
+          <AboutH1>
             About Me
-          </h1>
+          </AboutH1>
 
-          <p className="about-section-p">
+          <AboutP>
             When it comes to web design, I am a jack of all trades
             and a master of none. My fundamental and conceptual
             understanding of the following technologies is strong,
             however I am a still little shy of 10,000 hours.
-          </p>
+          </AboutP>
 
-          <div className="about-section-skills-container">
-            <div class="row1">
-              <div class="item-container">
-                <div class="item1">
-                  <img class="img" alt="javascript" src="/assets/img/js-square.svg"/>
-                </div>
+          <AboutSkillsContainer>
+            <Row>
+              <ItemContainer>
+                <Item>
+                  <img alt="javascript" src="/assets/img/js-square.svg"/>
+                </Item>
                   
-                <h3 class="item-sub-header">
+                <SubHeader>
                     Javasript
-                </h3>
-              </div>
+                </SubHeader>
+              </ItemContainer>
 
-              <div class="item-container">
-                <div class="item2">
-                  <img class="img" alt="react.js" src="/assets/img/react.svg"/>
-                </div>
+              <ItemContainer>
+                <Item>
+                  <img alt="react.js" src="/assets/img/react.svg"/>
+                </Item>
                 
-                <h3 class="item-sub-header">
+                <SubHeader>
                   React.js
-                </h3>
-              </div>
-            </div>
+                </SubHeader>
+              </ItemContainer>
+            </Row>
 
-            <div class="row2">
-              <div class="item-container">
-                <div class="item3">
-                  <img class="img" alt="html 5" src="/assets/img/html5.svg"/>
-                </div>
+            <Row>
+              <ItemContainer>
+                <Item>
+                  <img alt="html 5" src="/assets/img/html5.svg"/>
+                </Item>
                 
-                <h3 class="item-sub-header">
+                <SubHeader>
                   HTML5
-                </h3>
-              </div>
+                </SubHeader>
+              </ItemContainer>
 
-              <div class="item-container">
-                <div class="item4">
-                  <img class="img" alt="Css 3" src="/assets/img/css3-alt.svg"/>                          
-                </div>
+              <ItemContainer>
+                <Item>
+                  <img alt="Css 3" src="/assets/img/css3-alt.svg"/>                          
+                </Item>
                 
-                <h3 class="item-sub-header">
+                <SubHeader>
                   CSS3
-                </h3>
-              </div>
-            </div>
+                </SubHeader>
+              </ItemContainer>
+            </Row>
 
-            <div class="row3">
-              <div class="item-container">
-                <i class="item5">
-                  <img class="img" alt="node.js" src="/assets/img/node.svg"/>
-                </i>
+            <Row>
+              <ItemContainer>
+                <Item>
+                  <img alt="node.js" src="/assets/img/node.svg"/>
+                </Item>
                   
-                <h3 class="item-sub-header">
+                <SubHeader>
                   Node.js
-                </h3>
-              </div>
+                </SubHeader>
+              </ItemContainer>
                 
-              <div class="item-container item6-container">
-                <div class="item6">
-                  <img class="img" alt="responsive desgin" src="/assets/img/mobile-alt.svg"/>
-                </div>
+              <ItemContainer>
+                <Item>
+                  <img alt="responsive desgin" src="/assets/img/mobile-alt.svg"/>
+                </Item>
                 
-                <h3 class="item-sub-header">
+                <SubHeader>
                   Responsive Design
-                </h3>
-              </div>
-            </div>
+                </SubHeader>
+              </ItemContainer>
+            </Row>
 
-          </div>
+          </AboutSkillsContainer>
           
-          <p class="about-me-reassurance">
+          <AboutMeReassurance>
             Put simply I am young and so is my career, however 
             I am more than capable of using all of these
             technolgies, and more importantly I am capable of
             excelling in any or all of them.
             A nudge in any particular direction
             is the only thing I require.
-          </p>
-        </div>
-      </div>
+          </AboutMeReassurance>
+        </AboutSectionViewContainer>
+      </AboutSectionView>
     )
   }
 }
+
+const AboutSectionView = styled.div`
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-bottom: 100px;
+`
+
+const AboutSectionViewContainer = styled.div`
+margin-top: 120px;
+width: 50%;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+`
+
+const AboutH1 = styled.h1`
+`
+
+const AboutP = styled.p`
+margin-top: 15px;
+`
+
+const AboutSkillsContainer = styled.div`
+width: 200px;
+margin-top: 10px;
+`
+
+const Row = styled.div`
+display: flex;
+justify-content: space-between;
+margin-top: 40px;
+`
+
+const ItemContainer = styled.div`
+width: 60px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+`
+
+const Item = styled.div`
+  img{
+    width: 100%;
+  }
+`
+
+const SubHeader = styled.h3`
+font-size: 15px;
+font-weight: 700;
+margin-top: 0px;
+
+`
+
+const AboutMeReassurance = styled.p`
+margin-top: 42px;
+`
 
 export default AboutSection
