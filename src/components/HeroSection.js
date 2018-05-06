@@ -2,15 +2,9 @@ import React, { Component } from 'react'
 import styled from "styled-components"
 import { isMobile, isSafari } from "react-device-detect"
 
-// let navStyles = 'background'
-
-// if(isSafari){
-//   test = 'green'
-// }
-
-
 let fixedBackground = 'fixed'
 let safariNavBackgroundColor = 'transparent'
+let safariNavBorder = 'none';
 let safariButtonMargin = '62px'
 
 if(isMobile) {
@@ -20,17 +14,22 @@ if(isMobile) {
 if(isSafari) {
   safariNavBackgroundColor = '#111'
   safariButtonMargin = '120px'
+  safariNavBorder = 'rgb(28, 28, 28) 1px solid'
 }
 
-window.addEventListener('scroll', handleScroll)
-
-function handleScroll(){
-  const y = window.scrollY
-  console.log(y)
-}
 
 class HeroSection extends Component {
   render() {
+    window.addEventListener('scroll', handleScroll)
+    
+    function handleScroll(){
+      let lessThanOrEqualTo1000 = false
+        
+      if(window.innerWidth <= 1000){
+        lessThanOrEqualTo1000 = true
+      }
+    }
+ 
     return (
       <HeroSectionView>
         <NavBarContainer>
@@ -91,6 +90,7 @@ const NavBarContainer = styled.div`
   width: 100%;
   height: 82px;
   background: ${ safariNavBackgroundColor };
+  border-bottom: ${ safariNavBorder };
   position: fixed;
   top: 0;
   right: 0;
@@ -99,13 +99,19 @@ const NavBarContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  @media (max-width: 1000px) {
+    align-items: center;
+  }
 `
 
 const NavItemsContainer = styled.div`
-  padding: 0px 12% 0px 0px;
+  padding-right: 12%;
   width: 288px;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 1000px) {
+    padding: 0;
+  }
 `
 
 const NavItem = styled.button`
@@ -116,6 +122,9 @@ const NavItem = styled.button`
   color: rgba(230, 230, 230, .9);
   background: transparent;
   border: none;
+  @media (max-width: 1000px) {
+    font-size: 12px;
+  }
 `
 
 const HeroImg = styled.div`
@@ -177,7 +186,7 @@ const HeroH1 = styled.h1`
     bottom: 10px;
     font-size: 20px;
     span{
-      font-size: 30px;
+      font-size: 31px;
       bottom: 12px;
     }
   }
