@@ -51,12 +51,17 @@ const ContactSectionViewContainer = styled.div`
   align-items: flex-start;
   margin-top: -10px;
   padding-bottom: 85px;
+  @media(max-width: 1000px) {
+   padding-bottom: 55px;
+   margin-top: -30px;
+  }
 `
 
 const ContactSectionH1 = styled.h1`
 `
 
 const ContactSectionP = styled.p`
+  margin-top: 15px;
 `
 
 const FormAndMapContainer = styled.div`
@@ -64,6 +69,11 @@ const FormAndMapContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media(max-width: 1000px) {
+    flex-direction: column;
+    justify-content: none;
+    align-items: center;
+  }
 `
 
 const FormContainer = styled.div`
@@ -71,6 +81,9 @@ const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media(max-width: 1000px) {
+    width: 100%;
+  }
 `
 
 const Form = styled.form`
@@ -80,6 +93,9 @@ const Form = styled.form`
   align-items: center;
   padding: 0;
   margin: 0;
+  @media(max-width: 1000px) {
+    width: 100%;
+  }
 `
 
 const Input = styled.input`
@@ -136,6 +152,10 @@ const Iframe = styled.iframe`
   position: relative;
   top: 7px;
   border: #ccc 1px solid;
+  @media(max-width: 1000px) {
+    width: 100%;
+    margin-top: 50px;
+  }
 `
 
 export default ContactSection

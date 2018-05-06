@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
+import FontAwesome from '../../node_modules/font-awesome/css/font-awesome.min.css'
+import { isMobile, isSafari } from "react-device-detect"
 
+let mobileBackgroundNotFixed = 'fixed'
+
+if(isMobile) {
+  mobileBackgroundNotFixed = 'none'
+}
 
 class WhatICanDoSection extends Component {
   render() {
@@ -13,14 +20,14 @@ class WhatICanDoSection extends Component {
             What I can do
           </WhatICanDoH1>
 
-          <WhatICanDoH3>
+          <WhatICanDoP>
             Creating an aesthetically pleasing
             and easy user experience.
-          </WhatICanDoH3>
+          </WhatICanDoP>
         
           <WhatICanDoTrifold>
             <StepContainer>
-              <StepIcons />
+              <UiUxIcon />
 
               <StepSubHeader>
                 UX/UI
@@ -34,7 +41,7 @@ class WhatICanDoSection extends Component {
             </StepContainer>
 
             <StepContainer>
-              <StepIcons />
+              <CodingIcon />
 
 
               <StepSubHeader>
@@ -50,7 +57,7 @@ class WhatICanDoSection extends Component {
             </StepContainer>
 
             <StepContainer>
-              <StepIcons />
+              <LearningIcon />
 
 
               <StepSubHeader>
@@ -78,12 +85,18 @@ const WhatICanDoSectionView = styled.div`
   background-size: cover;
   background-position: 1% 40%;
   width: 100%;
-  height: 630px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  background-attachment: fixed;
+  background-attachment: ${ mobileBackgroundNotFixed };
+  @media(max-width: 1000px) {
+    height: 900px;
+  }
+  @media(max-width: 600px) {
+    height: 1040px;
+  }
 `
 
 const WhatICanDoSectionViewContainer = styled.div`
@@ -96,10 +109,16 @@ const WhatICanDoSectionViewContainer = styled.div`
 
 const Overlay2 = styled.div`
   width: 100%;
-  height: 630px;
+  height: 600px;
   background: rgba(0, 0, 0, .84);
   position: absolute;
   top: 0;
+  @media(max-width: 1000px) {
+    height: 900px;
+  }
+  @media(max-width: 600px) {
+    height: 1040px;
+  }
 `
 
 const WhatICanDoH1 = styled.h1`
@@ -108,9 +127,9 @@ const WhatICanDoH1 = styled.h1`
   z-index: 10;
 `
 
-const WhatICanDoH3 = styled.h3`
+const WhatICanDoP = styled.p`
   z-index: 10;
-  margin-top: -15px;
+  margin-top: 3px;
   color: #b5b5b5de;
   font-weight: 300;
   text-align: center;
@@ -122,24 +141,49 @@ const WhatICanDoTrifold = styled.div`
   align-items: flex-start;
   width: 100%;
   margin-top: 70px;
+  @media(max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10px;
+  }
 `
 
 const StepContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;  
   width: 29%;
   text-align: center;
+  @media(max-width: 1000px) {
+    width: 76%;
+    margin-top: 55px;
+  }
 `
 
-const StepIcons = styled.div`
-  content: '\\f00b';
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-  font-size: 3.9em;
-  color: rgb(33, 149, 147);
+const UiUxIcon = styled.div`
+  z-index: 200;
+  ::before{
+    font-family: FontAwesome;
+    content: "\\f00b";
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 3.9em;
+    color: rgb(33, 149, 147);
+  }
+`
+
+const CodingIcon = styled(UiUxIcon)`
+  ::before{
+    content: "\f126";
+  }
+`
+
+const LearningIcon = styled(UiUxIcon)`
+  ::before{
+    content: "\f0eb";
+  }
 `
 
 const StepSubHeader = styled.h3`
@@ -147,10 +191,11 @@ const StepSubHeader = styled.h3`
   font-size: 18px;
   z-index: 10;
   color: #c1c1c1;
+  margin-top: 20px;
 `
 
 const StepParagraph = styled.p`
-  margin-top: 1px;
+  margin-top: 9px;
   line-height: 1.8em;
   color: #565656;
   color: #929292;

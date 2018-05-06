@@ -21,6 +21,12 @@ const FooterView = styled.div`
   width: 100%;
   background: #ececec;
   border-top: #d0d0d0 1px solid;
+  p{
+    width: 76%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 13px;
+  }
 `
 
 export default FooterSection

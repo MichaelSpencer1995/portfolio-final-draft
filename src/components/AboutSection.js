@@ -106,6 +106,9 @@ const AboutSectionView = styled.div`
   flex-direction: column;
   align-items: center;
   padding-bottom: 100px;
+  @media(max-width: 1000px) {
+    padding-bottom: 76px;
+  }
 `
 
 const AboutSectionViewContainer = styled.div`
@@ -115,13 +118,17 @@ const AboutSectionViewContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  @media(max-width: 1000px) {
+    margin-top: 65px;
+    width: 76%;
+  }
 `
 
 const AboutH1 = styled.h1`
 `
 
 const AboutP = styled.p`
-  margin-top: 15px;
+  margin-top: 16px;
 `
 
 const AboutSkillsContainer = styled.div`

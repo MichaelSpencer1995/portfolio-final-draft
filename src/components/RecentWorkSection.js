@@ -20,7 +20,7 @@ class RecentWorkSection extends Component {
           </RecentWorkP>
 
           <RecentWorkTriFold>
-            <WorkItemContainer>
+            <WorkItemContainer1>
               <img alt="photo of a website on different screen sizes" src="/assets/img/responsive-displays.svg" />
                 
               <ProjectInfoContainer>
@@ -40,7 +40,7 @@ class RecentWorkSection extends Component {
                   Visit Website
                 </a>
               </ProjectInfoContainer>
-            </WorkItemContainer>
+            </WorkItemContainer1>
 
             <WorkItemContainer>
               <img alt="photos of various javascript projects" src="/assets/img/codecampchallenges.svg" />
@@ -114,14 +114,20 @@ const RecentWorkSectionViewContainer = styled.div`
   width: 100%;
   margin-top: 150px;
   padding-bottom: 100px;
+  @media(max-width: 1000px) {
+    margin-top: 65px;
+  }
 `
 
 const RecentWorkH1 = styled.h1`
 `
 
 const RecentWorkP = styled.p`
-  margin-top: 7px;
+  margin-top: 16px;
   width: 44%;
+  @media(max-width: 1000px) {
+    width: 76%;
+  }
 `
 
 const RecentWorkTriFold = styled.div`
@@ -129,11 +135,17 @@ const RecentWorkTriFold = styled.div`
   justify-content: space-between;
   width: 76%;
   margin-top: 70px;
+  height: 300px;
+  @media(max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 45px;
+    height: auto;
+  }
 `
 
 const WorkItemContainer = styled.div`
   width: 27%;
-  height: 330px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -142,16 +154,30 @@ const WorkItemContainer = styled.div`
   img{
     width: 100%;
   }
+  @media(max-width: 1000px) {
+    width: 76%;
+    height: auto;
+    margin-top: 65px;
+    align-items: center;
+  }
 `
 
 const WorkItemContainer3 = styled(WorkItemContainer)`
   img{
     width: 67%;
   }
+  @media(max-width: 1000px) {
+    width: 100%;
+  }
 `
 
+const WorkItemContainer1 = styled(WorkItemContainer)`
+  margin-top: 0px;
+`
+
+
 const ProjectInfoContainer = styled.div`
-  height: 100px;
+  height: 184px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -161,7 +187,12 @@ const ProjectInfoContainer = styled.div`
     width: 100px;
     height: 25px;
     text-decoration: none;
-    color: blue;
+    color: #6eaabd;
+  }
+  @media(max-width: 1000px) {
+    text-align: center;
+    align-items: center;
+    height: auto;
   }
 `
 
@@ -179,7 +210,8 @@ const ProjectTechsUsed = styled.p`
 `
 
 const AwardWinningUIP = styled.p`
-  margin-top: 104px;
+  width: 76%;
+  margin-top: 65px;
 `
 
 const Divider = styled.div`
