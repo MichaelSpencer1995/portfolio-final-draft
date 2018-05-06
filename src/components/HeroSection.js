@@ -6,15 +6,17 @@ let fixedBackground = 'fixed'
 let safariNavBackgroundColor = 'transparent'
 let safariNavBorder = 'none';
 let safariButtonMargin = '62px'
+let safariNavItemsColor = 'rgba(230, 230, 230, .9)'
 
 if(isMobile) {
   fixedBackground = 'none'
 }
 
 if(isSafari) {
-  safariNavBackgroundColor = '#111'
+  safariNavBackgroundColor = '#fff'
   safariButtonMargin = '120px'
-  safariNavBorder = 'rgb(28, 28, 28) 1px solid'
+  safariNavItemsColor = 'rgb(11, 23, 40)'
+  safariNavBorder = 'rgb(11, 23, 40) 1px solid'
 }
 
 
@@ -174,7 +176,7 @@ const NavItem = styled.button`
   font-weight: 600;
   letter-spacing: 0.035rem;
   text-decoration: none;
-  color: rgba(230, 230, 230, .9);
+  color: ${ safariNavItemsColor };
   background: transparent;
   border: none;
   @media (max-width: 1000px) {
