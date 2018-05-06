@@ -46,8 +46,8 @@ class HeroSection extends Component {
       let buttonsShiftAmount = 122
 
       if(window.innerWidth <= 1000) {
-        buttonsTargetHeight = heroHeight - 155
-        buttonsShiftAmount = 99
+        buttonsTargetHeight = heroHeight - 154
+        buttonsShiftAmount = 60
         navbarTargetHeight = heroHeight - 132
       }
       
