@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body{
+  margin: 0;
+  background: white;
+}
+h1{
+  font-family: 'Roboto', sans-srif;
+  font-size: 32px;
+  font-weight: 700;    
+  letter-spacing: -0.015rem;
+  color: #22242a;
+  padding: 0;
+  margin: 0;
+}
+h3{
+  font-family: 'Roboto', sans-srif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.02rem;
+  color: #2e2e42;
+  padding: 0;
+  margin: 0;
+}
+p{
+  font-family: 'lato';
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8em;
+  color: #879092de;
+  padding: 0;
+  margin: 0;
+}
+a{
+  font-family: lato;
+}

@@ -1,0 +1,17 @@
+.nav-items {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  width: 288px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.nav-item {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.035rem;
+  text-decoration: none;
+  color: rgba(230, 230, 230, 0.9); }
