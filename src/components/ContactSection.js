@@ -18,11 +18,11 @@ class ContactSection extends Component {
 
           <FormAndMapContainer>
             <FormContainer>
-              <Form>
-                <Input placeholder="name" />
-                <Input placeholder="number" />
-                <Input placeholder="email" />
-                <TextArea placeholder="message" />
+              <Form id="contact-form" method="POST" action="/">
+                <Input id="name-input" placeholder="name" />
+                <Input id="number-input"  placeholder="number" />
+                <Input id="email-input" placeholder="email" />
+                <TextArea id="message-input" placeholder="message" />
                 <FormSubmitButton>
                   Contact
                 </FormSubmitButton>
