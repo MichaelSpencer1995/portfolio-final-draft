@@ -13,7 +13,7 @@ class App extends Component {
         <HeroSection />
         <AboutSection />
         <WhatICanDoSection />
-        {/* <RecentWorkSection /> */}
+        <RecentWorkSection />
         <ContactSection />
         <FooterSection />
       </div>

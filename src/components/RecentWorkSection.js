@@ -4,100 +4,190 @@ import styled from "styled-components"
 class RecentWorkSection extends Component {
   render() {
     return (
-      <div className="recent-work-section-view">
-        <div className="recent-work-section-view-container">
-          <h1>
+      <RecentWorkSectionView>
+        <RecentWorkSectionViewContainer>
+          <RecentWorkH1>
             Recent Work
-          </h1>
+          </RecentWorkH1>
 
-          <p>
+          <RecentWorkP>
             Lorem ipsum dolor sit amet vero?
             Alias minus deserunt qui provident
             ipsa fuga a eos suscipit, repudiandae
             quod consequuntur similique! Delectus id
             veritatis distinctio eligendi expedita odit eius
             facilis rem nulla.
-          </p>
+          </RecentWorkP>
 
-          <div class="work-tri-fold">
-            <div class="work-item-container no-margin-responsive">
-              <img class="work-img-1" alt="photo of a website on different screen sizes" src="/assets/img/responsive-displays.svg" />
+          <RecentWorkTriFold>
+            <WorkItemContainer>
+              <img alt="photo of a website on different screen sizes" src="/assets/img/responsive-displays.svg" />
                 
-              <div class="project-info-containers">
-                <h3 class="project-name">
+              <ProjectInfoContainer>
+                <ProjectSubHeader>
                   Real Estate Website
-                </h3>
+                </ProjectSubHeader>
                     
-                <p class="work-description">
+                <ProjectDescription>
                   Personal website for a local real estate agent
-                </p>
+                </ProjectDescription>
                     
-                <p class="technologies-used">
+                <ProjectTechsUsed>
                   React, Styled Components, Node
-                </p>
+                </ProjectTechsUsed>
                     
                 <a href="#" class="visit-website">
                   Visit Website
                 </a>
-              </div>
-            </div>
+              </ProjectInfoContainer>
+            </WorkItemContainer>
 
-            <div class="work-item-container work-item-container-1">
+            <WorkItemContainer>
               <img class="work-img-2" alt="photos of various javascript projects" src="/assets/img/codecampchallenges.svg" />
                 
-              <div class="project-info-containers">
-                <h3 class="project-name">
+              <ProjectInfoContainer>
+                <ProjectSubHeader>
                   Various Javascript Projects
-                </h3>
+                </ProjectSubHeader>
 
-                <p class="work-description">
+                <ProjectDescription>
                   Challenges from the freecodecamp curriculum.
-                </p>
+                </ProjectDescription>
                     
-                <p class="technologies-used">
+                <ProjectTechsUsed>
                   React, Sass, Node and logic-intensive vanilla JS
-                </p>
+                </ProjectTechsUsed>
                 
                 <a href="#" className="visit-website">
                   Visit Website
                 </a>
-              </div>
-            </div>
+              </ProjectInfoContainer>
+            </WorkItemContainer>
 
-            <div class="work-item-container">
+            <WorkItemContainer3>
               <img class="work-img-3" alt="photo of my free code camp certification" src="/assets/img/certificate.png" />
                 
-              <div class="project-info-containers">
-                <h3 class="project-name">
+              <ProjectInfoContainer>
+                <ProjectSubHeader>
                   Front End Certification
-                </h3>
+                </ProjectSubHeader>
 
-                <p class="work-description">
+                <ProjectDescription>
                   Given after completion of FreeCodeCamp
-                </p>
+                </ProjectDescription>
                     
-                <p class="technologies-used">
+                <ProjectTechsUsed>
                   Javascript fundamentals and logic-intensive algorithms
-                </p>
+                </ProjectTechsUsed>
                     
                 <a href="#" class="visit-website-3">
                   Visit Website
                 </a>
-              </div>
-            </div>
-          </div>
+              </ProjectInfoContainer>
+            </WorkItemContainer3>
+          </RecentWorkTriFold>
         
-          <p class="award-winning-ui">
+          <AwardWinningUIP>
             One day this section will have multiple award winning UI's
-          </p>
+          </AwardWinningUIP>
 
-          <div class="divider">
+          <Divider>
             <img alt="vector image to seperate the contact section from the rest of the page" src="/assets/img/divider.svg" />
-          </div>
-        </div>
-      </div>
+          </Divider>
+        </RecentWorkSectionViewContainer>
+      </RecentWorkSectionView>
     )
   }
 }
+
+const RecentWorkSectionView = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+
+const RecentWorkSectionViewContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 150px;
+  padding-bottom: 100px;
+`
+
+const RecentWorkH1 = styled.h1`
+`
+
+const RecentWorkP = styled.p`
+  margin-top: 7px;
+  width: 44%;
+`
+
+const RecentWorkTriFold = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 76%;
+  margin-top: 70px;
+`
+
+const WorkItemContainer = styled.div`
+  width: 27%;
+  height: 330px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  img{
+    width: 100%;
+  }
+`
+
+const WorkItemContainer3 = styled(WorkItemContainer)`
+  img{
+    width: 67%;
+  }
+`
+
+const ProjectInfoContainer = styled.div`
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  a{
+    width: 100px;
+    height: 25px;
+    text-decoration: none;
+    color: blue;
+  }
+`
+
+const ProjectSubHeader = styled.h3`
+  margin-top: 30px;
+`
+
+const ProjectDescription = styled.p`
+  margin-top: 7px;
+`
+
+const ProjectTechsUsed = styled.p`
+  font-size: 13px;
+  font-style: italic;
+`
+
+const AwardWinningUIP = styled.p`
+  margin-top: 104px;
+`
+
+const Divider = styled.div`
+  width: 60%;
+  margin-top: 90px;  
+  img{
+    width: 100%;
+  }
+`
 
 export default RecentWorkSection
