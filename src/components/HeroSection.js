@@ -85,7 +85,6 @@ class HeroSection extends Component {
           paragraph.classList.remove('shift-paragraph-off-screen')
           hireButtons.classList.remove('fixed-nav-items')
           hireButtons.style.bottom = '0px'
-
       }
     }
  
