@@ -10,7 +10,6 @@ class ContactSection extends Component {
       numberValue: '',
       emailValue: '',
       messageValue: '',
-      errorMsg: "Invalid Email Address",
       nameInvalid: false,
       numberInvalid: false,
       emailInvalid: false,
@@ -29,7 +28,52 @@ class ContactSection extends Component {
 
   validateForm(input, currentValue){
     let formValid = true
-    console.log('validate the ' + input + ' field the current value is: ' + currentValue)
+
+    if(input === 'emailValue') {
+      let notValidEmailAndNotEmptyInputBox = !validator.isEmail(currentValue) && currentValue !== ''
+
+      if(notValidEmailAndNotEmptyInputBox){
+        this.setState({
+          emailInvalid: true,
+          anyInvalid: true
+        })
+
+      } else {
+        this.setState({
+          emailInvalid: false
+        })
+      }
+    }
+
+    //was putting mobile phone here until i realized I need to consider what happens when
+    //the submit button is hit, because that would probably be the better time to say 'dont forget etc..'
+
+    if(input === 'nameValue') {
+      if(currentValue === '') {
+        this.setState({
+          nameInvalid: true,
+          anyInvalid: true
+        })
+      
+      } else {
+        this.setState({
+          nameInvalid: false
+        })
+      }
+    }
+    if(input === 'messageValue') {
+      if(currentValue === '') {
+        this.setState({
+          messageInvalid: true,
+          anyInvalid: true
+        })
+      
+      } else {
+        this.setState({
+          messageInvalid: false
+        })
+      }
+    }
   }
 
   
@@ -51,17 +95,13 @@ class ContactSection extends Component {
           </ContactSectionP>
 
           <ErrorMessage isShown={this.state.anyInvalid}>
-            <p>
-              {this.state.errorMsg}
-            </p>
-            
             <p>Please correct fields marked with *</p>
           </ErrorMessage>
           
           <FormAndMapContainer>
             <FormContainer>
               <Form id="contact-form" method="POST" action="/contact" >
-                <Asteric isShown={this.state.nameInvalid}>*</Asteric>
+                <Asteric isShown={this.state.nameInvalid}>*Don't forget to put your name!</Asteric>
                 <Input 
                   onChange={this.handleChange.bind(this)} 
                   value={this.state.name}
@@ -69,7 +109,7 @@ class ContactSection extends Component {
                   placeholder="name"
                 />
 
-                <Asteric isShown={this.state.numberInvalid}>*</Asteric>
+                <Asteric isShown={this.state.numberInvalid}>*Invalid Phone Number</Asteric>
                 <Input 
                   onChange={this.handleChange.bind(this)} 
                   value={this.state.name}
@@ -77,7 +117,7 @@ class ContactSection extends Component {
                   placeholder="number"
                 />
 
-                <Asteric isShown={this.state.emailInvalid}>*</Asteric>
+                <Asteric isShown={this.state.emailInvalid}>*Invalid Email Address</Asteric>
                 <Input 
                   onChange={this.handleChange.bind(this)} 
                   value={this.state.name}
@@ -85,7 +125,7 @@ class ContactSection extends Component {
                   placeholder="email"
                 />
 
-                <Asteric isShown={this.state.messageInvalid}>*</Asteric>
+                <Asteric isShown={this.state.messageInvalid}>Don't forget to leave a message!</Asteric>
                 <TextArea
                   onChange={this.handleChange.bind(this)} 
                   value={this.state.name}
@@ -243,19 +283,11 @@ const ErrorMessage = styled.div`
   }
 `
 
-const AstericsContainer = styled.div`
-  width: 12vw;
-  height: 190px;
-  background: red;
-  position: relative;
-  top: 8px;
-`
-
 const Asteric = styled.p`
-  width: 20px;
+  width: 100%;
   height: 20px;
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 13px;
   padding: 0;
   margin: 0;
   color: #ea2525;
