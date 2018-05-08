@@ -3,25 +3,34 @@ import styled from "styled-components"
 import validator from 'validator'
 
 class ContactSection extends Component {
-  state = {
-    name: '',
-    number: '',
-    email: '',
-    message: '',
-    errorMsg: "Invalid Email Address",
-    nameInvalid: true,
-    numberInvalid: true,
-    emailInvalid: true,
-    messageInvalid: true,
-    anyInvalid: true
+  constructor() {
+    super()
+    this.state = {
+      nameValue: '',
+      numberValue: '',
+      emailValue: '',
+      messageValue: '',
+      errorMsg: "Invalid Email Address",
+      nameInvalid: false,
+      numberInvalid: false,
+      emailInvalid: false,
+      messageInvalid: false,
+      anyInvalid: false
+    }
   }
 
-  handleChange(value){
-    console.log(value)
+
+  handleChange(e) {
+    let change = {}
+    change[e.target.name] = e.target.value
+    this.setState(change)
+    console.log(this.state)
   }
 
-  updateInputValue(evt){
-    console.log(evt.target.value)
+  validateForm(){
+    setTimeout(function(){
+      alert("Hello");
+    }, 3000)
   }
 
   render() {
@@ -47,19 +56,45 @@ class ContactSection extends Component {
             
             <p>Please correct fields marked with *</p>
           </ErrorMessage>
-
+          
           <FormAndMapContainer>
             <FormContainer>
               <Form id="contact-form" method="POST" action="/contact" >
                 <Asteric isShown={this.state.nameInvalid}>*</Asteric>
-                <Input defaultvalue="" onChange={event => this.updateInputValue(event)} name="name" placeholder="name" />
+                <Input 
+                  onChange={this.handleChange.bind(this)} 
+                  value={this.state.name}
+                  name="nameValue"
+                  placeholder="name"
+                />
+
                 <Asteric isShown={this.state.numberInvalid}>*</Asteric>
-                <Input defaultvalue="" onChange={event => this.updateInputValue(event)} name="number"  placeholder="number"/>
+                <Input 
+                  onChange={this.handleChange.bind(this)} 
+                  value={this.state.name}
+                  name="numberValue"
+                  placeholder="number"
+                />
+
                 <Asteric isShown={this.state.emailInvalid}>*</Asteric>
-                <Input defaultvalue="" onChange={event => this.updateInputValue(event)} name="email" placeholder="email" />
+                <Input 
+                  onChange={this.handleChange.bind(this)} 
+                  value={this.state.name}
+                  name="emailValue"
+                  placeholder="email"
+                />
+
                 <Asteric isShown={this.state.messageInvalid}>*</Asteric>
-                <TextArea name="message" />
-                <FormSubmitButton>
+                <TextArea
+                  onChange={this.handleChange.bind(this)} 
+                  value={this.state.name}
+                  name="messageValue"
+                  placeholder="message"
+                />
+
+                <FormSubmitButton
+                  // onClick={() => this.validateForm()}
+                >
                   Contact
                 </FormSubmitButton>
               </Form>
