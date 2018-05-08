@@ -7,7 +7,13 @@ class ContactSection extends Component {
     name: '',
     number: '',
     email: '',
-    message: ''
+    message: '',
+    errorMsg: "Invalid Email Address",
+    nameInvalid: true,
+    numberInvalid: true,
+    emailInvalid: true,
+    messageInvalid: true,
+    anyInvalid: true
   }
 
   handleChange(value){
@@ -19,6 +25,8 @@ class ContactSection extends Component {
   }
 
   render() {
+    const { isExpanded } = this.state
+    
     return (
       <ContactSectionView>
         <ContactSectionViewContainer>
@@ -32,12 +40,24 @@ class ContactSection extends Component {
             skills, let me prove I can fill that role.
           </ContactSectionP>
 
+          <ErrorMessage isShown={this.state.anyInvalid}>
+            <p>
+              {this.state.errorMsg}
+            </p>
+            
+            <p>Please correct fields marked with *</p>
+          </ErrorMessage>
+
           <FormAndMapContainer>
             <FormContainer>
               <Form id="contact-form" method="POST" action="/contact" >
+                <Asteric isShown={this.state.nameInvalid}>*</Asteric>
                 <Input defaultvalue="" onChange={event => this.updateInputValue(event)} name="name" placeholder="name" />
+                <Asteric isShown={this.state.numberInvalid}>*</Asteric>
                 <Input defaultvalue="" onChange={event => this.updateInputValue(event)} name="number"  placeholder="number"/>
+                <Asteric isShown={this.state.emailInvalid}>*</Asteric>
                 <Input defaultvalue="" onChange={event => this.updateInputValue(event)} name="email" placeholder="email" />
+                <Asteric isShown={this.state.messageInvalid}>*</Asteric>
                 <TextArea name="message" />
                 <FormSubmitButton>
                   Contact
@@ -58,9 +78,11 @@ const ContactSectionView = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-items: center;
 `
 
 const ContactSectionViewContainer = styled.div`
+  // background: blue;
   width: 76%;
   display: flex;
   flex-direction: column;
@@ -95,8 +117,7 @@ const FormAndMapContainer = styled.div`
 const FormContainer = styled.div`
   width: 50%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
   @media(max-width: 1000px) {
     width: 100%;
   }
@@ -119,8 +140,8 @@ const Input = styled.input`
   padding: 0;
   margin: 0;
   height: 40px;
-  margin-top: 8px;
   padding-left: 10px;
+  margin-top: 10px;
   box-sizing: border-box;
   background: rgb(247, 247, 247);
   border: #ccc 1px solid;
@@ -163,7 +184,7 @@ const FormSubmitButton = styled.button`
 `
 
 const Iframe = styled.iframe`
-  width: 54%;
+  width: 50%; 
   height: 398px;
   position: relative;
   top: 7px;
@@ -172,6 +193,38 @@ const Iframe = styled.iframe`
     width: 100%;
     margin-top: 50px;
   }
+`
+
+const ErrorMessage = styled.div`
+  display: ${({ isShown }) => isShown ? "block" : "none" };
+  margin-top: 20px;
+  position: relative;
+  top: 10px;
+  p{
+    color: #ea2525;
+    font-weight: 500;
+    font-size: 15px;
+  }
+`
+
+const AstericsContainer = styled.div`
+  width: 12vw;
+  height: 190px;
+  background: red;
+  position: relative;
+  top: 8px;
+`
+
+const Asteric = styled.p`
+  width: 20px;
+  height: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  color: #ea2525;
+  display: ${({ isShown }) => isShown ? "block" : "none" };
+  // display: none;
 `
 
 export default ContactSection
