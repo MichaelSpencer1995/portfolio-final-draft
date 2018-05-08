@@ -24,14 +24,15 @@ class ContactSection extends Component {
     let change = {}
     change[e.target.name] = e.target.value
     this.setState(change)
-    console.log(this.state)
+    this.validateForm(e.target.name, e.target.value)
   }
 
-  validateForm(){
-    setTimeout(function(){
-      alert("Hello");
-    }, 3000)
+  validateForm(input, currentValue){
+    let formValid = true
+    console.log('validate the ' + input + ' field the current value is: ' + currentValue)
   }
+
+  
 
   render() {
     const { isExpanded } = this.state
