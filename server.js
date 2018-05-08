@@ -50,7 +50,7 @@ app.get('/', function(req, res){
 })
 
 app.post('/contact', urlencodedParser, function(req, res){
-    sendEmail(req.body)
+    // sendEmail(req.body)
 })
 
 const port = process.env.PORT || 8080;

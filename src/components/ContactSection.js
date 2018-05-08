@@ -1,7 +1,23 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
+import validator from 'validator'
 
 class ContactSection extends Component {
+  state = {
+    name: '',
+    number: '',
+    email: '',
+    message: ''
+  }
+
+  handleChange(value){
+    console.log(value)
+  }
+
+  updateInputValue(evt){
+    console.log(evt.target.value)
+  }
+
   render() {
     return (
       <ContactSectionView>
@@ -18,11 +34,11 @@ class ContactSection extends Component {
 
           <FormAndMapContainer>
             <FormContainer>
-              <Form id="contact-form" method="POST" action="/contact">
-                <Input name="name" placeholder="name" />
-                <Input name="number"  placeholder="number" />
-                <Input name="email" placeholder="email" />
-                <TextArea name="message" placeholder="message" />
+              <Form id="contact-form" method="POST" action="/contact" >
+                <Input defaultvalue="" onChange={event => this.updateInputValue(event)} name="name" placeholder="name" />
+                <Input defaultvalue="" onChange={event => this.updateInputValue(event)} name="number"  placeholder="number"/>
+                <Input defaultvalue="" onChange={event => this.updateInputValue(event)} name="email" placeholder="email" />
+                <TextArea name="message" />
                 <FormSubmitButton>
                   Contact
                 </FormSubmitButton>
@@ -52,8 +68,8 @@ const ContactSectionViewContainer = styled.div`
   margin-top: -10px;
   padding-bottom: 85px;
   @media(max-width: 1000px) {
-   padding-bottom: 55px;
-   margin-top: -30px;
+    padding-bottom: 55px;
+    margin-top: -30px;
   }
 `
 
