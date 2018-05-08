@@ -76,6 +76,9 @@ class ContactSection extends Component {
     }
   }
 
+  finalValidateForm(){
+    return false
+  }
   
 
   render() {
@@ -134,7 +137,7 @@ class ContactSection extends Component {
                 />
 
                 <FormSubmitButton
-                  // onClick={() => this.validateForm()}
+                  onSubmit={() => this.finalValidateForm()}
                 >
                   Contact
                 </FormSubmitButton>
