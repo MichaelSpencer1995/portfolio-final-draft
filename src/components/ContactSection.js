@@ -122,7 +122,7 @@ class ContactSection extends Component {
           <FormAndMapContainer>
             <FormContainer>
               <Form onSubmit={event => this.handleSubmit(event)} method="POST" action="/contact" >
-                <Asteric isShown={this.state.nameValid}>*</Asteric>
+                <Asteric isShown={this.state.nameValid}>*Name field cannot be blank</Asteric>
                 <Input 
                   onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
@@ -130,7 +130,7 @@ class ContactSection extends Component {
                   placeholder="name"
                 />
 
-                <Asteric isShown={this.state.numberValid}>*</Asteric>
+                <Asteric isShown={this.state.numberValid}>*Invalid phone number</Asteric>
                 <Input 
                   onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
@@ -138,7 +138,7 @@ class ContactSection extends Component {
                   placeholder="number"
                 />
 
-                <Asteric isShown={this.state.emailValid}>*Invalid Email Address</Asteric>
+                <Asteric isShown={this.state.emailValid}>*Invalid email address</Asteric>
                 <Input 
                   onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
@@ -146,7 +146,7 @@ class ContactSection extends Component {
                   placeholder="email"
                 />
 
-                <Asteric isShown={this.state.messageValid}>Don't forget to leave a message!</Asteric>
+                <Asteric isShown={this.state.messageValid}>Message field cannot be blank</Asteric>
                 <TextArea
                   onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
@@ -280,7 +280,7 @@ const FormSubmitButton = styled.input`
 
 const Iframe = styled.iframe`
   width: 50%; 
-  height: 398px;
+  height: 406px;
   position: relative;
   top: 7px;
   border: #ccc 1px solid;
@@ -294,18 +294,22 @@ const ErrorMessage = styled.div`
   margin-top: 20px;
   position: relative;
   top: 10px;
+  display: ${({ isShown }) => isShown ? "none" : "block" };
+  
   p{
-    color: ${({ isShown }) => isShown ? "transparent" : "#ea2525" };
-    font-weight: 500;
-    font-size: 15px;
+    color: #ea2525;
+    font-weight: 700;
+    font-size: 17px;
   }
 `
 
 const Asteric = styled.p`
   width: 100%;
-  height: 20px;
-  font-weight: 400;
-  font-size: 13px;
+  height: 30px;
+  font-weight: 500;
+  position: relative;
+  top: 17px;
+  font-size: 14px;
   padding: 0;
   margin: 0;
   color: #ea2525;
