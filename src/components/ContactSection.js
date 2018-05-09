@@ -265,6 +265,7 @@ const TextArea = styled.textarea`
 const FormSubmitButton = styled.input`
   width: 100%;
   padding: 0;
+  -webkit-appearance: none;  
   margin: 0;
   height: 57px;
   margin-top: 8px;
