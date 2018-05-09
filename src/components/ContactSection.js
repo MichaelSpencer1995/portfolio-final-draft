@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
-import validator from 'validator'
 
 class ContactSection extends Component {
   constructor() {
@@ -14,88 +13,64 @@ class ContactSection extends Component {
       numberInvalid: false,
       emailInvalid: false,
       messageInvalid: false,
-      anyInvalid: false
+      anyInvalid: false,
+      errorMessage: 'Please Correct the following errors:',
+      formValid: false
     }
   }
 
+  checkIfFormValid(){
+    let nameValidity = this.state.nameValue !== ''
+    let messageValidity = this.state.messageValue !== ''
+    let emailValidity = this.isEmail(this.state.emailValue)
+    let numberValidity = this.isPhoneNumber(this.state.numberValue)
 
-  handleChange(e) {
+    this.updateValidity(nameValidity, 'nameInvalid')
+    this.updateValidity(messageValidity, 'messageInvalid')
+    this.updateValidity(emailValidity, 'emailInvalid')
+    this.updateValidity(numberValidity, 'numberInvalid')
+
+    if(nameValidity && messageValidity && emailValidity && nameValidity) {
+      console.log(this.state)
+      this.setState({
+        formValid: true
+      })
+
+    } else {
+      console.log(this.state)
+      this.setState({
+        formValid: false
+      })
+    }
+  }
+
+  updateValidity(validity, correspondingState){
+    console.log(validity, correspondingState)
+    this.setState({
+      correspondingState: validity
+    })
+  }
+
+  updateInputValueInState(e) {
     let change = {}
     change[e.target.name] = e.target.value
     this.setState(change)
-    this.validateForm(e.target.name, e.target.value)
   }
 
-  validateForm(input, currentValue){
-    if(input === 'emailValue') {
-      let notValidEmailAndNotEmptyInputBox = !validator.isEmail(currentValue) && currentValue !== ''
-
-      if(notValidEmailAndNotEmptyInputBox){
-        this.setState({
-          emailInvalid: true,
-          anyInvalid: true
-        })
-
-      } else {
-        this.setState({
-          emailInvalid: false
-        })
-      }
-    }
-
-    if(input === 'nameValue') {
-      if(currentValue === '') {
-        this.setState({
-          nameInvalid: true,
-          anyInvalid: true
-        })
-      
-      } else {
-        this.setState({
-          nameInvalid: false
-        })
-      }
-    }
-    if(input === 'messageValue') {
-      if(currentValue === '') {
-        this.setState({
-          messageInvalid: true,
-          anyInvalid: true
-        })
-      
-      } else {
-        this.setState({
-          messageInvalid: false
-        })
-      }
-    }
-  }
-
-  isValid(){
-    let nameValid = this.state.nameValue !== ''
-    let messageValid = this.state.messageValue !== ''
-    let emailValid = true
-    let phoneValid = true
-
-    if(nameValid && messageValid && emailValid && phoneValid) {
-      return true
-    }
-
-    return false
-  }
-  
   displayErrors(){
     console.log('display errors here')
   }
-
+  
   handleSubmit(event){
     event.preventDefault()
+
+    this.checkIfFormValid()
     
-    if(!this.isValid()){
-      this.displayErrors()
+    if(!this.state.formValid){
+      console.log('invalid form')
       return
     }
-
+    
     fetch('/contact', {
       method: 'post',
       headers: {'Content-Type':'application/json'},
@@ -108,6 +83,27 @@ class ContactSection extends Component {
     })
   }
   
+  isPhoneNumber(str){
+    let valid = false
+    let onlyDigits = str.replace(/\D/g,'')
+
+    if(onlyDigits.length >= 7) {
+      return true
+    }
+
+    return false
+  }
+
+  isEmail(str){
+    let format = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
+    let passes = format.test(str)
+    
+    if(passes) {
+      return true
+    }
+    
+    return false
+  }
 
   render() {
     return (
@@ -130,17 +126,17 @@ class ContactSection extends Component {
           <FormAndMapContainer>
             <FormContainer>
               <Form onSubmit={event => this.handleSubmit(event)} method="POST" action="/contact" >
-                <Asteric isShown={this.state.nameInvalid}>*Don't forget to put your name!</Asteric>
+                <Asteric isShown={this.state.nameInvalid}>*</Asteric>
                 <Input 
-                  onBlur={(this.handleChange.bind(this))} 
+                  onBlur={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
                   name="nameValue"
                   placeholder="name"
                 />
 
-                <Asteric isShown={this.state.numberInvalid}>*Invalid Phone Number</Asteric>
+                <Asteric isShown={this.state.numberInvalid}>*</Asteric>
                 <Input 
-                  onBlur={(this.handleChange.bind(this))} 
+                  onBlur={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
                   name="numberValue"
                   placeholder="number"
@@ -148,7 +144,7 @@ class ContactSection extends Component {
 
                 <Asteric isShown={this.state.emailInvalid}>*Invalid Email Address</Asteric>
                 <Input 
-                  onBlur={(this.handleChange.bind(this))} 
+                  onBlur={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
                   name="emailValue"
                   placeholder="email"
@@ -156,7 +152,7 @@ class ContactSection extends Component {
 
                 <Asteric isShown={this.state.messageInvalid}>Don't forget to leave a message!</Asteric>
                 <TextArea
-                  onBlur={(this.handleChange.bind(this))} 
+                  onBlur={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
                   name="messageValue"
                   placeholder="message"
