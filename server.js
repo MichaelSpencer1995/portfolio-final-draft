@@ -45,11 +45,15 @@ function sendEmail(body){
 }
 
 app.use(express.static(path.resolve(__dirname)))
+
+app.use(require("body-parser").json())
+
 app.get('/', function(req, res){
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
 })
 
-app.post('/contact', urlencodedParser, function(req, res){
+app.post('/contact', function(req, res){
+    console.log(req.body)
     // sendEmail(req.body)
 })
 

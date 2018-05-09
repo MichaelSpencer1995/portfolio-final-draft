@@ -76,14 +76,23 @@ class ContactSection extends Component {
     }
   }
 
-  finalValidateForm(){
-    return false
+  finalValidateForm(event){
+    event.preventDefault()
+    
+    fetch('/contact', {
+      method: 'post',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+       "name": this.state.nameValue,
+       "number": this.state.numberValue,
+       "email": this.state.emailValue,
+       "message": this.state.messageValue
+      })
+    })
   }
   
 
   render() {
-    const { isExpanded } = this.state
-    
     return (
       <ContactSectionView>
         <ContactSectionViewContainer>
@@ -103,7 +112,7 @@ class ContactSection extends Component {
           
           <FormAndMapContainer>
             <FormContainer>
-              <Form id="contact-form" method="POST" action="/contact" >
+              <Form onSubmit={e => this.finalValidateForm(e)} method="POST" action="/contact" >
                 <Asteric isShown={this.state.nameInvalid}>*Don't forget to put your name!</Asteric>
                 <Input 
                   onChange={this.handleChange.bind(this)} 
@@ -137,10 +146,8 @@ class ContactSection extends Component {
                 />
 
                 <FormSubmitButton
-                  onSubmit={() => this.finalValidateForm()}
-                >
-                  Contact
-                </FormSubmitButton>
+                  type="submit"
+                />
               </Form>
             </FormContainer>
 
@@ -246,7 +253,7 @@ const TextArea = styled.textarea`
   font-family: 'Open Sans', sans-serif;
 `
 
-const FormSubmitButton = styled.button`
+const FormSubmitButton = styled.input`
   width: 100%;
   padding: 0;
   margin: 0;
