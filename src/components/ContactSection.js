@@ -9,64 +9,19 @@ class ContactSection extends Component {
       numberValue: '',
       emailValue: '',
       messageValue: '',
-      nameInvalid: false,
-      numberInvalid: false,
-      emailInvalid: false,
-      messageInvalid: false,
-      anyInvalid: false,
+      nameValid: true,
+      numberValid: true,
+      emailValid: true,
+      messageValid: true,
       errorMessage: 'Please Correct the following errors:',
-      formValid: false
+      formValid: true
     }
-  }
-
-  checkIfFormValid(){
-    let nameValidity = this.state.nameValue !== ''
-    let messageValidity = this.state.messageValue !== ''
-    let emailValidity = this.isEmail(this.state.emailValue)
-    let numberValidity = this.isPhoneNumber(this.state.numberValue)
-
-    this.updateValidity(nameValidity, 'nameInvalid')
-    this.updateValidity(messageValidity, 'messageInvalid')
-    this.updateValidity(emailValidity, 'emailInvalid')
-    this.updateValidity(numberValidity, 'numberInvalid')
-
-    if(nameValidity && messageValidity && emailValidity && nameValidity) {
-      console.log(this.state)
-      this.setState({
-        formValid: true
-      })
-
-    } else {
-      console.log(this.state)
-      this.setState({
-        formValid: false
-      })
-    }
-  }
-
-  updateValidity(validity, correspondingState){
-    console.log(validity, correspondingState)
-    this.setState({
-      correspondingState: validity
-    })
-  }
-
-  updateInputValueInState(e) {
-    let change = {}
-    change[e.target.name] = e.target.value
-    this.setState(change)
-  }
-
-  displayErrors(){
-    console.log('display errors here')
   }
   
   handleSubmit(event){
     event.preventDefault()
-
-    this.checkIfFormValid()
     
-    if(!this.state.formValid){
+    if(!this.checkIfFormValid()){
       console.log('invalid form')
       return
     }
@@ -81,6 +36,47 @@ class ContactSection extends Component {
        "message": this.state.messageValue
       })
     })
+  }
+
+  checkIfFormValid(){
+    let nameIsValid = this.state.nameValue !== ''
+    let messageIsValid = this.state.messageValue !== ''
+    let emailIsValid = this.isEmail(this.state.emailValue)
+    let numberIsValid = this.isPhoneNumber(this.state.numberValue)
+    
+    this.updateValidity(nameIsValid, 'nameValid')
+    this.updateValidity(messageIsValid, 'messageValid')
+    this.updateValidity(emailIsValid, 'emailValid')
+    this.updateValidity(numberIsValid, 'numberValid')
+    
+    if(nameIsValid && messageIsValid && emailIsValid && numberIsValid) {
+      console.log(this.state)
+      this.setState({
+        formValid: true
+      })
+      return true
+
+    } else {
+      console.log(this.state)
+      this.setState({
+        formValid: false
+      })
+      return false
+    }
+  }
+
+  updateValidity(validity, correspondingState){
+    let change = {}
+    
+    change[correspondingState] = validity
+    console.log(change)
+    this.setState(change)
+  }
+
+  updateInputValueInState(e) {
+    let change = {}
+    change[e.target.name] = e.target.value
+    this.setState(change)
   }
   
   isPhoneNumber(str){
@@ -119,40 +115,40 @@ class ContactSection extends Component {
             skills, let me prove I can fill that role.
           </ContactSectionP>
 
-          <ErrorMessage isShown={this.state.anyInvalid}>
+          <ErrorMessage isShown={this.state.formValid}>
             <p>Please correct fields marked with *</p>
           </ErrorMessage>
           
           <FormAndMapContainer>
             <FormContainer>
               <Form onSubmit={event => this.handleSubmit(event)} method="POST" action="/contact" >
-                <Asteric isShown={this.state.nameInvalid}>*</Asteric>
+                <Asteric isShown={this.state.nameValid}>*</Asteric>
                 <Input 
-                  onBlur={(this.updateInputValueInState.bind(this))} 
+                  onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
                   name="nameValue"
                   placeholder="name"
                 />
 
-                <Asteric isShown={this.state.numberInvalid}>*</Asteric>
+                <Asteric isShown={this.state.numberValid}>*</Asteric>
                 <Input 
-                  onBlur={(this.updateInputValueInState.bind(this))} 
+                  onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
                   name="numberValue"
                   placeholder="number"
                 />
 
-                <Asteric isShown={this.state.emailInvalid}>*Invalid Email Address</Asteric>
+                <Asteric isShown={this.state.emailValid}>*Invalid Email Address</Asteric>
                 <Input 
-                  onBlur={(this.updateInputValueInState.bind(this))} 
+                  onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
                   name="emailValue"
                   placeholder="email"
                 />
 
-                <Asteric isShown={this.state.messageInvalid}>Don't forget to leave a message!</Asteric>
+                <Asteric isShown={this.state.messageValid}>Don't forget to leave a message!</Asteric>
                 <TextArea
-                  onBlur={(this.updateInputValueInState.bind(this))} 
+                  onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
                   name="messageValue"
                   placeholder="message"
@@ -299,7 +295,7 @@ const ErrorMessage = styled.div`
   position: relative;
   top: 10px;
   p{
-    color: ${({ isShown }) => isShown ? "#ea2525" : "transparent" };
+    color: ${({ isShown }) => isShown ? "transparent" : "#ea2525" };
     font-weight: 500;
     font-size: 15px;
   }
@@ -313,8 +309,7 @@ const Asteric = styled.p`
   padding: 0;
   margin: 0;
   color: #ea2525;
-  display: ${({ isShown }) => isShown ? "block" : "none" };
-  // display: none;
+  display: ${({ isShown }) => isShown ? "none" : "block" };
 `
 
 export default ContactSection
