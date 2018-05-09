@@ -27,8 +27,6 @@ class ContactSection extends Component {
   }
 
   validateForm(input, currentValue){
-    let formValid = true
-
     if(input === 'emailValue') {
       let notValidEmailAndNotEmptyInputBox = !validator.isEmail(currentValue) && currentValue !== ''
 
@@ -44,9 +42,6 @@ class ContactSection extends Component {
         })
       }
     }
-
-    //was putting mobile phone here until i realized I need to consider what happens when
-    //the submit button is hit, because that would probably be the better time to say 'dont forget etc..'
 
     if(input === 'nameValue') {
       if(currentValue === '') {
@@ -76,9 +71,31 @@ class ContactSection extends Component {
     }
   }
 
-  finalValidateForm(event){
+  isValid(){
+    let nameValid = this.state.nameValue !== ''
+    let messageValid = this.state.messageValue !== ''
+    let emailValid = true
+    let phoneValid = true
+
+    if(nameValid && messageValid && emailValid && phoneValid) {
+      return true
+    }
+
+    return false
+  }
+  
+  displayErrors(){
+    console.log('display errors here')
+  }
+
+  handleSubmit(event){
     event.preventDefault()
     
+    if(!this.isValid()){
+      this.displayErrors()
+      return
+    }
+
     fetch('/contact', {
       method: 'post',
       headers: {'Content-Type':'application/json'},
@@ -112,10 +129,10 @@ class ContactSection extends Component {
           
           <FormAndMapContainer>
             <FormContainer>
-              <Form onSubmit={e => this.finalValidateForm(e)} method="POST" action="/contact" >
+              <Form onSubmit={event => this.handleSubmit(event)} method="POST" action="/contact" >
                 <Asteric isShown={this.state.nameInvalid}>*Don't forget to put your name!</Asteric>
                 <Input 
-                  onChange={this.handleChange.bind(this)} 
+                  onBlur={(this.handleChange.bind(this))} 
                   value={this.state.name}
                   name="nameValue"
                   placeholder="name"
@@ -123,7 +140,7 @@ class ContactSection extends Component {
 
                 <Asteric isShown={this.state.numberInvalid}>*Invalid Phone Number</Asteric>
                 <Input 
-                  onChange={this.handleChange.bind(this)} 
+                  onBlur={(this.handleChange.bind(this))} 
                   value={this.state.name}
                   name="numberValue"
                   placeholder="number"
@@ -131,7 +148,7 @@ class ContactSection extends Component {
 
                 <Asteric isShown={this.state.emailInvalid}>*Invalid Email Address</Asteric>
                 <Input 
-                  onChange={this.handleChange.bind(this)} 
+                  onBlur={(this.handleChange.bind(this))} 
                   value={this.state.name}
                   name="emailValue"
                   placeholder="email"
@@ -139,7 +156,7 @@ class ContactSection extends Component {
 
                 <Asteric isShown={this.state.messageInvalid}>Don't forget to leave a message!</Asteric>
                 <TextArea
-                  onChange={this.handleChange.bind(this)} 
+                  onBlur={(this.handleChange.bind(this))} 
                   value={this.state.name}
                   name="messageValue"
                   placeholder="message"
@@ -282,12 +299,11 @@ const Iframe = styled.iframe`
 `
 
 const ErrorMessage = styled.div`
-  display: ${({ isShown }) => isShown ? "block" : "none" };
   margin-top: 20px;
   position: relative;
   top: 10px;
   p{
-    color: #ea2525;
+    color: ${({ isShown }) => isShown ? "#ea2525" : "transparent" };
     font-weight: 500;
     font-size: 15px;
   }
