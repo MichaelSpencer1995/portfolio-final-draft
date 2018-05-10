@@ -36,6 +36,14 @@ class ContactSection extends Component {
        "message": this.state.messageValue
       })
     })
+    .then(res => {
+      if(res.status === 200){
+        alert('your message was sent', res.status)
+        return
+      } 
+      alert('There is a problems with the server, please call me at 512 825 2241, or email me obsessedwiththeprocess@gmail.com', res.status)
+    })
+    .catch(res => alert('There is a problems with the server, please call me at 512 825 2241, or email me obsessedwiththeprocess@gmail.com', res))  
   }
 
   checkIfFormValid(){
@@ -50,14 +58,12 @@ class ContactSection extends Component {
     this.updateValidity(numberIsValid, 'numberValid')
     
     if(nameIsValid && messageIsValid && emailIsValid && numberIsValid) {
-      console.log(this.state)
       this.setState({
         formValid: true
       })
       return true
 
     } else {
-      console.log(this.state)
       this.setState({
         formValid: false
       })
@@ -69,7 +75,6 @@ class ContactSection extends Component {
     let change = {}
     
     change[correspondingState] = validity
-    console.log(change)
     this.setState(change)
   }
 
@@ -81,9 +86,9 @@ class ContactSection extends Component {
   
   isPhoneNumber(str){
     let valid = false
-    let onlyDigits = str.replace(/\D/g,'')
+    let digits = str.replace(/\D/g,'')
 
-    if(onlyDigits.length >= 7) {
+    if(digits.length >= 7) {
       return true
     }
 
@@ -121,8 +126,16 @@ class ContactSection extends Component {
           
           <FormAndMapContainer>
             <FormContainer>
-              <Form onSubmit={event => this.handleSubmit(event)} method="POST" action="/contact" >
-                <Asteric isShown={this.state.nameValid}>*Name field cannot be blank</Asteric>
+              <Form
+                onSubmit={event => this.handleSubmit(event)}
+                method="POST" 
+                action="/contact">
+
+                <Asteric
+                  isShown={this.state.nameValid}>
+                  *Name field cannot be blank
+                </Asteric>
+                
                 <Input 
                   onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
@@ -130,7 +143,11 @@ class ContactSection extends Component {
                   placeholder="name"
                 />
 
-                <Asteric isShown={this.state.numberValid}>*Invalid phone number</Asteric>
+                <Asteric
+                  isShown={this.state.numberValid}>
+                  *Invalid phone number
+                </Asteric>
+                
                 <Input 
                   onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
@@ -138,7 +155,11 @@ class ContactSection extends Component {
                   placeholder="number"
                 />
 
-                <Asteric isShown={this.state.emailValid}>*Invalid email address</Asteric>
+                <Asteric
+                  isShown={this.state.emailValid}>
+                  *Invalid email address
+                </Asteric>
+
                 <Input 
                   onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
@@ -146,7 +167,11 @@ class ContactSection extends Component {
                   placeholder="email"
                 />
 
-                <Asteric isShown={this.state.messageValid}>Message field cannot be blank</Asteric>
+                <Asteric
+                  isShown={this.state.messageValid}>
+                  Message field cannot be blank
+                </Asteric>
+                
                 <TextArea
                   onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
@@ -160,8 +185,8 @@ class ContactSection extends Component {
               </Form>
             </FormContainer>
 
-            <Iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.3791666800007!2d-97.65040418526884!3d30.510315781715313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644d0361c2e1531%3A0x13b0645b022fbd90!2sLoquat+Ln%2C+Round+Rock%2C+TX+78664!5e0!3m2!1sen!2sus!4v1525381025642" allowfullscreen />
-          </FormAndMapContainer>
+          <Iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.3791666800007!2d-97.65040418526884!3d30.510315781715313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644d0361c2e1531%3A0x13b0645b022fbd90!2sLoquat+Ln%2C+Round+Rock%2C+TX+78664!5e0!3m2!1sen!2sus!4v1525381025642" allowfullscreen />
+        </FormAndMapContainer>
         </ContactSectionViewContainer>
       </ContactSectionView>
     )

@@ -4,10 +4,11 @@ const app = express()
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
+let emailSent = false
 // Generate test SMTP service account from ethereal.email
 // Only needed if you don't have a real mail account for testing
-function sendEmail(body){
-    nodemailer.createTestAccount((err, account) => {
+function sendEmail(body, res){
+    return nodemailer.createTestAccount((err, account) => {
         let transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
             port: 587,
@@ -20,21 +21,23 @@ function sendEmail(body){
 
         // setup email data with unicode symbols
         let mailOptions = {
-            from: `"${ body.name }" <michael.spencer1@g.austincc.edu>`, // sender address
+            from: `${ body.name } <michael.spencer1@g.austincc.edu>`, // sender address
             to: 'michael.spencer1@g.austincc.edu', // list of receivers
             subject: 'FROM PERSONAL PORTFOLIO', // Subject line
             text: '',
             html: `<strong>Phone Number: </strong>${ body.number }<br />
-                   <strong>email: </strong>${ body.email }<br />
+                   <strong>Email: </strong>${ body.email }<br />
                    <strong>Message: </strong>${ body.message }` // html body
         };
 
         // send mail with defined transport object
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
-                return console.log(error);
+                res.status(117).send()
+                return
             }
             console.log('Message sent: %s', info.messageId);
+            res.status(200).send()
             // Preview only available when sending through an Ethereal account
             console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
@@ -53,11 +56,12 @@ app.get('/', function(req, res){
 })
 
 app.post('/contact', function(req, res){
-    console.log(req.body)
-    sendEmail(req.body)
+    sendEmail(req, res)
+    // the send email function returns whether or not the email was sent
 })
 
 const port = process.env.PORT || 8080;
+
 app.listen(port, function(){
     console.log('connected to port', port)
 })
