@@ -14,18 +14,23 @@ class ContactSection extends Component {
       emailValid: true,
       messageValid: true,
       errorMessage: 'Please Correct the following errors:',
-      formValid: true
+      formValid: true,
+      formSending: false
     }
   }
   
   handleSubmit(event){
     event.preventDefault()
     
-    if(!this.checkIfFormValid()){
+    if(!this.checkIfFormValid() || this.state.formSending){
       console.log('invalid form')
       return
     }
     
+    this.setState({
+      formSending: true
+    })
+
     fetch('/contact', {
       method: 'post',
       headers: {'Content-Type':'application/json'},
@@ -39,11 +44,25 @@ class ContactSection extends Component {
     .then(res => {
       if(res.status === 200){
         alert('your message was sent', res.status)
+        
+        this.setState({
+          formSending: false
+        })
         return
       } 
       alert('There is a problems with the server, please call me at 512 825 2241, or email me obsessedwiththeprocess@gmail.com', res.status)
+      
+      this.setState({
+        formSending: false
+      })
     })
-    .catch(res => alert('There is a problems with the server, please call me at 512 825 2241, or email me obsessedwiththeprocess@gmail.com', res))  
+    .catch(res => {
+      alert('There is a problems with the server, please call me at 512 825 2241, or email me obsessedwiththeprocess@gmail.com', res)
+
+      this.setState({
+        formSending: false
+      })
+    })
   }
 
   checkIfFormValid(){
@@ -180,6 +199,7 @@ class ContactSection extends Component {
                 />
 
                 <FormSubmitButton
+                  isShown={this.state.formSending}
                   type="submit"
                 />
               </Form>
@@ -297,7 +317,7 @@ const FormSubmitButton = styled.input`
   border-radius: 2px;
   font-size: 14px;
   text-shadow: none;
-  background: rgb(33, 149, 147);
+  background: ${({ isShown }) => isShown ? "rgb(146, 171, 171)" : "rgb(33, 149, 147)" };
   border: none;
   font-weight: 500;
   font-family: 'Open Sans', sans-serif;
