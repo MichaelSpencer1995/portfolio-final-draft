@@ -83,6 +83,7 @@ class ContactSection extends Component {
       return true
 
     } else {
+      alert('Please correct the marked entries')
       this.setState({
         formValid: false
       })
