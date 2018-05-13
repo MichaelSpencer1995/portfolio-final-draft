@@ -5,6 +5,7 @@ class RecentWorkSection extends Component {
   render() {
     return (
       <RecentWorkSectionView>
+        <div id="recent-work-scroll-id" style={{ position: 'relative', top: '-82px'}} />      
         <RecentWorkSectionViewContainer>
           <RecentWorkH1>
             Recent Work
@@ -177,7 +178,7 @@ const WorkItemContainer1 = styled(WorkItemContainer)`
 
 
 const ProjectInfoContainer = styled.div`
-  height: 184px;
+  height: 190px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -186,8 +187,9 @@ const ProjectInfoContainer = styled.div`
   a{
     width: 100px;
     height: 25px;
-    text-decoration: none;
-    color: #6eaabd;
+    font-size: 14px;
+    font-weight: 400;
+    color: #0c9ecc;
   }
   @media(max-width: 1000px) {
     text-align: center;
@@ -207,6 +209,7 @@ const ProjectDescription = styled.p`
 const ProjectTechsUsed = styled.p`
   font-size: 13px;
   font-style: italic;
+  margin-top: -8px;
 `
 
 const AwardWinningUIP = styled.p`

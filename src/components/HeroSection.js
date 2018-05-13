@@ -23,7 +23,14 @@ if(isSafari) {
 
 
 class HeroSection extends Component {
+  handleScrollIntoView(div){
+    const element = document.getElementById(div)
+    
+    element.scrollIntoView({behavior: "smooth", block: "start"})
+  }
+  
   render() {
+
     window.addEventListener('scroll', handleScroll)
     
     function handleScroll(){
@@ -87,31 +94,30 @@ class HeroSection extends Component {
           hireButtons.style.bottom = '0px'
       }
     }
- 
     return (
       <HeroSectionView>
         <NavBarContainer>
           <NavItemsContainer>
-            <NavItem>
+            <NavItem onClick={() => this.handleScrollIntoView('about-scroll-id')}>
               About
             </NavItem>
             
-            <NavItem>
+            <NavItem onClick={() => this.handleScrollIntoView('recent-work-scroll-id')}>
               Recent Work
             </NavItem>
 
-            <NavItem>
+            <NavItem onClick={() => this.handleScrollIntoView('contact-scroll-id')}>
             Get In Touch
             </NavItem>
           </NavItemsContainer>
         </NavBarContainer>
 
-        <HeroImg className="hero-image" />
+        <HeroImg className="hero-image"/>
         
         <HeroImgOverlay className="overlay" />
 
         <HeroContentContainer>
-          <HeroH1>
+          <HeroH1 id="testElement">
             My name is <br /><span>Michael Spencer</span>          
           </HeroH1>
 
@@ -176,10 +182,13 @@ const NavItemsContainer = styled.div`
 `
 
 const NavItem = styled.button`
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
+  // text-transform: uppercase;
   letter-spacing: 0.035rem;
   text-decoration: none;
+  font-family: 'Roboto', sans-srif;
+  font-family: lato;
   color: ${ safariNavItemsColor };
   background: transparent;
   border: none;

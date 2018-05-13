@@ -5,6 +5,7 @@ class AboutSection extends Component {
   render() {
     return (
       <AboutSectionView>
+        <div id="about-scroll-id" style={{ position: 'relative', top: '-82px'}} />
         <AboutSectionViewContainer>
           <AboutH1>
             About Me

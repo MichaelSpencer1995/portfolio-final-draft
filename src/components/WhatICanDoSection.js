@@ -202,7 +202,6 @@ const StepParagraph = styled.p`
   font-size: 13px;
   z-index: 10;
   font-weight: 400;
-  font-family: 'Open Sans', sans-serif;
 `
 
 

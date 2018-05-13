@@ -26,7 +26,7 @@ h3{
   margin: 0;
 }
 p{
-  font-family: 'lato';
+  font-family: 'lato';  
   font-size: 14px;
   font-weight: 300;
   line-height: 1.8em;
@@ -36,6 +36,9 @@ p{
 }
 a{
   font-family: lato;
+}
+button:hover{
+  cursor: pointer;
 }
 .keep-width{
   width: inherit !important;

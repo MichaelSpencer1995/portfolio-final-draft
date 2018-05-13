@@ -129,6 +129,7 @@ class ContactSection extends Component {
   render() {
     return (
       <ContactSectionView>
+        <div id="contact-scroll-id" style={{ position: 'relative', top: '-185px'}} />      
         <ContactSectionViewContainer>
           <ContactSectionH1>
             Get in touch
@@ -288,7 +289,7 @@ const Input = styled.input`
   border: #ccc 1px solid;
   border-radius: 0;
   -webkit-appearance: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'lato';
 `
 
 const TextArea = styled.textarea`
@@ -297,15 +298,15 @@ const TextArea = styled.textarea`
   margin: 0;
   resize: none;
   height: 190px;
-  margin-top: 10px;
-  padding-left: 8px;
+  margin-top: 11px;
+  padding-left: 9px;
   padding-top: 6px;
   box-sizing: border-box;
   background: rgb(247, 247, 247);
   border: #ccc 1px solid;
   border-radius: 0;
   -webkit-appearance: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'lato';
 `
 
 const FormSubmitButton = styled.input`
@@ -321,8 +322,8 @@ const FormSubmitButton = styled.input`
   background: ${({ isShown }) => isShown ? "rgb(146, 171, 171)" : "rgb(33, 149, 147)" };
   border: none;
   font-weight: 500;
-  font-family: 'Open Sans', sans-serif;
   color: rgba(255, 255, 255, 0.8);
+  font-family: 'lato';
 `
 
 const Iframe = styled.iframe`
@@ -353,7 +354,7 @@ const ErrorMessage = styled.div`
 const Asteric = styled.p`
   width: 100%;
   height: 30px;
-  font-weight: 500;
+  font-weight: 400;
   position: relative;
   top: 17px;
   font-size: 14px;
