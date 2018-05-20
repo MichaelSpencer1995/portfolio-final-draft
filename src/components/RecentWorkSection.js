@@ -2,7 +2,13 @@ import React, { Component } from 'react'
 import styled from "styled-components"
 
 class RecentWorkSection extends Component {
+  state = {
+    isExpanded: false
+  }
+
   render() {
+    const { isExpanded } = this.state
+    console.log(isExpanded)
     return (
       <RecentWorkSectionView>
         <div id="recent-work-scroll-id" style={{ position: 'relative', top: '-82px'}} />      
@@ -59,9 +65,26 @@ class RecentWorkSection extends Component {
                   React, Sass, Node and logic-intensive vanilla JS
                 </ProjectTechsUsed>
                 
-                <a href="#">
+                <CodeCampProjectsExpander isExpanded={ isExpanded }>
+                  <Link1>
+                    Link 1
+                  </Link1>
+
+                  <Link2>
+                    Link 2
+                  </Link2>
+
+                  <Link3>
+                    Link 3
+                  </Link3>
+                </CodeCampProjectsExpander>
+
+                <ExpandLinks onClick={() => {
+                  this.setState({ isExpanded: ! isExpanded })
+                  console.log(this.state)
+                }}>
                   Visit Website
-                </a>
+                </ExpandLinks>
               </ProjectInfoContainer>
             </WorkItemContainer>
 
@@ -80,7 +103,7 @@ class RecentWorkSection extends Component {
                 <ProjectTechsUsed>
                   Javascript fundamentals and logic-intensive algorithms
                 </ProjectTechsUsed>
-                    
+
                 <a href="#">
                   Visit Website
                 </a>
@@ -136,7 +159,7 @@ const RecentWorkTriFold = styled.div`
   justify-content: space-between;
   width: 76%;
   margin-top: 70px;
-  height: 300px;
+  // height: 300px;
   @media(max-width: 1000px) {
     flex-direction: column;
     align-items: center;
@@ -152,6 +175,10 @@ const WorkItemContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
+  border: red 1px solid;
+  padding: 2em;
+  box-sizing: border-box;
+
   img{
     width: 100%;
   }
@@ -176,9 +203,26 @@ const WorkItemContainer1 = styled(WorkItemContainer)`
   margin-top: 0px;
 `
 
+const ExpandLinks = styled.button`
+`
+
+const CodeCampProjectsExpander = styled.div`
+  overflow: hidden;
+  height: ${({ isExpanded }) => isExpanded ? "0px" : "60px" };
+  width: 100%;
+  background: red;
+  display: flex;
+  flex-direction: column;
+  transition: height .5s ease-in-out;
+`
+
+const Link1 = styled.a``
+const Link2 = styled.a``
+const Link3 = styled.a``
+
 
 const ProjectInfoContainer = styled.div`
-  height: 190px;
+  // height: 190px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
