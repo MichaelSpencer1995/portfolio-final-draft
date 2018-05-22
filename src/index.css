@@ -8,7 +8,7 @@ body{
   background: white;
 }
 h1{
-  font-family: 'Roboto', sans-srif;
+  font-family: 'Segoe UI';
   font-size: 32px;
   font-weight: 700;    
   letter-spacing: -0.015rem;
@@ -17,7 +17,7 @@ h1{
   margin: 0;
 }
 h3{
-  font-family: 'Roboto', sans-srif;
+  font-family: 'Segoe UI';
   font-size: 15px;
   font-weight: 500;
   letter-spacing: -0.02rem;
@@ -26,7 +26,7 @@ h3{
   margin: 0;
 }
 p{
-  font-family: 'lato';  
+  font-family: 'Segoe UI';
   font-size: 14px;
   font-weight: 300;
   line-height: 1.8em;
@@ -35,10 +35,7 @@ p{
   margin: 0;
 }
 a{
-  font-family: lato;
-}
-button:hover{
-  cursor: pointer;
+  font-family: 'Segoe UI';
 }
 .keep-width{
   width: inherit !important;
@@ -49,4 +46,12 @@ button:hover{
 }
 .shift-paragraph-off-screen{
   margin-bottom: 50px !important;
+}
+
+button:hover{
+  cursor: pointer !important;
+}
+
+a:hover{
+  cursor: pointer;
 }

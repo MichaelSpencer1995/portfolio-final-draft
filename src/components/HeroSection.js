@@ -129,11 +129,11 @@ class HeroSection extends Component {
           </HeroP>
 
           <HireButtonsContainer className="hire-buttons">
-            <HireButton>
+            <HireButton onClick={() => this.handleScrollIntoView('contact-scroll-id')}>
               Hire Me
             </HireButton>
 
-            <HireButtonTransparent>
+            <HireButtonTransparent onClick={() => this.handleScrollIntoView('contact-scroll-id')}>
               I need a website
             </HireButtonTransparent>
           </HireButtonsContainer>
@@ -244,8 +244,8 @@ const HeroH1 = styled.h1`
   color: rgba(255, 255, 255, 0.75);
   span{
     font-size: 50px;
-    font-weight: 600;
-    letter-spacing: 0.04rem;
+    font-weight: 700;
+    letter-spacing: 0.03rem;
     color: rgba(255, 255, 255, 0.9);
     position: relative;
     bottom: 7px;
@@ -292,7 +292,8 @@ const HireButton = styled.button`
   letter-spacing: 0.01rem;
   color: rgba(255, 255, 255, 0.8);
   background: rgb(15, 142, 113);
-  background: rgb(33, 149, 147);
+  // background: rgb(33, 149, 147);
+  background: rgb(0, 162, 95);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
   border: none;
   border-radius: 4px;

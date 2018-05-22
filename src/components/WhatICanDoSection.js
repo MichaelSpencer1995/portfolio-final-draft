@@ -171,6 +171,7 @@ const UiUxIcon = styled.div`
     text-decoration: inherit;
     font-size: 3.9em;
     color: rgb(33, 149, 147);
+    color: rgb(0, 162, 95);
   }
 `
 
