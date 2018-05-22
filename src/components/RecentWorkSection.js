@@ -175,7 +175,7 @@ const WorkItemContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
-  border: red 1px solid;
+  border: #ddd 1px solid;
   padding: 2em;
   box-sizing: border-box;
 
@@ -204,13 +204,18 @@ const WorkItemContainer1 = styled(WorkItemContainer)`
 `
 
 const ExpandLinks = styled.button`
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: #2196f3;
+  letter-spacing: 0.04rem;
+  padding: 0;
 `
 
 const CodeCampProjectsExpander = styled.div`
   overflow: hidden;
   height: ${({ isExpanded }) => isExpanded ? "0px" : "60px" };
   width: 100%;
-  background: red;
   display: flex;
   flex-direction: column;
   transition: height .5s ease-in-out;
@@ -248,12 +253,13 @@ const ProjectSubHeader = styled.h3`
 
 const ProjectDescription = styled.p`
   margin-top: 7px;
+  line-height: 1em;
 `
 
 const ProjectTechsUsed = styled.p`
-  font-size: 13px;
+  font-size: 12px;
   font-style: italic;
-  margin-top: -8px;
+  margin-top: 5px;
 `
 
 const AwardWinningUIP = styled.p`

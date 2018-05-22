@@ -94,6 +94,7 @@ class HeroSection extends Component {
           hireButtons.style.bottom = '0px'
       }
     }
+
     return (
       <HeroSectionView>
         <NavBarContainer>
@@ -187,8 +188,6 @@ const NavItem = styled.button`
   // text-transform: uppercase;
   letter-spacing: 0.035rem;
   text-decoration: none;
-  font-family: 'Roboto', sans-srif;
-  font-family: lato;
   color: ${ safariNavItemsColor };
   background: transparent;
   border: none;
@@ -291,14 +290,13 @@ const HireButton = styled.button`
   font-weight: 500;
   letter-spacing: 0.01rem;
   color: rgba(255, 255, 255, 0.8);
-  background: rgb(15, 142, 113);
-  // background: rgb(33, 149, 147);
   background: rgb(0, 162, 95);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
   border: none;
   border-radius: 4px;
   width: 142px;
   height: 31px;
+
   @media (max-width: 1000px) {
     width: 49.5%;
   }

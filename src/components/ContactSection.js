@@ -289,7 +289,6 @@ const Input = styled.input`
   border: #ccc 1px solid;
   border-radius: 0;
   -webkit-appearance: none;
-  font-family: 'lato';
 `
 
 const TextArea = styled.textarea`
@@ -306,7 +305,6 @@ const TextArea = styled.textarea`
   border: #ccc 1px solid;
   border-radius: 0;
   -webkit-appearance: none;
-  font-family: 'lato';
 `
 
 const FormSubmitButton = styled.input`
@@ -323,7 +321,9 @@ const FormSubmitButton = styled.input`
   border: none;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
-  font-family: 'lato';
+  &:hover{
+    cursor: pointer;
+  }
 `
 
 const Iframe = styled.iframe`
