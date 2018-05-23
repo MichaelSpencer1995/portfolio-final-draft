@@ -285,8 +285,8 @@ const Input = styled.input`
   padding-left: 10px;
   margin-top: 10px;
   box-sizing: border-box;
-  background: rgb(247, 247, 247);
-  border: #ccc 1px solid;
+  background: #f6f6f6;
+  border: #ddd 1px solid;
   border-radius: 0;
   -webkit-appearance: none;
 `
@@ -301,8 +301,8 @@ const TextArea = styled.textarea`
   padding-left: 9px;
   padding-top: 6px;
   box-sizing: border-box;
-  background: rgb(247, 247, 247);
-  border: #ccc 1px solid;
+  background: #f6f6f6;
+  border: #ddd 1px solid;
   border-radius: 0;
   -webkit-appearance: none;
 `

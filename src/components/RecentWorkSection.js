@@ -188,7 +188,7 @@ const WorkItemContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
-  border: #ddd 1px solid;
+  border: #eee 1px solid;
   padding: 2em;
   box-sizing: border-box;
 
