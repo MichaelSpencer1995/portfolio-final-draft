@@ -65,9 +65,9 @@ class WhatICanDoSection extends Component {
               </StepSubHeader>
 
               <StepParagraph>
-                Learning is a skill I feel often goes overlooked,
-                or assumed to be 'good enough'.
-                I pick up things much faster than the average individual.
+              Lorem ipsum dolor sit amet vero?
+            Alias minus deserunt qui provident
+            ipsa fuga a eos suscipit.
               </StepParagraph>
             </StepContainer>
           </WhatICanDoTrifold>

@@ -28,7 +28,9 @@ class RecentWorkSection extends Component {
 
           <RecentWorkTriFold>
             <WorkItemContainer1>
-              <img alt="photo of a website on different screen sizes" src="/assets/img/responsive-displays.svg" />
+              <ImageWrapper>
+                <img alt="photo of a website on different screen sizes" src="/assets/img/responsive-displays.svg" />
+              </ImageWrapper>
                 
               <ProjectInfoContainer>
                 <ProjectSubHeader>
@@ -43,14 +45,16 @@ class RecentWorkSection extends Component {
                   React, Styled Components, Node
                 </ProjectTechsUsed>
                     
-                <a href="#">
+                <a style={{ marginTop: '10px' }} href="#">
                   Visit Website
                 </a>
               </ProjectInfoContainer>
             </WorkItemContainer1>
 
             <WorkItemContainer>
-              <img alt="photos of various javascript projects" src="/assets/img/codecampchallenges.svg" />
+            <ImageWrapper>
+                <img alt="photos of various javascript projects" src="/assets/img/codecampchallenges.svg" />
+              </ImageWrapper>
                 
               <ProjectInfoContainer>
                 <ProjectSubHeader>
@@ -67,15 +71,15 @@ class RecentWorkSection extends Component {
                 
                 <CodeCampProjectsExpander isExpanded={ isExpanded }>
                   <Link1>
-                    Link 1
+                    • Link 1
                   </Link1>
 
-                  <Link2>
-                    Link 2
+                  <Link2 href="https://pomodoro-1995.herokuapp.com/" target="blank">
+                    •Pomodoro Timer
                   </Link2>
 
-                  <Link3>
-                    Link 3
+                  <Link3 href="https://twitch-1995.herokuapp.com/" target="blank">
+                    •Twitch Viewer
                   </Link3>
                 </CodeCampProjectsExpander>
 
@@ -89,7 +93,9 @@ class RecentWorkSection extends Component {
             </WorkItemContainer>
 
             <WorkItemContainer3>
-              <img alt="photo of my free code camp certification" src="/assets/img/certificate.png" />
+              <ImageWrapper>
+                <img alt="photo of my free code camp certification" src="/assets/img/certificate.png" />
+              </ImageWrapper>
                 
               <ProjectInfoContainer>
                 <ProjectSubHeader>
@@ -104,7 +110,7 @@ class RecentWorkSection extends Component {
                   Javascript fundamentals and logic-intensive algorithms
                 </ProjectTechsUsed>
 
-                <a href="#">
+                <a style={{ marginTop: '10px' }} href="https://www.freecodecamp.org/michaelspencer1995/front-end-certification" target="blank">
                   Visit Website
                 </a>
               </ProjectInfoContainer>
@@ -159,7 +165,7 @@ const RecentWorkTriFold = styled.div`
   justify-content: space-between;
   width: 76%;
   margin-top: 70px;
-  // height: 300px;
+
   @media(max-width: 1000px) {
     flex-direction: column;
     align-items: center;
@@ -167,10 +173,17 @@ const RecentWorkTriFold = styled.div`
     height: auto;
   }
 `
+const ImageWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+`
 
 const WorkItemContainer = styled.div`
   width: 27%;
-  border-radius: 20px;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -214,16 +227,23 @@ const ExpandLinks = styled.button`
 
 const CodeCampProjectsExpander = styled.div`
   overflow: hidden;
-  height: ${({ isExpanded }) => isExpanded ? "0px" : "60px" };
+  height: ${({ isExpanded }) => isExpanded ? "60px" : "0px" };
   width: 100%;
   display: flex;
   flex-direction: column;
   transition: height .5s ease-in-out;
+  margin-top: 10px;
 `
 
-const Link1 = styled.a``
-const Link2 = styled.a``
-const Link3 = styled.a``
+const Link1 = styled.a`
+  font-size: 11px !important;
+`
+const Link2 = styled.a`
+  font-size: 11px !important;
+`
+const Link3 = styled.a`
+  font-size: 11px !important;
+`
 
 
 const ProjectInfoContainer = styled.div`
@@ -233,6 +253,8 @@ const ProjectInfoContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   text-align: left;
+  border-top: #eee 1px solid;
+
   a{
     width: 100px;
     height: 25px;
@@ -254,12 +276,14 @@ const ProjectSubHeader = styled.h3`
 const ProjectDescription = styled.p`
   margin-top: 7px;
   line-height: 1em;
+  font-size: 13px;
 `
 
 const ProjectTechsUsed = styled.p`
-  font-size: 12px;
+  font-size: 10px;
   font-style: italic;
   margin-top: 5px;
+  line-height: 1em;
 `
 
 const AwardWinningUIP = styled.p`
