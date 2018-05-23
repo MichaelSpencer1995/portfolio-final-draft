@@ -159,7 +159,7 @@ const NavBarContainer = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 100000;
+  z-index: 2000000000;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -191,6 +191,7 @@ const NavItem = styled.button`
   color: ${ safariNavItemsColor };
   background: transparent;
   border: none;
+  z-index: 2000000000000000;
   @media (max-width: 1000px) {
     font-size: 12px;
   }
@@ -278,6 +279,8 @@ const HireButtonsContainer = styled.div`
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
+  z-index: 100000000000000000000000000 !important;
+  
   @media (max-width: 1000px) {
     width: 100%;
   }
@@ -296,7 +299,6 @@ const HireButton = styled.button`
   border-radius: 4px;
   width: 142px;
   height: 31px;
-
   @media (max-width: 1000px) {
     width: 49.5%;
   }
