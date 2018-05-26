@@ -70,8 +70,8 @@ class RecentWorkSection extends Component {
                 </ProjectTechsUsed>
                 
                 <CodeCampProjectsExpander isExpanded={ isExpanded }>
-                  <Link1>
-                    • Link 1
+                  <Link1 href="https://calculator1995.herokuapp.com/" target="blank">
+                    •Calculator
                   </Link1>
 
                   <Link2 href="https://pomodoro-1995.herokuapp.com/" target="blank">

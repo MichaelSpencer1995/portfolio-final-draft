@@ -10,18 +10,18 @@ let emailSent = false
 function sendEmail(body, response){
     return nodemailer.createTestAccount((err, account) => {
         let transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
+            host: 'smtp.ethereal.email',
             port: 587,
             secure: false,
             auth: {
-                user: 'michael.spencer1@g.austincc.edu',
-                pass: 'Hhh440826hh'
+                user: 'cpz4kz5zx5dwbhma@ethereal.email',
+                pass: '2utebNGFH1qfebcSU3'
             }
         });
 
         // setup email data with unicode symbols
         let mailOptions = {
-            from: `${ body.name } <michael.spencer1@g.austincc.edu>`, // sender addresponses
+            from: `${ body.name } <cpz4kz5zx5dwbhma@ethereal.email>`, // sender addresponses
             to: 'michael.spencer1@g.austincc.edu', // list of receivers
             subject: 'FROM PERSONAL PORTFOLIO', // Subject line
             text: '',

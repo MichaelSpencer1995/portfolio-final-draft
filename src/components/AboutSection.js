@@ -64,7 +64,7 @@ class AboutSection extends Component {
             </Row>
 
             <Row>
-              <ItemContainer>
+              <ItemContainer5>
                 <Item>
                   <img alt="node.js" src="/assets/img/node.svg"/>
                 </Item>
@@ -72,7 +72,7 @@ class AboutSection extends Component {
                 <SubHeader>
                   Node.js
                 </SubHeader>
-              </ItemContainer>
+              </ItemContainer5>
                 
               <ItemContainer>
                 <Item>
@@ -149,6 +149,10 @@ const ItemContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`
+
+const ItemContainer5 = styled(ItemContainer)`
+  width: 70px;
 `
 
 const Item = styled.div`

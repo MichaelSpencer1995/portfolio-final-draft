@@ -320,7 +320,7 @@ const FormSubmitButton = styled.input`
   background: ${({ isShown }) => isShown ? "#637970" : "#00a25f" };
   border: none;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
   &:hover{
     cursor: pointer;
   }
