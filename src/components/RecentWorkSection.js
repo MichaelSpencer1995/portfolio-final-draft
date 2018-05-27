@@ -18,12 +18,12 @@ class RecentWorkSection extends Component {
           </RecentWorkH1>
 
           <RecentWorkP>
-            Lorem ipsum dolor sit amet vero?
-            Alias minus deserunt qui provident
-            ipsa fuga a eos suscipit, repudiandae
-            quod consequuntur similique! Delectus id
-            veritatis distinctio eligendi expedita odit eius
-            facilis rem nulla.
+            Below are some proof of my qualifications as a junior web developer.
+            They consist mostly of apps made with the React.js library, along with
+            some very logic intensive vanilla js apps. The concepts I used to complete
+            them include: Closures, recursive functions, functional programming, Ui/Ux design,
+            responsive design, async callbacks, design patterns, node module
+            implementation, and more.
           </RecentWorkP>
 
           <RecentWorkTriFold>

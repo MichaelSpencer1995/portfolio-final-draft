@@ -65,9 +65,9 @@ class WhatICanDoSection extends Component {
               </StepSubHeader>
 
               <StepParagraph>
-              Lorem ipsum dolor sit amet vero?
-            Alias minus deserunt qui provident
-            ipsa fuga a eos suscipit.
+                I pick up new skills very quickly, and am able to
+                adapt to work with any paradigm your team uses,
+                in a very short period of time.
               </StepParagraph>
             </StepContainer>
           </WhatICanDoTrifold>
