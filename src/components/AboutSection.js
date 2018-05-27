@@ -153,6 +153,8 @@ const ItemContainer = styled.div`
 
 const ItemContainer5 = styled(ItemContainer)`
   width: 70px;
+  position: relative;
+  right: 6px;
 `
 
 const Item = styled.div`

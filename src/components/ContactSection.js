@@ -132,7 +132,7 @@ class ContactSection extends Component {
         <div id="contact-scroll-id" style={{ position: 'relative', top: '-185px'}} />      
         <ContactSectionViewContainer>
           <ContactSectionH1>
-            Get in touch
+            Get In Touch
           </ContactSectionH1>
 
           <ContactSectionP>
@@ -308,6 +308,7 @@ const TextArea = styled.textarea`
 `
 
 const FormSubmitButton = styled.input`
+  transition: all 0.3s ease;
   width: 100%;
   padding: 0;
   -webkit-appearance: none;  
@@ -321,6 +322,11 @@ const FormSubmitButton = styled.input`
   border: none;
   font-weight: 500;
   color: white;
+
+  &:hover{
+    transform: scale(1.01);
+  }
+
   &:hover{
     cursor: pointer;
   }

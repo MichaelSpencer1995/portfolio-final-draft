@@ -185,13 +185,17 @@ const NavItemsContainer = styled.div`
 const NavItem = styled.button`
   font-size: 13px;
   font-weight: 600;
-  // text-transform: uppercase;
   letter-spacing: 0.035rem;
   text-decoration: none;
   color: ${ safariNavItemsColor };
   background: transparent;
   border: none;
   z-index: 2000000000000000;
+  
+  &:hover{
+    color: rgb(0, 239, 140);
+  }
+
   @media (max-width: 1000px) {
     font-size: 12px;
   }
@@ -299,6 +303,11 @@ const HireButton = styled.button`
   border-radius: 4px;
   width: 142px;
   height: 31px;
+
+  &:hover{
+    transform: scale(1.03);
+  }
+
   @media (max-width: 1000px) {
     width: 49.5%;
   }

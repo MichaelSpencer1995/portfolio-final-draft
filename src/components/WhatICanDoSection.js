@@ -17,7 +17,7 @@ class WhatICanDoSection extends Component {
           <Overlay2 />
           
           <WhatICanDoH1>
-            What I can do
+            What I Can Do
           </WhatICanDoH1>
 
           <WhatICanDoP>
@@ -129,8 +129,8 @@ const WhatICanDoH1 = styled.h1`
 
 const WhatICanDoP = styled.p`
   z-index: 10;
-  margin-top: 3px;
-  color: #b5b5b5de;
+  margin-top: 1px;
+  color: #929292;
   font-weight: 300;
   text-align: center;
 `
