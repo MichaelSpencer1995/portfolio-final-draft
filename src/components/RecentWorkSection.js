@@ -8,7 +8,7 @@ class RecentWorkSection extends Component {
 
   render() {
     const { isExpanded } = this.state
-    console.log(isExpanded)
+
     return (
       <RecentWorkSectionView>
         <div id="recent-work-scroll-id" style={{ position: 'relative', top: '-82px'}} />      
@@ -89,7 +89,6 @@ class RecentWorkSection extends Component {
 
                 <ExpandLinks onClick={() => {
                   this.setState({ isExpanded: ! isExpanded })
-                  console.log(this.state)
                 }}>
                   Visit Website
                 </ExpandLinks>
@@ -168,7 +167,7 @@ const RecentWorkTriFold = styled.div`
   display: flex;
   justify-content: space-between;
   width: 76%;
-  margin-top: 24px;
+  margin-top: 38px;
 
   @media(max-width: 1000px) {
     flex-direction: column;
@@ -237,6 +236,10 @@ const CodeCampProjectsExpander = styled.div`
   flex-direction: column;
   transition: height .5s ease-in-out;
   margin-top: 10px;
+  a{
+    font-size: 11px !important;
+    margin-left: 3px;
+  }
 `
 
 const ProjectInfoContainer = styled.div`
