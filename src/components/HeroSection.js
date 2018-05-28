@@ -203,7 +203,7 @@ const NavItem = styled.button`
 
 const HeroImg = styled.div`
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-  background: url(/assets/img/hero1.png) no-repeat;;
+  background: url(/assets/img/heroimagemain.jpg) no-repeat;
   background-size: cover;
   background-position: 20% 0%;
   background-attachment: ${ fixedBackground };

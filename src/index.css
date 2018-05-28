@@ -36,6 +36,8 @@ p{
 }
 a, input, textarea{
   font-family: 'Segoe UI';
+  font-size: 11px;
+  white-space: nowrap;
 }
 a{
   background: none;

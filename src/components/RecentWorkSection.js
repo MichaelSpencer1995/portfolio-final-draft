@@ -70,17 +70,21 @@ class RecentWorkSection extends Component {
                 </ProjectTechsUsed>
                 
                 <CodeCampProjectsExpander isExpanded={ isExpanded }>
-                  <Link1 href="https://calculator1995.herokuapp.com/" target="blank">
+                  <a href="https://calculator1995.herokuapp.com/" target="blank">
                     •Calculator
-                  </Link1>
+                  </a>
 
-                  <Link2 href="https://pomodoro-1995.herokuapp.com/" target="blank">
+                  <a href="https://pomodoro-1995.herokuapp.com/" target="blank">
                     •Pomodoro Timer
-                  </Link2>
+                  </a>
 
-                  <Link3 href="https://twitch-1995.herokuapp.com/" target="blank">
+                  <a href="https://twitch-1995.herokuapp.com/" target="blank">
                     •Twitch Viewer
-                  </Link3>
+                  </a>
+
+                  <a href="https://simon1995.herokuapp.com/" target="blank">
+                    •Simon Game
+                  </a>
                 </CodeCampProjectsExpander>
 
                 <ExpandLinks onClick={() => {
@@ -199,7 +203,7 @@ const WorkItemContainer = styled.div`
     width: 76%;
     height: auto;
     margin-top: 65px;
-    align-items: center;
+    // align-items: center;
   }
 `
 
@@ -208,7 +212,7 @@ const WorkItemContainer3 = styled(WorkItemContainer)`
     width: 67%;
   }
   @media(max-width: 1000px) {
-    width: 100%;
+    // width: 100%;
   }
 `
 
@@ -227,24 +231,13 @@ const ExpandLinks = styled.button`
 
 const CodeCampProjectsExpander = styled.div`
   overflow: hidden;
-  height: ${({ isExpanded }) => isExpanded ? "60px" : "0px" };
+  height: ${({ isExpanded }) => isExpanded ? "100px" : "0px" };
   width: 100%;
   display: flex;
   flex-direction: column;
   transition: height .5s ease-in-out;
   margin-top: 10px;
 `
-
-const Link1 = styled.a`
-  font-size: 11px !important;
-`
-const Link2 = styled.a`
-  font-size: 11px !important;
-`
-const Link3 = styled.a`
-  font-size: 11px !important;
-`
-
 
 const ProjectInfoContainer = styled.div`
   // height: 190px;
@@ -263,8 +256,8 @@ const ProjectInfoContainer = styled.div`
     color: #0c9ecc;
   }
   @media(max-width: 1000px) {
-    text-align: center;
-    align-items: center;
+    // text-align: center;
+    // align-items: center;
     height: auto;
   }
 `
