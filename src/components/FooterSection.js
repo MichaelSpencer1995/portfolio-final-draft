@@ -14,18 +14,19 @@ class FooterSection extends Component {
 }
 
 const FooterView = styled.div`
-  height: 79px;
+  height: 82px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  background: #ececec;
-  border-top: #d0d0d0 1px solid;
+  background: #f5f5f5;
+  border-top: #ddd 1px solid;
   p{
     width: 76%;
     text-align: center;
     line-height: 20px;
     font-size: 13px;
+    color: #aaa;
   }
 `
 

@@ -146,7 +146,7 @@ const RecentWorkSectionViewContainer = styled.div`
   align-items: center;
   text-align: center;
   width: 100%;
-  margin-top: 150px;
+  margin-top: 110px;
   padding-bottom: 100px;
   @media(max-width: 1000px) {
     margin-top: 65px;
@@ -168,7 +168,7 @@ const RecentWorkTriFold = styled.div`
   display: flex;
   justify-content: space-between;
   width: 76%;
-  margin-top: 70px;
+  margin-top: 24px;
 
   @media(max-width: 1000px) {
     flex-direction: column;

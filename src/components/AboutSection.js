@@ -113,7 +113,7 @@ const AboutSectionView = styled.div`
 `
 
 const AboutSectionViewContainer = styled.div`
-  margin-top: 120px;
+  margin-top: 110px;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -134,7 +134,6 @@ const AboutP = styled.p`
 
 const AboutSkillsContainer = styled.div`
   width: 200px;
-  margin-top: 10px;
 `
 
 const Row = styled.div`
@@ -170,7 +169,7 @@ const SubHeader = styled.h3`
 `
 
 const AboutMeReassurance = styled.p`
-  margin-top: 42px;
+  margin-top: 32px;
 `
 
 export default AboutSection

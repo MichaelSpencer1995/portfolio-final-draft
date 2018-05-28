@@ -85,7 +85,7 @@ const WhatICanDoSectionView = styled.div`
   background-size: cover;
   background-position: 1% 40%;
   width: 100%;
-  height: 600px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,12 +104,11 @@ const WhatICanDoSectionViewContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
 `
 
 const Overlay2 = styled.div`
   width: 100%;
-  height: 600px;
+  height: 500px;
   background: rgba(0, 0, 0, .84);
   position: absolute;
   top: 0;
