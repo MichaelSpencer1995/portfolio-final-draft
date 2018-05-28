@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
-import FontAwesome from '../../node_modules/font-awesome/css/font-awesome.min.css'
+import '../../node_modules/font-awesome/css/font-awesome.min.css'
 import { isMobile, isSafari } from "react-device-detect"
 
 let mobileBackgroundNotFixed = 'fixed'
