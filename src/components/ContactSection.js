@@ -224,12 +224,11 @@ const ContactSectionView = styled.div`
 `
 
 const ContactSectionViewContainer = styled.div`
-  // background: blue;
   width: 76%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: -10px;
+  margin-top: -14px;
   padding-bottom: 85px;
   @media(max-width: 1000px) {
     padding-bottom: 55px;
