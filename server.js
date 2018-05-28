@@ -49,12 +49,12 @@ function sendEmail(body, response){
     })
 }
 
-app.use(express.static(path.resolve(__dirname)))
-
 app.use(require("body-parser").json())
 
+app.use(express.static(path.resolve(__dirname, 'build')))
+
 app.get('/', function(req, res){
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
 })
 
 app.post('/contact', function(req, res){
