@@ -36,7 +36,7 @@ class WhatICanDoSection extends Component {
               <StepParagraph>
                 Imagine, wireframe, sketch, and
                 create simple, aesthetic, user-friendly,
-                and fully functional user-interfaces.
+                and fully functional user interfaces.
               </StepParagraph>
             </StepContainer>
 
@@ -67,7 +67,7 @@ class WhatICanDoSection extends Component {
               <StepParagraph>
                 I pick up new skills very quickly, and am able to
                 adapt to work with any paradigm your team uses,
-                in a very short period of time.
+                very quikly.
               </StepParagraph>
             </StepContainer>
           </WhatICanDoTrifold>

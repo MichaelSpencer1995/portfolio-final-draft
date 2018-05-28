@@ -14,9 +14,9 @@ if(isMobile) {
 }
 
 if(isSafari) {
-  safariNavBackgroundColor = '#fff'
+  safariNavBackgroundColor = '#0a0a0a'
   safariButtonMargin = '120px'
-  safariNavItemsColor = 'rgb(11, 23, 40)'
+  safariNavItemsColor = 'white'
   safariNavBorder = '#777 1px solid'
   safariNavHeight = '70px'
 }
@@ -131,7 +131,7 @@ class HeroSection extends Component {
 
           <HireButtonsContainer className="hire-buttons">
             <HireButton onClick={() => this.handleScrollIntoView('contact-scroll-id')}>
-              Hire Me
+              Hire me
             </HireButton>
 
             <HireButtonTransparent onClick={() => this.handleScrollIntoView('contact-scroll-id')}>

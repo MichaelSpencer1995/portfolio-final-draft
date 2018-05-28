@@ -136,7 +136,7 @@ class ContactSection extends Component {
           </ContactSectionH1>
 
           <ContactSectionP>
-            I am ready to grind, excel, and push my own limits.
+            I am ready to grind, excel, and push past my limits.
             If you need a competent, willing, and young Javascript developer with UI/UX
             skills, let me prove I can fill that role.
           </ContactSectionP>

@@ -12,10 +12,10 @@ class AboutSection extends Component {
           </AboutH1>
 
           <AboutP>
-            When it comes to web design, I am a jack of all trades
+            When it comes to web design, I am a Jack of all trades
             and a master of none. My fundamental and conceptual
             understanding of the following technologies is strong,
-            and all were used in the making of this website.
+            and all were used when making this website.
           </AboutP>
 
           <AboutSkillsContainer>

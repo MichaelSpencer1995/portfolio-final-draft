@@ -23,7 +23,7 @@ class RecentWorkSection extends Component {
             some very logic intensive vanilla js apps. The concepts I used to complete
             them include: Closures, recursive functions, functional programming, Ui/Ux design,
             responsive design, async callbacks, design patterns, node module
-            implementation, and more.
+            implementation, cross-browser issues, and more.
           </RecentWorkP>
 
           <RecentWorkTriFold>
@@ -62,7 +62,7 @@ class RecentWorkSection extends Component {
                 </ProjectSubHeader>
 
                 <ProjectDescription>
-                  Challenges from the freecodecamp curriculum.
+                  Challenges from the FreeCodeCamp curriculum.
                 </ProjectDescription>
                     
                 <ProjectTechsUsed>
@@ -84,6 +84,10 @@ class RecentWorkSection extends Component {
 
                   <a href="https://simon1995.herokuapp.com/" target="blank">
                     •Simon Game
+                  </a>
+
+                  <a href="https://tictactoe1995.herokuapp.com/" target="blank">
+                    •Tic-Tac-Toe Game
                   </a>
                 </CodeCampProjectsExpander>
 
@@ -230,7 +234,7 @@ const ExpandLinks = styled.button`
 
 const CodeCampProjectsExpander = styled.div`
   overflow: hidden;
-  height: ${({ isExpanded }) => isExpanded ? "100px" : "0px" };
+  height: ${({ isExpanded }) => isExpanded ? "120px" : "0px" };
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -238,7 +242,7 @@ const CodeCampProjectsExpander = styled.div`
   margin-top: 10px;
   a{
     font-size: 11px !important;
-    margin-left: 3px;
+    margin-left: 4px;
   }
 `
 
@@ -272,7 +276,7 @@ const ProjectSubHeader = styled.h3`
 const ProjectDescription = styled.p`
   margin-top: 7px;
   line-height: 1em;
-  font-size: 13px;
+  font-size: 12px;
 `
 
 const ProjectTechsUsed = styled.p`

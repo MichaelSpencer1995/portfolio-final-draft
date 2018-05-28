@@ -6,7 +6,7 @@ class FooterSection extends Component {
     return (
       <FooterView>
         <p>
-          Website designed and created by Michael Spencer 2018
+          Website designed and created by Michael Spencer 2018©
         </p>
       </FooterView>
     )
