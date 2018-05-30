@@ -6,7 +6,7 @@ let fixedBackground = 'fixed'
 let safariNavBackgroundColor = 'transparent'
 let safariNavBorder = 'none';
 let safariButtonMargin = '62px'
-let safariNavItemsColor = 'rgba(230, 230, 230, .9)'
+let safariNavItemsColor = 'rgb(230, 230, 230)'
 let safariNavHeight = '82px'
 
 if(isMobile) {
