@@ -45,7 +45,7 @@ class RecentWorkSection extends Component {
                   React, Styled Components, Node
                 </ProjectTechsUsed>
                     
-                <a style={{ marginTop: '10px' }} href="#">
+                <a style={{ marginTop: '10px' }} href="https://jacobwestrealestate1995.herokuapp.com/" target="blank">
                   Visit Website
                 </a>
               </ProjectInfoContainer>
@@ -99,7 +99,7 @@ class RecentWorkSection extends Component {
               </ProjectInfoContainer>
             </WorkItemContainer>
 
-            <WorkItemContainer3>
+            <WorkItemContainer>
               <ImageWrapper>
                 <img alt="photo of my free code camp certification" src="/assets/img/certificate.png" />
               </ImageWrapper>
@@ -121,7 +121,31 @@ class RecentWorkSection extends Component {
                   Visit Website
                 </a>
               </ProjectInfoContainer>
-            </WorkItemContainer3>
+            </WorkItemContainer>
+
+            <WorkItemContainer>
+              <ImageWrapper>
+                <img alt="photo of my free code camp certification" src="/assets/img/udemy.jpg" />
+              </ImageWrapper>
+                
+              <ProjectInfoContainer>
+                <ProjectSubHeader>
+                  Javascript Fundamentals Certification
+                </ProjectSubHeader>
+
+                <ProjectDescription>
+                  Given after completion of Udemy's Javascript: Understanding The Weird Parts.
+                </ProjectDescription>
+                    
+                <ProjectTechsUsed>
+                  Javascript fundamentals
+                </ProjectTechsUsed>
+
+                <a style={{ marginTop: '10px' }} href="https://udemy-certificate.s3.amazonaws.com/image/UC-H0M5A6T6.jpg" target="blank">
+                  Visit Website
+                </a>
+              </ProjectInfoContainer>
+            </WorkItemContainer>
           </RecentWorkTriFold>
         
           <AwardWinningUIP>
@@ -189,7 +213,7 @@ const ImageWrapper = styled.div`
 `
 
 const WorkItemContainer = styled.div`
-  width: 27%;
+  width: 22%;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
