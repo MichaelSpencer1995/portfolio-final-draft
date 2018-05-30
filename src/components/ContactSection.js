@@ -151,11 +151,16 @@ class ContactSection extends Component {
                 onSubmit={event => this.handleSubmit(event)}
                 method="POST" 
                 action="/contact">
+                <LabelAstericContainer>
+                  <FormLabel>
+                    Name
+                  </FormLabel>
 
-                <Asteric
-                  isShown={this.state.nameValid}>
-                  *Name field cannot be blank
-                </Asteric>
+                  <Asteric
+                    isShown={this.state.nameValid}>
+                    *Name field cannot be blank
+                  </Asteric>
+                </LabelAstericContainer>
                 
                 <Input 
                   onChange={(this.updateInputValueInState.bind(this))} 
@@ -163,11 +168,18 @@ class ContactSection extends Component {
                   name="nameValue"
                   placeholder="name"
                 />
-
-                <Asteric
-                  isShown={this.state.numberValid}>
-                  *Invalid phone number
-                </Asteric>
+                
+                <LabelAstericContainer>
+                  <FormLabel>
+                    Phone Number
+                  </FormLabel>
+                
+                  <Asteric
+                    isShown={this.state.numberValid}>
+                    *Invalid phone number
+                  </Asteric>
+                </LabelAstericContainer>
+                
                 
                 <Input 
                   onChange={(this.updateInputValueInState.bind(this))} 
@@ -176,10 +188,16 @@ class ContactSection extends Component {
                   placeholder="number"
                 />
 
-                <Asteric
-                  isShown={this.state.emailValid}>
-                  *Invalid email address
-                </Asteric>
+                <LabelAstericContainer>
+                  <FormLabel>
+                    Email Address
+                  </FormLabel>
+                
+                  <Asteric
+                    isShown={this.state.emailValid}>
+                    *Invalid email address
+                  </Asteric>
+                </LabelAstericContainer>
 
                 <Input 
                   onChange={(this.updateInputValueInState.bind(this))} 
@@ -188,10 +206,16 @@ class ContactSection extends Component {
                   placeholder="email"
                 />
 
-                <Asteric
-                  isShown={this.state.messageValid}>
-                  Message field cannot be blank
-                </Asteric>
+                <LabelAstericContainer>
+                  <FormLabel>
+                    Message
+                  </FormLabel>
+                
+                  <Asteric
+                    isShown={this.state.messageValid}>
+                    *Message field cannot be left blank.
+                  </Asteric>
+                </LabelAstericContainer>
                 
                 <TextArea
                   onChange={(this.updateInputValueInState.bind(this))} 
@@ -280,14 +304,17 @@ const Input = styled.input`
   width: 100%;
   padding: 0;
   margin: 0;
-  height: 40px;
+  height: 42px;
   padding-left: 10px;
-  margin-top: 10px;
   box-sizing: border-box;
-  background: #f6f6f6;
+  background: #fbfbfb;
   border: #ddd 1px solid;
   border-radius: 0;
   -webkit-appearance: none;
+
+  &::placeholder{
+    color: #bbb;
+  }
 `
 
 const TextArea = styled.textarea`
@@ -295,27 +322,31 @@ const TextArea = styled.textarea`
   padding: 0;
   margin: 0;
   resize: none;
-  height: 190px;
-  margin-top: 11px;
+  height: 100px;
   padding-left: 9px;
   padding-top: 6px;
   box-sizing: border-box;
-  background: #f6f6f6;
+  background: #fbfbfb;
   border: #ddd 1px solid;
   border-radius: 0;
   -webkit-appearance: none;
+  
+  &::placeholder{
+    color: #bbb;
+  }
 `
 
 const FormSubmitButton = styled.input`
   transition: all 0.3s ease;
-  width: 100%;
+  width: 21%;
+  height: 41px;
+  align-self: flex-start;
   padding: 0;
   -webkit-appearance: none;  
   margin: 0;
-  height: 57px;
-  margin-top: 8px;
+  margin-top: 17px;
   border-radius: 2px;
-  font-size: 14px;
+  font-size: 15px;
   text-shadow: none;
   background: ${({ isShown }) => isShown ? "#637970" : "#00a25f" };
   border: none;
@@ -335,7 +366,7 @@ const Iframe = styled.iframe`
   width: 50%; 
   height: 406px;
   position: relative;
-  top: 7px;
+  top: 38px;
   border: #ccc 1px solid;
   @media(max-width: 1000px) {
     width: 100%;
@@ -350,23 +381,41 @@ const ErrorMessage = styled.div`
   display: ${({ isShown }) => isShown ? "none" : "block" };
   
   p{
-    color: #ea2525;
-    font-weight: 700;
+    color: #d20000;
+    font-weight: 500;
     font-size: 17px;
   }
 `
 
 const Asteric = styled.p`
-  width: 100%;
-  height: 30px;
   font-weight: 400;
-  position: relative;
-  top: 17px;
   font-size: 14px;
+  height: 37px;
+  position: relative;
+  top: 18px;
   padding: 0;
   margin: 0;
-  color: #ea2525;
+  color: #d20000;
   display: ${({ isShown }) => isShown ? "none" : "block" };
+`
+
+const LabelAstericContainer = styled.div`
+  width: 100%;
+  height: 37px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-sizing: border-box;
+  padding-left: 6px;
+  padding-bottom: 3px;
+`
+
+const FormLabel = styled.label`
+  padding: 0;
+  margin: 0;
+  color: #7e8384;
+  font-size: 14px;
+  font-weight: 400;
 `
 
 export default ContactSection
