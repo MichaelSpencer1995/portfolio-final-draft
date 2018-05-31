@@ -7,8 +7,7 @@
 /coverage
 
 # production
-/build
-/server.js
+/public
 
 # misc
 .DS_Store
