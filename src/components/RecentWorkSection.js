@@ -230,16 +230,9 @@ const WorkItemContainer = styled.div`
     width: 76%;
     height: auto;
     margin-top: 65px;
-    // align-items: center;
   }
-`
-
-const WorkItemContainer3 = styled(WorkItemContainer)`
-  img{
-    width: 67%;
-  }
-  @media(max-width: 1000px) {
-    // width: 100%;
+  @media(max-width: 600px) {
+    width: 100%;
   }
 `
 
@@ -271,7 +264,6 @@ const CodeCampProjectsExpander = styled.div`
 `
 
 const ProjectInfoContainer = styled.div`
-  // height: 190px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -287,8 +279,6 @@ const ProjectInfoContainer = styled.div`
     color: #0c9ecc;
   }
   @media(max-width: 1000px) {
-    // text-align: center;
-    // align-items: center;
     height: auto;
   }
 `
