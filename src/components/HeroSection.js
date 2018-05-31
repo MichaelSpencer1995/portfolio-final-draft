@@ -292,7 +292,7 @@ const HireButtonsContainer = styled.div`
 
 const HireButton = styled.button`
   transition: all 0.3s ease;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.01rem;
