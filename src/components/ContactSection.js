@@ -137,7 +137,7 @@ class ContactSection extends Component {
 
           <ContactSectionP>
             I am ready to grind, excel, and push past my limits.
-            If you need a competent, willing, and young Javascript developer with UI/UX
+            If you need a competent, willing, and young Javascript developer with Ui/Ux
             skills, let me prove I can fill that role.
           </ContactSectionP>
 

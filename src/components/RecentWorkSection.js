@@ -20,7 +20,7 @@ class RecentWorkSection extends Component {
           <RecentWorkP>
             Below are some proof of my qualifications as a junior web developer.
             They consist mostly of apps made with the React.js library, along with
-            some very logic intensive vanilla js apps. The concepts I used to complete
+            some very logic-intensive vanilla js apps. The concepts I used to complete
             them include: Closures, recursive functions, functional programming, Ui/Ux design,
             responsive design, async callbacks, design patterns, node module
             implementation, cross-browser issues, and more.

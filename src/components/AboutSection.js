@@ -15,7 +15,7 @@ class AboutSection extends Component {
             When it comes to web design, I am a Jack of all trades
             and a master of none. My fundamental and conceptual
             understanding of the following technologies is strong,
-            and all were used when making this website.
+            and all were used to make this website.
           </AboutP>
 
           <AboutSkillsContainer>
@@ -90,7 +90,7 @@ class AboutSection extends Component {
           <AboutMeReassurance>
             However, I am young and so is my career,
             I am more than capable of using all of these
-            technolgies, and more importantly I am capable of
+            technologies, and more importantly I am capable of
             excelling in any or all of them.
             A nudge in any particular direction
             is the only thing I require.

@@ -67,7 +67,7 @@ class WhatICanDoSection extends Component {
               <StepParagraph>
                 I pick up new skills very quickly, and am able to
                 adapt to work with any paradigm your team uses,
-                very quikly.
+                very quickly.
               </StepParagraph>
             </StepContainer>
           </WhatICanDoTrifold>

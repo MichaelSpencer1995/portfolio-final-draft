@@ -8,6 +8,7 @@ let safariNavBorder = 'none';
 let safariButtonMargin = '62px'
 let safariNavItemsColor = 'rgb(230, 230, 230)'
 let safariNavHeight = '82px'
+let buttonsZIndex = "100000000000000000000000000 !important"
 
 if(isMobile) {
   fixedBackground = 'none'
@@ -19,6 +20,7 @@ if(isSafari) {
   safariNavItemsColor = 'white'
   safariNavBorder = '#777 1px solid'
   safariNavHeight = '70px'
+  buttonsZIndex = '0 !important';
 }
 
 
@@ -283,7 +285,7 @@ const HireButtonsContainer = styled.div`
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
-  z-index: 100000000000000000000000000 !important;
+  z-index:  ${ buttonsZIndex };
   
   @media (max-width: 1000px) {
     width: 100%;
