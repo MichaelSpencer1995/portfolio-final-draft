@@ -130,7 +130,7 @@ class RecentWorkSection extends Component {
                 
               <ProjectInfoContainer>
                 <ProjectSubHeader>
-                  Javascript Fundamentals Certification
+                  Javascript Certification
                 </ProjectSubHeader>
 
                 <ProjectDescription>

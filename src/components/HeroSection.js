@@ -271,7 +271,7 @@ const HeroP = styled.p`
   font-weight: 300;
   letter-spacing: -.01rem;
   line-height: 1.8em;
-  color: #dededef0;
+  color: #b5b5b5;
   margin-top: 8px;
   @media (max-width: 1000px) {
     font-size: 14px;
