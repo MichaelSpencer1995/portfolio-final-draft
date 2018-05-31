@@ -54,9 +54,11 @@ class ContactSection extends Component {
           numberValid: true,
           emailValid: true,
           messageValid: true,
+          errorMessage: 'Please Correct the following errors:',
           formValid: true,
           formSending: false
         })
+        document.forms['FORM'].reset()
         return
       } 
       alert('There is a problems with the server, please call me at 512 825 2241, or email me obsessedwiththeprocess@gmail.com', res.status)
@@ -109,6 +111,7 @@ class ContactSection extends Component {
 
   updateInputValueInState(e) {
     let change = {}
+
     change[e.target.name] = e.target.value
     this.setState(change)
   }
@@ -157,6 +160,7 @@ class ContactSection extends Component {
           <FormAndMapContainer>
             <FormContainer>
               <Form
+                id="FORM"
                 onSubmit={event => this.handleSubmit(event)}
                 method="POST">
                 <LabelAstericContainer>
