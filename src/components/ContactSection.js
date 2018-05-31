@@ -46,6 +46,15 @@ class ContactSection extends Component {
         alert('your message was sent', res.status)
         
         this.setState({
+          nameValue: '',
+          numberValue: '',
+          emailValue: '',
+          messageValue: '',
+          nameValid: true,
+          numberValid: true,
+          emailValid: true,
+          messageValid: true,
+          formValid: true,
           formSending: false
         })
         return
@@ -149,8 +158,7 @@ class ContactSection extends Component {
             <FormContainer>
               <Form
                 onSubmit={event => this.handleSubmit(event)}
-                method="POST" 
-                action="/contact">
+                method="POST">
                 <LabelAstericContainer>
                   <FormLabel>
                     Name
