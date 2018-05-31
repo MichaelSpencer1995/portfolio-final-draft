@@ -255,7 +255,7 @@ const ContactSectionViewContainer = styled.div`
   margin-top: -14px;
   padding-bottom: 85px;
   @media(max-width: 1000px) {
-    padding-bottom: 55px;
+    // padding-bottom: 55px;
     margin-top: -30px;
   }
 `
@@ -338,7 +338,7 @@ const TextArea = styled.textarea`
 
 const FormSubmitButton = styled.input`
   transition: all 0.3s ease;
-  width: 21%;
+  width: 100px;
   height: 41px;
   align-self: flex-start;
   padding: 0;
@@ -370,7 +370,7 @@ const Iframe = styled.iframe`
   border: #ccc 1px solid;
   @media(max-width: 1000px) {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 20px;
   }
 `
 
