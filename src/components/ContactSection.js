@@ -31,7 +31,7 @@ class ContactSection extends Component {
       formSending: true
     })
 
-    fetch('/contact', {
+    fetch('https://cors-anywhere.herokuapp.com/emailer1995.herokuapp.com', {
       method: 'post',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
