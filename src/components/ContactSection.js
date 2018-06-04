@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
+import { GREEN } from "../constants/"
 
 class ContactSection extends Component {
   constructor() {
@@ -360,7 +361,9 @@ const FormSubmitButton = styled.input`
   border-radius: 2px;
   font-size: 15px;
   text-shadow: none;
-  background: ${({ isShown }) => isShown ? "#637970" : "#00a25f" };
+  background: ;
+  
+  background: ${({ isShown }) => isShown ? "#637970" : GREEN };
   border: none;
   font-weight: 500;
   color: white;

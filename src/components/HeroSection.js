@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
 import { isMobile, isSafari } from "react-device-detect"
+import { GREEN } from "../constants/"
 
 let fixedBackground = 'fixed'
 let safariNavBackgroundColor = 'transparent'
@@ -195,7 +196,7 @@ const NavItem = styled.button`
   z-index: 2000000000000000;
   
   &:hover{
-    color: rgb(0, 239, 140);
+    color: ${ GREEN };
   }
 
   @media (max-width: 1000px) {
@@ -219,7 +220,7 @@ const HeroImg = styled.div`
 
 const HeroImgOverlay = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 96%);
-  border-bottom: rgb(28, 28, 28)1px solid;
+  border-bottom: rgb(30, 30, 30) 2px solid;
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -299,10 +300,11 @@ const HireButton = styled.button`
   font-weight: 500;
   letter-spacing: 0.01rem;
   color: rgba(255, 255, 255, 0.8);
-  background: rgb(0, 162, 95);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
   border: none;
-  border-radius: 4px;
+  background: ${ GREEN };
+  border-bottom: rgb(111,154,55) 2px solid;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
   width: 142px;
   height: 31px;
 
@@ -317,6 +319,8 @@ const HireButton = styled.button`
 
 const HireButtonTransparent = styled(HireButton)`
   background: rgba(181, 181, 181, 0.14);
+  border-bottom: rgba(181, 181, 181, 0.05) 2px solid;
+  color: rgba(255, 255, 255, 0.65);
 `
 
 export default HeroSection

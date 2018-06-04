@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from "styled-components"
 import '../../node_modules/font-awesome/css/font-awesome.min.css'
 import { isMobile, isSafari } from "react-device-detect"
+import { GREEN } from "../constants/"
 
 let mobileBackgroundNotFixed = 'fixed'
 
@@ -169,8 +170,7 @@ const UiUxIcon = styled.div`
     font-weight: normal;
     text-decoration: inherit;
     font-size: 3.9em;
-    color: rgb(33, 149, 147);
-    color: rgb(0, 162, 95);
+    color: ${ GREEN };
   }
 `
 
