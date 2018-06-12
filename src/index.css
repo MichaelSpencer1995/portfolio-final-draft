@@ -7,6 +7,9 @@ body{
   margin: 0;
   background: white;
 }
+button{
+  font-family: 'Ubuntu', sans-serif;
+}
 h1{
   font-family: 'Ubuntu', sans-serif;
   font-size: 32px;

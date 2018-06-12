@@ -216,6 +216,10 @@ const HeroImg = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
+  @media(max-width: 406px){
+    background-size: 260%;
+    background-position: 50% 0%;
+  }
 `
 
 const HeroImgOverlay = styled.div`

@@ -117,7 +117,7 @@ class RecentWorkSection extends Component {
                   Javascript fundamentals and logic-intensive algorithms
                 </ProjectTechsUsed>
 
-                <a style={{ marginTop: '10px' }} href="https://www.freecodecamp.org/michaelspencer1995/front-end-certification" target="blank">
+                <a style={{ marginTop: '10px' }} href="https://www.freecodecamp.org/certification/michaelspencer1995/legacy-front-end" target="blank">
                   Visit Website
                 </a>
               </ProjectInfoContainer>

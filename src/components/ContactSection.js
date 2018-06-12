@@ -36,10 +36,10 @@ class ContactSection extends Component {
       method: 'post',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
-       "name": this.state.nameValue,
-       "number": this.state.numberValue,
-       "email": this.state.emailValue,
-       "message": this.state.messageValue
+        "name": this.state.nameValue,
+        "number": this.state.numberValue,
+        "email": this.state.emailValue,
+        "message": this.state.messageValue
       })
     })
     .then(res => {
