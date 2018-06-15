@@ -74,6 +74,10 @@ class RecentWorkSection extends Component {
                     •Calculator
                   </a>
 
+                  <a href="https://useless-account1995.herokuapp.com/" target="blank">
+                    •Useless Account
+                  </a>
+
                   <a href="https://pomodoro-1995.herokuapp.com/" target="blank">
                     •Pomodoro Timer
                   </a>
@@ -251,7 +255,7 @@ const ExpandLinks = styled.button`
 
 const CodeCampProjectsExpander = styled.div`
   overflow: hidden;
-  height: ${({ isExpanded }) => isExpanded ? "120px" : "0px" };
+  height: ${({ isExpanded }) => isExpanded ? "140px" : "0px" };
   width: 100%;
   display: flex;
   flex-direction: column;

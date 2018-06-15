@@ -362,7 +362,6 @@ const FormSubmitButton = styled.input`
   font-size: 15px;
   text-shadow: none;
   background: ;
-  
   background: ${({ isShown }) => isShown ? "#637970" : GREEN };
   border: none;
   font-weight: 500;
