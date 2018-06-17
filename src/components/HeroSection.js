@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
-import { isMobile, isSafari } from "react-device-detect"
+import { isMobile, isSafari, isChrome } from "react-device-detect"
 import { GREEN } from "../constants/"
 
 let fixedBackground = 'fixed'
@@ -11,7 +11,7 @@ let safariNavItemsColor = 'rgb(230, 230, 230)'
 let safariNavHeight = '82px'
 let buttonsZIndex = "100000000000000000000000000 !important"
 
-if(isMobile) {
+if(isMobile || isChrome) {
   fixedBackground = 'none'
 }
 
@@ -23,7 +23,6 @@ if(isSafari) {
   safariNavHeight = '70px'
   buttonsZIndex = '0 !important';
 }
-
 
 class HeroSection extends Component {
   handleScrollIntoView(div){
@@ -40,6 +39,7 @@ class HeroSection extends Component {
       if(isSafari) {
         return
       }
+      
 
       let lessThanOrEqualTo1000 = false
       
