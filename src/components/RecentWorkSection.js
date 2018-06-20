@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
+import Divider from './Divider'
 
 class RecentWorkSection extends Component {
   state = {
@@ -156,9 +157,7 @@ class RecentWorkSection extends Component {
             One day this section will have multiple award winning UI's
           </AwardWinningUIP>
 
-          <Divider>
-            <img alt="vector image to seperate the contact section from the rest of the page" src="/assets/img/divider.svg" />
-          </Divider>
+          <Divider />
         </RecentWorkSectionViewContainer>
       </RecentWorkSectionView>
     )
@@ -176,7 +175,7 @@ const RecentWorkSectionViewContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 100%;
+  width: 76%;
   margin-top: 110px;
   padding-bottom: 100px;
   @media(max-width: 1000px) {
@@ -189,7 +188,7 @@ const RecentWorkH1 = styled.h1`
 
 const RecentWorkP = styled.p`
   margin-top: 16px;
-  width: 44%;
+  width: 70%;
   @media(max-width: 1000px) {
     width: 76%;
   }
@@ -198,7 +197,7 @@ const RecentWorkP = styled.p`
 const RecentWorkTriFold = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 76%;
+  width: 100%;
   margin-top: 38px;
 
   @media(max-width: 1000px) {
@@ -307,14 +306,6 @@ const ProjectTechsUsed = styled.p`
 const AwardWinningUIP = styled.p`
   width: 76%;
   margin-top: 65px;
-`
-
-const Divider = styled.div`
-  width: 60%;
-  margin-top: 90px;  
-  img{
-    width: 100%;
-  }
 `
 
 export default RecentWorkSection

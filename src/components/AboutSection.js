@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
+import Divider from './Divider';
 
 class AboutSection extends Component {
   render() {
@@ -95,6 +96,8 @@ class AboutSection extends Component {
             A nudge in any particular direction
             is the only thing I require.
           </AboutMeReassurance>
+          
+          <Divider />
         </AboutSectionViewContainer>
       </AboutSectionView>
     )
@@ -106,7 +109,7 @@ const AboutSectionView = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 100px;
+  padding-bottom: 90px;
   @media(max-width: 1000px) {
     padding-bottom: 76px;
   }
@@ -114,7 +117,7 @@ const AboutSectionView = styled.div`
 
 const AboutSectionViewContainer = styled.div`
   margin-top: 110px;
-  width: 50%;
+  width: 76%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,6 +133,7 @@ const AboutH1 = styled.h1`
 
 const AboutP = styled.p`
   margin-top: 16px;
+  width: 70%;
 `
 
 const AboutSkillsContainer = styled.div`
@@ -170,6 +174,7 @@ const SubHeader = styled.h3`
 
 const AboutMeReassurance = styled.p`
   margin-top: 32px;
+  width: 70%;
 `
 
 export default AboutSection
