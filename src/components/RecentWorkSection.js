@@ -18,18 +18,14 @@ class RecentWorkSection extends Component {
           </RecentWorkH1>
 
           <RecentWorkP>
-            Below are some proof of my qualifications as a junior web developer.
-            They consist mostly of apps made with the React.js library, along with
-            some very logic-intensive vanilla js apps. The concepts I used to complete
-            them include: Closures, recursive functions, functional programming, Ui/Ux design,
-            responsive design, async callbacks, design patterns, node module
-            implementation, cross-browser issues, and more.
+            Mostly apps made with the React.js library, along with
+            some very logic-intensive vanilla js apps.
           </RecentWorkP>
 
           <RecentWorkTriFold>
             <WorkItemContainer1>
               <ImageWrapper>
-                <img alt="photo of a website on different screen sizes" src="/assets/img/responsive-displays.svg" />
+                <img alt="photo of a website on different screen sizes" src="/assets/img/bitmap2.png" />
               </ImageWrapper>
                 
               <ProjectInfoContainer>
@@ -52,8 +48,32 @@ class RecentWorkSection extends Component {
             </WorkItemContainer1>
 
             <WorkItemContainer>
+              <ImageWrapper>
+                <img alt="photo of a website on different screen sizes" src="/assets/img/bitmap.png" />
+              </ImageWrapper>
+                
+              <ProjectInfoContainer>
+                <ProjectSubHeader>
+                  Moove-it Website Mock Up
+                </ProjectSubHeader>
+                    
+                <ProjectDescription>
+                  I did not design, nor do I own this website or brand.
+                </ProjectDescription>
+                    
+                <ProjectTechsUsed>
+                  React, Styled Components
+                </ProjectTechsUsed>
+                    
+                <a style={{ marginTop: '10px' }} href="https://moove-it-1995.herokuapp.com/" target="blank">
+                  Visit Website
+                </a>
+              </ProjectInfoContainer>
+            </WorkItemContainer>
+
+            <WorkItemContainer>
             <ImageWrapper>
-                <img alt="photos of various javascript projects" src="/assets/img/codecampchallenges.svg" />
+                <img alt="photos of various javascript projects" src="/assets/img/codecampchallenges.png" />
               </ImageWrapper>
                 
               <ProjectInfoContainer>
@@ -197,9 +217,12 @@ const RecentWorkP = styled.p`
 
 const RecentWorkTriFold = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 76%;
   margin-top: 38px;
+
+
+  flex-wrap: wrap;
 
   @media(max-width: 1000px) {
     flex-direction: column;
@@ -217,7 +240,8 @@ const ImageWrapper = styled.div`
 `
 
 const WorkItemContainer = styled.div`
-  width: 22%;
+  margin: 10px 10px;
+  width: 30%;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -233,7 +257,7 @@ const WorkItemContainer = styled.div`
   @media(max-width: 1000px) {
     width: 76%;
     height: auto;
-    margin-top: 65px;
+    margin-top: 45px;
   }
   @media(max-width: 600px) {
     width: 100%;
