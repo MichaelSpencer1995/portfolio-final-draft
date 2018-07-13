@@ -66,9 +66,8 @@ class WhatICanDoSection extends Component {
               </StepSubHeader>
 
               <StepParagraph>
-                I pick up new skills very quickly, and am able to
-                adapt to work with any paradigm your team uses,
-                very quickly.
+                I am always trying to expand my skillset, and revaluate my 
+                approach for new angles.
               </StepParagraph>
             </StepContainer>
           </WhatICanDoTrifold>
@@ -109,7 +108,7 @@ const WhatICanDoSectionViewContainer = styled.div`
 const Overlay2 = styled.div`
   width: 100%;
   height: 500px;
-  background: rgba(0, 0, 0, .84);
+  background: rgba(0, 0, 0, .86);
   position: absolute;
   top: 0;
 

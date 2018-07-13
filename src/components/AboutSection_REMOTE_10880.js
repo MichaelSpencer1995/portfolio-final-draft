@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
-import Divider from './Divider';
 
 class AboutSection extends Component {
   render() {
@@ -94,7 +93,7 @@ const AboutSectionView = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 90px;
+  padding-bottom: 100px;
   @media(max-width: 1000px) {
     padding-bottom: 76px;
   }
@@ -102,7 +101,7 @@ const AboutSectionView = styled.div`
 
 const AboutSectionViewContainer = styled.div`
   margin-top: 110px;
-  width: 76%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,7 +117,6 @@ const AboutH1 = styled.h1`
 
 const AboutP = styled.p`
   margin-top: 16px;
-  width: 70%;
 `
 
 const AboutSkillsContainer = styled.div`

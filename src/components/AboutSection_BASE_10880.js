@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
-import Divider from './Divider';
 
 class AboutSection extends Component {
   render() {
@@ -13,7 +12,10 @@ class AboutSection extends Component {
           </AboutH1>
 
           <AboutP>
-            Below are some technologies that I am comfortable with, all were used to make this page.
+            When it comes to web design, I am a Jack of all trades
+            and a master of none. My fundamental and conceptual
+            understanding of the following technologies is strong,
+            and all were used to make this website.
           </AboutP>
 
           <AboutSkillsContainer>
@@ -82,7 +84,17 @@ class AboutSection extends Component {
                 </SubHeader>
               </ItemContainer>
             </Row>
+
           </AboutSkillsContainer>
+          
+          <AboutMeReassurance>
+            However, I am young and so is my career,
+            I am more than capable of using all of these
+            technologies, and more importantly I am capable of
+            excelling in any or all of them.
+            A nudge in any particular direction
+            is the only thing I require.
+          </AboutMeReassurance>
         </AboutSectionViewContainer>
       </AboutSectionView>
     )
@@ -94,7 +106,7 @@ const AboutSectionView = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 90px;
+  padding-bottom: 100px;
   @media(max-width: 1000px) {
     padding-bottom: 76px;
   }
@@ -102,7 +114,7 @@ const AboutSectionView = styled.div`
 
 const AboutSectionViewContainer = styled.div`
   margin-top: 110px;
-  width: 76%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,7 +130,6 @@ const AboutH1 = styled.h1`
 
 const AboutP = styled.p`
   margin-top: 16px;
-  width: 70%;
 `
 
 const AboutSkillsContainer = styled.div`
@@ -146,7 +157,6 @@ const ItemContainer5 = styled(ItemContainer)`
 `
 
 const Item = styled.div`
-  width: 100%;
   img{
     width: 100%;
   }
@@ -156,6 +166,10 @@ const SubHeader = styled.h3`
   font-size: 15px;
   font-weight: 700;
   margin-top: 0px;
+`
+
+const AboutMeReassurance = styled.p`
+  margin-top: 32px;
 `
 
 export default AboutSection

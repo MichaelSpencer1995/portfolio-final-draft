@@ -66,15 +66,15 @@ class HeroSection extends Component {
       }
       
       if(y >= navbarTargetHeight){
-        heroImg.classList.add('fixed-nav-items')
+        // heroImg.classList.add('fixed-nav-items')
         overlay.classList.add('fixed-nav-items')
-        heroImg.style.bottom = navbarTargetHeight + 'px'
+        // heroImg.style.bottom = navbarTargetHeight + 'px'
         overlay.style.bottom = navbarTargetHeight + 'px'
 
       } else if(y < navbarTargetHeight){
-          heroImg.classList.remove('fixed-nav-items')
+          // heroImg.classList.remove('fixed-nav-items')
           overlay.classList.remove('fixed-nav-items')
-          heroImg.style.bottom = '0px'
+          // heroImg.style.bottom = '0px'
           overlay.style.bottom = '0px'
       }
 
@@ -99,7 +99,7 @@ class HeroSection extends Component {
     }
 
     return (
-      <HeroSectionView>
+      <HeroSectionView className="hero-image">
         <NavBarContainer>
           <NavItemsContainer>
             <NavItem onClick={() => this.handleScrollIntoView('about-scroll-id')}>
@@ -116,7 +116,7 @@ class HeroSection extends Component {
           </NavItemsContainer>
         </NavBarContainer>
 
-        <HeroImg className="hero-image"/>
+        {/* <HeroImg className="hero-image"/> */}
         
         <HeroImgOverlay className="overlay" />
 
@@ -152,6 +152,10 @@ const HeroSectionView = styled.div`
   height: 100vh;
   display: flex;
   align-items: flex-end;
+  background: url(/assets/img/heroimagemain.jpg) no-repeat;
+  background-size: cover;
+  background-position: 20% 0%;
+  background-attachment: ${ fixedBackground };
 `
 
 const NavBarContainer = styled.div`

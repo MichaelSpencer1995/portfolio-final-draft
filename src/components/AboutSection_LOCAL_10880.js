@@ -13,7 +13,10 @@ class AboutSection extends Component {
           </AboutH1>
 
           <AboutP>
-            Below are some technologies that I am comfortable with, all were used to make this page.
+            When it comes to web design, I am a Jack of all trades
+            and a master of none. My fundamental and conceptual
+            understanding of the following technologies is strong,
+            and all were used to make this website.
           </AboutP>
 
           <AboutSkillsContainer>
@@ -82,7 +85,19 @@ class AboutSection extends Component {
                 </SubHeader>
               </ItemContainer>
             </Row>
+
           </AboutSkillsContainer>
+          
+          <AboutMeReassurance>
+            However, I am young and so is my career,
+            I am more than capable of using all of these
+            technologies, and more importantly I am capable of
+            excelling in any or all of them.
+            A nudge in any particular direction
+            is the only thing I require.
+          </AboutMeReassurance>
+          
+          <Divider />
         </AboutSectionViewContainer>
       </AboutSectionView>
     )
@@ -146,7 +161,6 @@ const ItemContainer5 = styled(ItemContainer)`
 `
 
 const Item = styled.div`
-  width: 100%;
   img{
     width: 100%;
   }
@@ -156,6 +170,11 @@ const SubHeader = styled.h3`
   font-size: 15px;
   font-weight: 700;
   margin-top: 0px;
+`
+
+const AboutMeReassurance = styled.p`
+  margin-top: 32px;
+  width: 70%;
 `
 
 export default AboutSection
