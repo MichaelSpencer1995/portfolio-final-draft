@@ -5,7 +5,7 @@ import { GREEN } from "../constants/"
 
 let fixedBackground = 'fixed'
 let safariNavBackgroundColor = 'transparent'
-let safariNavBorder = 'none';
+let safariNavBorder = 'none'
 let safariButtonMargin = '62px'
 let safariNavItemsColor = 'rgb(230, 230, 230)'
 let safariNavHeight = '82px'
@@ -21,7 +21,7 @@ if(isSafari) {
   safariNavItemsColor = 'white'
   safariNavBorder = '#777 1px solid'
   safariNavHeight = '70px'
-  buttonsZIndex = '0 !important';
+  buttonsZIndex = '0 !important'
 }
 
 class HeroSection extends Component {

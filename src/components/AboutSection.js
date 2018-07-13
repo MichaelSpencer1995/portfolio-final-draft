@@ -101,7 +101,7 @@ const AboutSectionView = styled.div`
 `
 
 const AboutSectionViewContainer = styled.div`
-  margin-top: 110px;
+  margin-top: 90px;
   width: 76%;
   display: flex;
   flex-direction: column;
@@ -117,7 +117,7 @@ const AboutH1 = styled.h1`
 `
 
 const AboutP = styled.p`
-  margin-top: 16px;
+  margin-top: 10px;
   width: 70%;
 `
 

@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
 import '../../node_modules/font-awesome/css/font-awesome.min.css'
-// import { isMobile, isSafari } from "react-device-detect"
+import { isMobile, isSafari } from "react-device-detect"
 import { GREEN } from "../constants/"
 import Divider from "./Divider"
-// let mobileBackgroundNotFixed = 'fixed'
+let mobileBackgroundNotFixed = 'fixed'
 
-// if(isMobile) {
-//   mobileBackgroundNotFixed = 'none'
-// }
+if(isMobile) {
+  mobileBackgroundNotFixed = 'none'
+}
 
 class WhatICanDoSection extends Component {
   render() {
     return (
       <WhatICanDoSectionView>
         <WhatICanDoSectionViewContainer>
-          {/* <Overlay2 /> */}
+          <Overlay2 />
           
           <WhatICanDoH1>
             What I Can Do
@@ -84,17 +84,17 @@ const WhatICanDoSectionView = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  // background: url(/assets/img/hero11.jpg) no-repeat;
-  // background-size: cover;
-  // background-position: 1% 40%;
-  // width: 100%;
-  // height: 500px;
-  // background-attachment: ${ 'mobileBackgroundNotFixed' };
+  background: url(/assets/img/hero11.jpg) no-repeat;
+  background-size: cover;
+  background-position: 1% 40%;
+  width: 100%;
+  height: 500px;
+  background-attachment: ${ 'mobileBackgroundNotFixed' };
   @media(max-width: 1000px) {
-    // height: 900px;
+    height: 900px;
   }
   @media(max-width: 600px) {
-    // height: 1040px;
+    height: 1040px;
   }
 `
 
@@ -110,18 +110,19 @@ const Overlay2 = styled.div`
   height: 500px;
   background: rgba(0, 0, 0, .86);
   position: absolute;
-  top: 0;
 
   @media(max-width: 1000px) {
-    // height: 900px;
+    height: 900px;
   }
   @media(max-width: 600px) {
-    // height: 1040px;
+    height: 1040px;
   }
 `
 
 const WhatICanDoH1 = styled.h1`
   z-index: 10;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 90px;
 `
 
 const WhatICanDoP = styled.p`
@@ -187,7 +188,7 @@ const StepSubHeader = styled.h3`
   font-weight: 700;
   font-size: 18px;
   z-index: 10;
-  // color: #c1c1c1;
+  color: rgba(255, 255, 255, 0.8);
   margin-top: 20px;
 `
 
