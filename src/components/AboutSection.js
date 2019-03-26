@@ -13,7 +13,7 @@ class AboutSection extends Component {
           </AboutH1>
 
           <AboutP>
-            Below are some technologies that I am comfortable with, all were used to make this page.
+            Below are some technologies that I am comfortable with.
           </AboutP>
 
           <AboutSkillsContainer>
@@ -62,17 +62,7 @@ class AboutSection extends Component {
             </Row>
 
             <Row>
-              <ItemContainer5>
-                <Item>
-                  <img alt="node.js" src="/assets/img/node.svg"/>
-                </Item>
-                  
-                <SubHeader>
-                  Node.js
-                </SubHeader>
-              </ItemContainer5>
-                
-              <ItemContainer>
+              <ItemContainerLast>
                 <Item>
                   <img alt="responsive desgin" src="/assets/img/mobile-alt.svg"/>
                 </Item>
@@ -80,7 +70,7 @@ class AboutSection extends Component {
                 <SubHeader>
                   Responsive Design
                 </SubHeader>
-              </ItemContainer>
+              </ItemContainerLast>
             </Row>
           </AboutSkillsContainer>
         </AboutSectionViewContainer>
@@ -143,6 +133,10 @@ const ItemContainer5 = styled(ItemContainer)`
   width: 70px;
   position: relative;
   right: 6px;
+`
+
+const ItemContainerLast = styled(ItemContainer)`
+  margin: 0 auto;
 `
 
 const Item = styled.div`

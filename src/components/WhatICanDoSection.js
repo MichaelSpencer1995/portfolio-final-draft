@@ -50,10 +50,7 @@ class WhatICanDoSection extends Component {
               </StepSubHeader>
 
               <StepParagraph>
-                HTML(5), CSS(3), Javascript(ES6),
-                and some of the popular libraries and frameworks
-                that help make these languages easier
-                and more efficient.
+                HTML(5), CSS(3), Javascript(ES6), and related tools, libraries, frameworks.
               </StepParagraph>
             </StepContainer>
 
@@ -67,7 +64,7 @@ class WhatICanDoSection extends Component {
 
               <StepParagraph>
                 I am always trying to expand my skillset, and revaluate my 
-                approach for new angles.
+                approach.
               </StepParagraph>
             </StepContainer>
           </WhatICanDoTrifold>

@@ -127,9 +127,7 @@ class HeroSection extends Component {
 
           <HeroP className="hero-paragraph">
             I am a full stack web developer near Austin,
-            Texas with very little professional experience,
-            eager to help any corporate or personal business
-            do better.
+            Texas with professional experience.
           </HeroP>
 
           <HireButtonsContainer className="hire-buttons">
@@ -228,7 +226,7 @@ const HeroImg = styled.div`
 
 const HeroImgOverlay = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 96%);
-  border-bottom: rgb(30, 30, 30) 2px solid;
+  border-bottom: rgb(30, 30, 30) 1px solid;
   width: 100%;
   height: 100vh;
   position: absolute;

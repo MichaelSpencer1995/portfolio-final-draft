@@ -19,8 +19,7 @@ class RecentWorkSection extends Component {
           </RecentWorkH1>
 
           <RecentWorkP>
-            Mostly apps made with the React.js library, along with
-            some very logic-intensive vanilla js apps.
+            Some React and Vanilla js apps.
           </RecentWorkP>
 
           <RecentWorkTriFold>
@@ -124,7 +123,7 @@ class RecentWorkSection extends Component {
               </ProjectInfoContainer>
             </WorkItemContainer>
 
-            <WorkItemContainer>
+            {/* <WorkItemContainer>
               <ImageWrapper>
                 <img alt="photo of my free code camp certification" src="/assets/img/certificate.png" />
               </ImageWrapper>
@@ -146,9 +145,9 @@ class RecentWorkSection extends Component {
                   Visit Website
                 </a>
               </ProjectInfoContainer>
-            </WorkItemContainer>
+            </WorkItemContainer> */}
 
-            <WorkItemContainer>
+            {/* <WorkItemContainer>
               <ImageWrapper>
                 <img alt="photo of my free code camp certification" src="/assets/img/udemy.jpg" />
               </ImageWrapper>
@@ -170,12 +169,12 @@ class RecentWorkSection extends Component {
                   Visit Website
                 </a>
               </ProjectInfoContainer>
-            </WorkItemContainer>
+            </WorkItemContainer> */}
           </RecentWorkTriFold>
         
-          <AwardWinningUIP>
+          {/* <AwardWinningUIP>
             One day this section will have multiple award winning UI's
-          </AwardWinningUIP>
+          </AwardWinningUIP> */}
 
           <Divider />
         </RecentWorkSectionViewContainer>
