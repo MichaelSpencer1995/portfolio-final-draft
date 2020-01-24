@@ -43,7 +43,7 @@ class HeroSection extends Component {
     window.addEventListener('scroll', handleScroll)
 
     function handleScroll(){
-      if(isSafari) {
+      if(isMobile || isSafari) {
         return
       }
 
