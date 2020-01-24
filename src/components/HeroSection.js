@@ -15,16 +15,23 @@ if(isMobile || isChrome) {
   fixedBackground = 'none'
 }
 
-if(isSafari) {
+if(isMobile || isSafari) {
   safariNavBackgroundColor = '#0a0a0a'
   safariButtonMargin = '120px'
   safariNavItemsColor = 'white'
-  safariNavBorder = '#777 1px solid'
+  // safariNavBorder = '#777 1px solid'
   safariNavHeight = '70px'
   buttonsZIndex = '0 !important'
 }
 
 class HeroSection extends Component {
+  componentDidMount() {
+    const heroImg = new Image()
+    heroImg.src = '/assets/img/heroimagemain.jpg'
+    heroImg.onload = () => {
+      this.props.heroLoaded()
+    }
+  }
   handleScrollIntoView(div){
     const element = document.getElementById(div)
     
@@ -34,31 +41,34 @@ class HeroSection extends Component {
   render() {
 
     window.addEventListener('scroll', handleScroll)
-    
+
     function handleScroll(){
       if(isSafari) {
         return
       }
-      
+
 
       let lessThanOrEqualTo1000 = false
-      
+
       if(window.innerWidth <= 1000){
         lessThanOrEqualTo1000 = true
       }
-      
+
       const heroImg = document.getElementsByClassName('hero-image')[0]
       const overlay = document.getElementsByClassName('overlay')[0]
       const hireButtons = document.getElementsByClassName('hire-buttons')[0]
       const paragraph = document.getElementsByClassName('hero-paragraph')[0]
-      
+
       const y = window.scrollY
-      
+
       let heroHeight = parseInt(window.getComputedStyle(heroImg).height)
       let navbarTargetHeight = heroHeight - 82
-      let buttonsTargetHeight = heroHeight - 175
-      let buttonsShiftAmount = 119
+      let buttonsTargetHeight = heroHeight - 140
+      // let buttonsTargetHeight = heroHeight - 175
+      // let buttonsShiftAmount = 119
+      let buttonsShiftAmount = 84
 
+      //shouldnt matter
       if(window.innerWidth <= 1000) {
         buttonsTargetHeight = heroHeight - 158
         buttonsShiftAmount = 62
@@ -82,7 +92,7 @@ class HeroSection extends Component {
           if(lessThanOrEqualTo1000){
               hireButtons.classList.add('keep-width')
           }
-          
+
           hireButtons.classList.add('fixed-nav-items')
           hireButtons.style.bottom = buttonsTargetHeight + buttonsShiftAmount + 'px'
           paragraph.classList.add('shift-paragraph-off-screen')
@@ -91,7 +101,7 @@ class HeroSection extends Component {
           if(lessThanOrEqualTo1000){
               hireButtons.classList.remove('keep-width')
           }
-          
+
           paragraph.classList.remove('shift-paragraph-off-screen')
           hireButtons.classList.remove('fixed-nav-items')
           hireButtons.style.bottom = '0px'
@@ -111,13 +121,11 @@ class HeroSection extends Component {
             </NavItem>
 
             <NavItem onClick={() => this.handleScrollIntoView('contact-scroll-id')}>
-            Get In Touch
+              Get In Touch
             </NavItem>
           </NavItemsContainer>
         </NavBarContainer>
 
-        {/* <HeroImg className="hero-image"/> */}
-        
         <HeroImgOverlay className="overlay" />
 
         <HeroContentContainer>
@@ -126,13 +134,13 @@ class HeroSection extends Component {
           </HeroH1>
 
           <HeroP className="hero-paragraph">
-            I am a full stack web developer near Austin,
-            Texas with professional experience.
+            I am a freelance web developer near Austin,
+            Texas.
           </HeroP>
 
           <HireButtonsContainer className="hire-buttons">
-            <HireButton onClick={() => this.handleScrollIntoView('contact-scroll-id')}>
-              Hire me
+            <HireButton onClick={() => this.handleScrollIntoView('recent-work-scroll-id')}>
+              Recent Work
             </HireButton>
 
             <HireButtonTransparent onClick={() => this.handleScrollIntoView('contact-scroll-id')}>
@@ -238,7 +246,7 @@ const HeroContentContainer = styled.div`
   letter-spacing: 0.2rem;
   color: white;
   margin-left: 12%;
-  margin-bottom: 120px;
+  margin-bottom: 90px;
   width: 45%;
   display: flex;
   flex-direction: column;
@@ -281,7 +289,8 @@ const HeroP = styled.p`
   letter-spacing: -.01rem;
   line-height: 1.8em;
   color: #b5b5b5;
-  margin-top: 8px;
+  position: relative;
+  top: -3px;
   @media (max-width: 1000px) {
     font-size: 14px;
   }
