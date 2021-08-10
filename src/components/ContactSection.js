@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
-import { GREEN } from "../constants/"
+import { GREEN, GREYACCENT } from "../constants/"
+import { UITEXT } from "../uitext/"
 
 class ContactSection extends Component {
   constructor() {
@@ -145,16 +146,12 @@ class ContactSection extends Component {
         <div id="contact-scroll-id" style={{ position: 'relative', top: '-185px'}} />      
         <ContactSectionViewContainer>
           <ContactSectionH1>
-            Get In Touch
+            { UITEXT.contact.main }
           </ContactSectionH1>
 
           <ContactSectionP>
-            Contact me if you need a Javascript developer or a website made.
+            { UITEXT.contact.sub }
           </ContactSectionP>
-
-          <ErrorMessage isShown={this.state.formValid}>
-            <p>Please correct fields marked with *</p>
-          </ErrorMessage>
           
           <FormAndMapContainer>
             <FormContainer>
@@ -164,12 +161,12 @@ class ContactSection extends Component {
                 method="POST">
                 <LabelAstericContainer>
                   <FormLabel>
-                    Name
+                    { UITEXT.contact.form.labels.l1 }
                   </FormLabel>
 
                   <Asteric
                     isShown={this.state.nameValid}>
-                    *Name field cannot be blank
+                    { UITEXT.contact.form.errorMessages.m1 }
                   </Asteric>
                 </LabelAstericContainer>
                 
@@ -177,17 +174,17 @@ class ContactSection extends Component {
                   onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
                   name="nameValue"
-                  placeholder="name"
+                  placeholder={ UITEXT.contact.form.placeholders.p1 }
                 />
                 
                 <LabelAstericContainer>
                   <FormLabel>
-                    Phone Number
+                    { UITEXT.contact.form.labels.l2 }
                   </FormLabel>
                 
                   <Asteric
                     isShown={this.state.numberValid}>
-                    *Invalid phone number
+                    { UITEXT.contact.form.errorMessages.m2 }
                   </Asteric>
                 </LabelAstericContainer>
                 
@@ -196,17 +193,17 @@ class ContactSection extends Component {
                   onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
                   name="numberValue"
-                  placeholder="number"
+                  placeholder={ UITEXT.contact.form.placeholders.p2 }
                 />
 
                 <LabelAstericContainer>
                   <FormLabel>
-                    Email Address
+                    { UITEXT.contact.form.labels.l3 }
                   </FormLabel>
                 
                   <Asteric
                     isShown={this.state.emailValid}>
-                    *Invalid email address
+                    { UITEXT.contact.form.errorMessages.m3 }
                   </Asteric>
                 </LabelAstericContainer>
 
@@ -214,17 +211,17 @@ class ContactSection extends Component {
                   onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
                   name="emailValue"
-                  placeholder="email"
+                  placeholder={ UITEXT.contact.form.placeholders.p3 }
                 />
 
                 <LabelAstericContainer>
                   <FormLabel>
-                    Message
+                    { UITEXT.contact.form.labels.l4 }
                   </FormLabel>
                 
                   <Asteric
                     isShown={this.state.messageValid}>
-                    *Message field cannot be left blank.
+                    { UITEXT.contact.form.errorMessages.m4 }
                   </Asteric>
                 </LabelAstericContainer>
                 
@@ -232,10 +229,11 @@ class ContactSection extends Component {
                   onChange={(this.updateInputValueInState.bind(this))} 
                   value={this.state.name}
                   name="messageValue"
-                  placeholder="message"
+                  placeholder={ UITEXT.contact.form.placeholders.p4 }
                 />
 
                 <FormSubmitButton
+                  value={ UITEXT.contact.form.submit }
                   isShown={this.state.formSending}
                   type="submit" />
               </Form>
@@ -275,6 +273,7 @@ const ContactSectionH1 = styled.h1`
 
 const ContactSectionP = styled.p`
   margin-top: 15px;
+  color: ${ GREYACCENT };
 `
 
 const FormAndMapContainer = styled.div`
@@ -314,16 +313,17 @@ const Input = styled.input`
   width: 100%;
   padding: 0;
   margin: 0;
-  height: 42px;
+  height: 36px;
   padding-left: 10px;
   box-sizing: border-box;
   background: #fbfbfb;
-  border: #ddd 1px solid;
+  border: none;
   border-radius: 0;
   -webkit-appearance: none;
 
   &::placeholder{
     color: #bbb;
+    font-size: 12px;
   }
 `
 
@@ -337,12 +337,13 @@ const TextArea = styled.textarea`
   padding-top: 6px;
   box-sizing: border-box;
   background: #fbfbfb;
-  border: #ddd 1px solid;
+  border: none;
   border-radius: 0;
   -webkit-appearance: none;
   
   &::placeholder{
     color: #bbb;
+    font-size: 12px;
   }
 `
 
@@ -356,7 +357,7 @@ const FormSubmitButton = styled.input`
   margin: 0;
   margin-top: 17px;
   border-radius: 2px;
-  font-size: 15px;
+  font-size: 13px;
   text-shadow: none;
   background: ;
   background: ${({ isShown }) => isShown ? "#637970" : GREEN };
@@ -385,28 +386,15 @@ const Iframe = styled.iframe`
   }
 `
 
-const ErrorMessage = styled.div`
-  margin-top: 20px;
-  position: relative;
-  top: 10px;
-  display: ${({ isShown }) => isShown ? "none" : "block" };
-  
-  p{
-    color: #d20000;
-    font-weight: 500;
-    font-size: 17px;
-  }
-`
-
 const Asteric = styled.p`
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   height: 37px;
   position: relative;
   top: 18px;
   padding: 0;
   margin: 0;
-  color: #d20000;
+  color: #ff4b4b;
   display: ${({ isShown }) => isShown ? "none" : "block" };
 `
 
@@ -417,15 +405,15 @@ const LabelAstericContainer = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   box-sizing: border-box;
-  padding-left: 6px;
+  padding-left: 11px;
   padding-bottom: 3px;
 `
 
 const FormLabel = styled.label`
   padding: 0;
   margin: 0;
-  color: #7e8384;
-  font-size: 14px;
+  color: ${ GREYACCENT };
+  font-size: 12px;
   font-weight: 400;
 `
 

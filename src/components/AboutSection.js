@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
 import Divider from './Divider';
+import { GREYACCENT } from "../constants/"
+import { UITEXT } from "../uitext/"
 
 class AboutSection extends Component {
   render() {
@@ -9,11 +11,11 @@ class AboutSection extends Component {
         <div id="about-scroll-id" style={{ position: 'relative', top: '-82px'}} />
         <AboutSectionViewContainer>
           <AboutH1>
-            About Me
+            { UITEXT.about.main }
           </AboutH1>
 
           <AboutP>
-            Below are some technologies that I am comfortable with.
+            { UITEXT.about.sub }
           </AboutP>
 
           <AboutSkillsContainer>
@@ -24,7 +26,7 @@ class AboutSection extends Component {
                 </Item>
                   
                 <SubHeader>
-                    Javasript
+                  { UITEXT.about.techs.tech1 }
                 </SubHeader>
               </ItemContainer>
 
@@ -34,7 +36,7 @@ class AboutSection extends Component {
                 </Item>
                 
                 <SubHeader>
-                  React.js
+                  { UITEXT.about.techs.tech2 }
                 </SubHeader>
               </ItemContainer>
             </Row>
@@ -46,7 +48,7 @@ class AboutSection extends Component {
                 </Item>
                 
                 <SubHeader>
-                  HTML5
+                  { UITEXT.about.techs.tech3 }
                 </SubHeader>
               </ItemContainer>
 
@@ -56,7 +58,7 @@ class AboutSection extends Component {
                 </Item>
                 
                 <SubHeader>
-                  CSS3
+                  { UITEXT.about.techs.tech4 }
                 </SubHeader>
               </ItemContainer>
             </Row>
@@ -68,7 +70,7 @@ class AboutSection extends Component {
                 </Item>
                 
                 <SubHeader>
-                  Responsive Design
+                  { UITEXT.about.techs.tech5 }
                 </SubHeader>
               </ItemContainerLast>
             </Row>
@@ -109,6 +111,7 @@ const AboutH1 = styled.h1`
 const AboutP = styled.p`
   margin-top: 10px;
   width: 70%;
+  color: ${ GREYACCENT };
 `
 
 const AboutSkillsContainer = styled.div`

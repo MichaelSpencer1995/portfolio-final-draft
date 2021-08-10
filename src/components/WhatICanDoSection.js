@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import styled from "styled-components"
 import '../../node_modules/font-awesome/css/font-awesome.min.css'
 import { isMobile, isSafari } from "react-device-detect"
-import { GREEN } from "../constants/"
+import { GREEN, GREYACCENT } from "../constants/"
+import { UITEXT } from "../uitext/"
 import Divider from "./Divider"
 let mobileBackgroundNotFixed = 'fixed'
 
@@ -18,12 +19,11 @@ class WhatICanDoSection extends Component {
           <Overlay2 />
           
           <WhatICanDoH1>
-            What I Can Do
+           { UITEXT.whatICanDo.main }
           </WhatICanDoH1>
 
           <WhatICanDoP>
-            Creating an aesthetically pleasing
-            and easy user experience.
+            { UITEXT.whatICanDo.sub }
           </WhatICanDoP>
         
           <WhatICanDoTrifold>
@@ -31,13 +31,12 @@ class WhatICanDoSection extends Component {
               <UiUxIcon />
 
               <StepSubHeader>
-                UX/UI
+                { UITEXT.whatICanDo.subHeaders.sh1 }
               </StepSubHeader>
 
               <StepParagraph>
-                Imagine, wireframe, sketch, and
-                create simple, aesthetic, user-friendly,
-                and fully functional user interfaces.
+                { UITEXT.whatICanDo.subParagraphs.sp1 }
+
               </StepParagraph>
             </StepContainer>
 
@@ -46,11 +45,11 @@ class WhatICanDoSection extends Component {
 
 
               <StepSubHeader>
-                Coding
+                { UITEXT.whatICanDo.subHeaders.sh2 }
               </StepSubHeader>
 
               <StepParagraph>
-                HTML(5), CSS(3), Javascript(ES6), and related tools, libraries, frameworks.
+                { UITEXT.whatICanDo.subParagraphs.sp2 }
               </StepParagraph>
             </StepContainer>
 
@@ -59,12 +58,11 @@ class WhatICanDoSection extends Component {
 
 
               <StepSubHeader>
-                Learning
+              { UITEXT.whatICanDo.subHeaders.sh3 }
               </StepSubHeader>
 
               <StepParagraph>
-                I am always trying to expand my skillset, and revaluate my 
-                approach.
+                { UITEXT.whatICanDo.subParagraphs.sp3 }
               </StepParagraph>
             </StepContainer>
           </WhatICanDoTrifold>
@@ -106,6 +104,7 @@ const Overlay2 = styled.div`
   width: 100%;
   height: 500px;
   background: rgba(0, 0, 0, .86);
+  background: beige;
   position: absolute;
 
   @media(max-width: 1000px) {
@@ -118,14 +117,14 @@ const Overlay2 = styled.div`
 
 const WhatICanDoH1 = styled.h1`
   z-index: 10;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgb(11 23 27);
   margin-top: 90px;
 `
 
 const WhatICanDoP = styled.p`
   z-index: 10;
   margin-top: 1px;
-  color: #929292;
+  color: ${ GREYACCENT };
   font-weight: 300;
   text-align: center;
 `
@@ -185,18 +184,17 @@ const StepSubHeader = styled.h3`
   font-weight: 700;
   font-size: 18px;
   z-index: 10;
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: 20px;
+  color: rgb(11 23 27);
+  margin-top: 15px;
 `
 
 const StepParagraph = styled.p`
-  margin-top: 9px;
+  margin-top: 6px;
   line-height: 1.8em;
-  color: #565656;
-  color: #929292;
+  color: ${ GREYACCENT };
   font-size: 13px;
   z-index: 10;
-  font-weight: 400;
+  font-weight: 300;
 `
 
 

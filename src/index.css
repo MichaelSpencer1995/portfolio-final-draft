@@ -32,6 +32,7 @@ h3{
 }
 p{
   font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-rendering: optimizeLegibility;
   font-size: 14px;
   font-weight: 300;
@@ -41,10 +42,12 @@ p{
   margin: 0;
 }
 a, input, textarea, label{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   white-space: nowrap;
   text-rendering: optimizeLegibility;
-  
+}
+label {
+  font-family: 'Ubuntu', sans-serif;
 }
 a{
   background: none;

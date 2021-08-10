@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import styled from "styled-components"
 import { isMobile, isSafari, isChrome } from "react-device-detect"
 import { GREEN } from "../constants/"
+import { UITEXT } from "../uitext/"
 
 let fixedBackground = 'fixed'
 let safariNavBackgroundColor = 'transparent'
 let safariNavBorder = 'none'
 let safariButtonMargin = '62px'
-let safariNavItemsColor = 'rgb(230, 230, 230)'
+let safariNavItemsColor = '#fff'
 let safariNavHeight = '82px'
 let buttonsZIndex = "100000000000000000000000000 !important"
 
@@ -63,10 +64,8 @@ class HeroSection extends Component {
 
       let heroHeight = parseInt(window.getComputedStyle(heroImg).height)
       let navbarTargetHeight = heroHeight - 82
-      let buttonsTargetHeight = heroHeight - 140
-      // let buttonsTargetHeight = heroHeight - 175
-      // let buttonsShiftAmount = 119
-      let buttonsShiftAmount = 84
+      let buttonsTargetHeight = heroHeight - 145
+      let buttonsShiftAmount = 89
 
       //shouldnt matter
       if(window.innerWidth <= 1000) {
@@ -76,15 +75,11 @@ class HeroSection extends Component {
       }
       
       if(y >= navbarTargetHeight){
-        // heroImg.classList.add('fixed-nav-items')
         overlay.classList.add('fixed-nav-items')
-        // heroImg.style.bottom = navbarTargetHeight + 'px'
         overlay.style.bottom = navbarTargetHeight + 'px'
 
       } else if(y < navbarTargetHeight){
-          // heroImg.classList.remove('fixed-nav-items')
           overlay.classList.remove('fixed-nav-items')
-          // heroImg.style.bottom = '0px'
           overlay.style.bottom = '0px'
       }
 
@@ -113,15 +108,13 @@ class HeroSection extends Component {
         <NavBarContainer>
           <NavItemsContainer>
             <NavItem onClick={() => this.handleScrollIntoView('about-scroll-id')}>
-              About
+              { UITEXT.nav.item1 }
             </NavItem>
-            
             <NavItem onClick={() => this.handleScrollIntoView('recent-work-scroll-id')}>
-              Recent Work
+              { UITEXT.nav.item2 }
             </NavItem>
-
             <NavItem onClick={() => this.handleScrollIntoView('contact-scroll-id')}>
-              Get In Touch
+              { UITEXT.nav.item3 }
             </NavItem>
           </NavItemsContainer>
         </NavBarContainer>
@@ -130,21 +123,20 @@ class HeroSection extends Component {
 
         <HeroContentContainer>
           <HeroH1 id="testElement">
-            My name is <br /><span>Michael Spencer</span>          
+            <span>{ UITEXT.header.main }</span>          
           </HeroH1>
 
           <HeroP className="hero-paragraph">
-            I am a freelance web developer near Austin,
-            Texas.
+            { UITEXT.header.sub }
           </HeroP>
 
           <HireButtonsContainer className="hire-buttons">
             <HireButton onClick={() => this.handleScrollIntoView('recent-work-scroll-id')}>
-              Recent Work
+              { UITEXT.header.button1 }
             </HireButton>
 
             <HireButtonTransparent onClick={() => this.handleScrollIntoView('contact-scroll-id')}>
-              I need a website
+              { UITEXT.header.button2 }
             </HireButtonTransparent>
           </HireButtonsContainer>
         </HeroContentContainer>
@@ -196,6 +188,7 @@ const NavItemsContainer = styled.div`
 `
 
 const NavItem = styled.button`
+  transition: all 0.3s ease;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.035rem;
@@ -234,7 +227,7 @@ const HeroImg = styled.div`
 
 const HeroImgOverlay = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 96%);
-  border-bottom: rgb(30, 30, 30) 1px solid;
+  background: linear-gradient(rgba(0,0,0,0) -17%,rgba(0,0,0,1) 86%);
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -262,12 +255,12 @@ const HeroH1 = styled.h1`
   font-size: 30px;
   font-weight: 100;
   letter-spacing: 0.05rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: #fff
   span{
     font-size: 50px;
     font-weight: 700;
     letter-spacing: 0.03rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: #fff;
     position: relative;
     bottom: 7px;
   }
@@ -284,13 +277,13 @@ const HeroH1 = styled.h1`
 `
 
 const HeroP = styled.p`
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 300;
   letter-spacing: -.01rem;
   line-height: 1.8em;
-  color: #b5b5b5;
+  color: #bbb;
   position: relative;
-  top: -3px;
+  top: -5px;
   @media (max-width: 1000px) {
     font-size: 14px;
   }
@@ -313,12 +306,9 @@ const HireButton = styled.button`
   font-family: 'Ubuntu', sans-serif;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.01rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #fff;
   border: none;
   background: ${ GREEN };
-  border-bottom: rgb(111,154,55) 2px solid;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   width: 142px;
   height: 31px;
@@ -334,8 +324,7 @@ const HireButton = styled.button`
 
 const HireButtonTransparent = styled(HireButton)`
   background: rgba(181, 181, 181, 0.14);
-  border-bottom: rgba(181, 181, 181, 0.05) 2px solid;
-  color: rgba(255, 255, 255, 0.65);
+  color: #fff;
 `
 
 export default HeroSection

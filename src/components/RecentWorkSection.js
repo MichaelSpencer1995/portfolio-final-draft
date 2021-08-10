@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
 import Divider from './Divider'
+import { GREYACCENT } from "../constants/"
+import { UITEXT } from "../uitext/"
 
 class RecentWorkSection extends Component {
   state = {
@@ -15,11 +17,11 @@ class RecentWorkSection extends Component {
         <div id="recent-work-scroll-id" style={{ position: 'relative', top: '-82px'}} />      
         <RecentWorkSectionViewContainer>
           <RecentWorkH1>
-            Recent Work
+            { UITEXT.recentWork.main }
           </RecentWorkH1>
 
           <RecentWorkP>
-            Some React and Vanilla js apps.
+            { UITEXT.recentWork.sub }
           </RecentWorkP>
 
           <RecentWorkTriFold>
@@ -30,19 +32,19 @@ class RecentWorkSection extends Component {
                 
               <ProjectInfoContainer>
                 <ProjectSubHeader>
-                  Real Estate Website
+                  { UITEXT.recentWork.works.headers.h1 }
                 </ProjectSubHeader>
                     
                 <ProjectDescription>
-                  Personal website for a local real estate agent
+                  { UITEXT.recentWork.works.descriptions.d1 }
                 </ProjectDescription>
                     
                 <ProjectTechsUsed>
-                  React, Styled Components, Node
+                  { UITEXT.recentWork.works.subHeaders.s1 }
                 </ProjectTechsUsed>
                     
                 <a style={{ marginTop: '10px' }} href="https://jacobwestrealestate1995.herokuapp.com/" target="blank">
-                  Visit Website
+                  { UITEXT.recentWork.works.linkToExternal.generic }
                 </a>
               </ProjectInfoContainer>
             </WorkItemContainer1>
@@ -54,19 +56,19 @@ class RecentWorkSection extends Component {
                 
               <ProjectInfoContainer>
                 <ProjectSubHeader>
-                  Moove-it Website Mock Up
+                  { UITEXT.recentWork.works.headers.h2 }
                 </ProjectSubHeader>
                     
                 <ProjectDescription>
-                  I did not design, nor do I own this website or brand.
+                  { UITEXT.recentWork.works.descriptions.d2 }
                 </ProjectDescription>
                     
                 <ProjectTechsUsed>
-                  React, Styled Components
+                  { UITEXT.recentWork.works.subHeaders.s2 }
                 </ProjectTechsUsed>
                     
                 <a style={{ marginTop: '10px' }} href="https://moove-it-1995.herokuapp.com/" target="blank">
-                  Visit Website
+                  { UITEXT.recentWork.works.linkToExternal.generic }
                 </a>
               </ProjectInfoContainer>
             </WorkItemContainer>
@@ -78,103 +80,99 @@ class RecentWorkSection extends Component {
                 
               <ProjectInfoContainer>
                 <ProjectSubHeader>
-                  Various Javascript Projects
+                  { UITEXT.recentWork.works.headers.h3 }
                 </ProjectSubHeader>
 
                 <ProjectDescription>
-                  Challenges from the FreeCodeCamp curriculum.
+                  { UITEXT.recentWork.works.descriptions.d3 }
                 </ProjectDescription>
                     
                 <ProjectTechsUsed>
-                  React, Sass, Node and logic-intensive vanilla JS
+                  { UITEXT.recentWork.works.subHeaders.s3 }
                 </ProjectTechsUsed>
                 
                 <CodeCampProjectsExpander isExpanded={ isExpanded }>
                   <a href="https://calculator1995.herokuapp.com/" target="blank">
-                    •Calculator
+                    { UITEXT.recentWork.works.linkToExternal.l1 }
                   </a>
 
                   <a href="https://useless-account1995.herokuapp.com/" target="blank">
-                    •Useless Account
+                    { UITEXT.recentWork.works.linkToExternal.l2 }
                   </a>
 
                   <a href="https://pomodoro-1995.herokuapp.com/" target="blank">
-                    •Pomodoro Timer
+                    { UITEXT.recentWork.works.linkToExternal.l3 }
                   </a>
 
                   <a href="https://twitch-1995.herokuapp.com/" target="blank">
-                    •Twitch Viewer
+                    { UITEXT.recentWork.works.linkToExternal.l4 }
                   </a>
 
                   <a href="https://simon1995.herokuapp.com/" target="blank">
-                    •Simon Game
+                    { UITEXT.recentWork.works.linkToExternal.l5 }
                   </a>
 
                   <a href="https://tictactoe1995.herokuapp.com/" target="blank">
-                    •Tic-Tac-Toe Game
+                    { UITEXT.recentWork.works.linkToExternal.l6 }
                   </a>
                 </CodeCampProjectsExpander>
 
                 <ExpandLinks onClick={() => {
                   this.setState({ isExpanded: ! isExpanded })
                 }}>
-                  Visit Website
+                  { UITEXT.recentWork.works.linkToExternal.generic }
                 </ExpandLinks>
               </ProjectInfoContainer>
             </WorkItemContainer>
 
-            {/* <WorkItemContainer>
+            <WorkItemContainer>
               <ImageWrapper>
                 <img alt="photo of my free code camp certification" src="/assets/img/certificate.png" />
               </ImageWrapper>
                 
               <ProjectInfoContainer>
                 <ProjectSubHeader>
-                  Front End Certification
+                  { UITEXT.recentWork.works.headers.h4 }
                 </ProjectSubHeader>
 
                 <ProjectDescription>
-                  Given after completion of FreeCodeCamp
+                  { UITEXT.recentWork.works.descriptions.d4 }
                 </ProjectDescription>
                     
                 <ProjectTechsUsed>
-                  Javascript fundamentals and logic-intensive algorithms
+                  { UITEXT.recentWork.works.subHeaders.s4 }
                 </ProjectTechsUsed>
 
                 <a style={{ marginTop: '10px' }} href="https://www.freecodecamp.org/certification/michaelspencer1995/legacy-front-end" target="blank">
-                  Visit Website
+                  { UITEXT.recentWork.works.linkToExternal.generic }
                 </a>
               </ProjectInfoContainer>
-            </WorkItemContainer> */}
+            </WorkItemContainer>
 
-            {/* <WorkItemContainer>
+            <WorkItemContainer>
               <ImageWrapper>
                 <img alt="photo of my free code camp certification" src="/assets/img/udemy.jpg" />
               </ImageWrapper>
                 
               <ProjectInfoContainer>
                 <ProjectSubHeader>
-                  Javascript Certification
+                  { UITEXT.recentWork.works.headers.h5 }
                 </ProjectSubHeader>
 
                 <ProjectDescription>
-                  Given after completion of Udemy's Javascript: Understanding The Weird Parts.
+                  { UITEXT.recentWork.works.descriptions.d5 }
                 </ProjectDescription>
                     
                 <ProjectTechsUsed>
-                  Javascript fundamentals
+                  { UITEXT.recentWork.works.subHeaders.s5 }
                 </ProjectTechsUsed>
 
                 <a style={{ marginTop: '10px' }} href="https://udemy-certificate.s3.amazonaws.com/image/UC-H0M5A6T6.jpg" target="blank">
-                  Visit Website
+                  { UITEXT.recentWork.works.linkToExternal.generic }
                 </a>
               </ProjectInfoContainer>
-            </WorkItemContainer> */}
+            </WorkItemContainer>
           </RecentWorkTriFold>
-        
-          {/* <AwardWinningUIP>
-            One day this section will have multiple award winning UI's
-          </AwardWinningUIP> */}
 
           <Divider />
         </RecentWorkSectionViewContainer>
@@ -194,7 +192,7 @@ const RecentWorkSectionViewContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 76%;
+  width: 100%;
   margin-top: 110px;
   padding-bottom: 100px;
   @media(max-width: 1000px) {
@@ -208,6 +206,7 @@ const RecentWorkH1 = styled.h1`
 const RecentWorkP = styled.p`
   margin-top: 16px;
   width: 70%;
+  color: ${ GREYACCENT };
   @media(max-width: 1000px) {
     width: 76%;
   }
