@@ -1,23 +1,14 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
 import '../../node_modules/font-awesome/css/font-awesome.min.css'
-import { isMobile, isSafari } from "react-device-detect"
 import { GREEN, GREYACCENT, BLACK } from "../constants/"
 import { UITEXT } from "../uitext/"
-import Divider from "./Divider"
-let mobileBackgroundNotFixed = 'fixed'
-
-if(isMobile) {
-  mobileBackgroundNotFixed = 'none'
-}
 
 class WhatICanDoSection extends Component {
   render() {
     return (
       <WhatICanDoSectionView>
         <WhatICanDoSectionViewContainer>
-          <Overlay2 />
-          
           <WhatICanDoH1>
            { UITEXT.whatICanDo.main }
           </WhatICanDoH1>
@@ -66,8 +57,6 @@ class WhatICanDoSection extends Component {
               </StepParagraph>
             </StepContainer>
           </WhatICanDoTrifold>
-
-          <Divider />
         </WhatICanDoSectionViewContainer>
       </WhatICanDoSectionView>
     )
@@ -79,12 +68,12 @@ const WhatICanDoSectionView = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: url(/assets/img/hero11.jpg) no-repeat;
+  background: #f5f5f5;
   background-size: cover;
   background-position: 1% 40%;
   width: 100%;
-  height: 500px;
-  background-attachment: ${ 'mobileBackgroundNotFixed' };
+  box-sizing: border-box;
+  padding: 51px 0;
   @media(max-width: 1000px) {
     height: 900px;
   }
@@ -94,37 +83,20 @@ const WhatICanDoSectionView = styled.div`
 `
 
 const WhatICanDoSectionViewContainer = styled.div`
-  width: 76%;
+  width: 74%;
   display: flex;
   flex-direction: column;
   align-items: center;
 `
 
-const Overlay2 = styled.div`
-  width: 100%;
-  height: 500px;
-  background: rgba(0, 0, 0, .86);
-  background: beige;
-  background: #f5f5f5;
-  position: absolute;
-
-  @media(max-width: 1000px) {
-    height: 900px;
-  }
-  @media(max-width: 600px) {
-    height: 1040px;
-  }
-`
-
 const WhatICanDoH1 = styled.h1`
   z-index: 10;
   color: ${ BLACK };
-  margin-top: 90px;
 `
 
 const WhatICanDoP = styled.p`
   z-index: 10;
-  margin-top: 1px;
+  margin-top: 4px;
   color: ${ GREYACCENT };
   font-weight: 300;
   text-align: center;
@@ -135,7 +107,7 @@ const WhatICanDoTrifold = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  margin-top: 55px;
+  margin-top: 49px;
   @media(max-width: 1000px) {
     flex-direction: column;
     align-items: center;
@@ -197,11 +169,5 @@ const StepParagraph = styled.p`
   z-index: 10;
   font-weight: 300;
 `
-
-
-
-
-
-
 
 export default WhatICanDoSection

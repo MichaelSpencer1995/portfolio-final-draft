@@ -205,19 +205,19 @@ const RecentWorkH1 = styled.h1`
 `
 
 const RecentWorkP = styled.p`
-  margin-top: 16px;
+  margin-top: 5px;
   width: 70%;
   color: ${ GREYACCENT };
   @media(max-width: 1000px) {
-    width: 76%;
+    width: 74%;
   }
 `
 
 const RecentWorkTriFold = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 76%;
-  margin-top: 38px;
+  width: 74%;
+  margin-top: 30px;
   flex-wrap: wrap;
   @media(max-width: 1000px) {
     flex-direction: column;

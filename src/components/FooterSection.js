@@ -16,7 +16,7 @@ class FooterSection extends Component {
 }
 
 const FooterView = styled.div`
-  height: 90px;
+  height: 76px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,9 +26,9 @@ const FooterView = styled.div`
     width: 76%;
     text-align: center;
     line-height: 20px;
-    font-size: 13px;
+    font-size: 11px;
     color: #aaa;
-    color: ${ GREYACCENT };
+    color: #bbb;
   }
 `
 

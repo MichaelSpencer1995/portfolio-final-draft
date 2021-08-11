@@ -94,7 +94,7 @@ const AboutSectionView = styled.div`
 
 const AboutSectionViewContainer = styled.div`
   margin-top: 90px;
-  width: 76%;
+  width: 74%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,7 +110,7 @@ const AboutH1 = styled.h1`
 `
 
 const AboutP = styled.p`
-  margin-top: 10px;
+  margin-top: 5px;
   width: 70%;
   color: ${ GREYACCENT };
 `

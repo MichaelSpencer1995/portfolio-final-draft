@@ -239,7 +239,7 @@ class ContactSection extends Component {
               </Form>
             </FormContainer>
 
-          <Iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.3791666800007!2d-97.65040418526884!3d30.510315781715313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644d0361c2e1531%3A0x13b0645b022fbd90!2sLoquat+Ln%2C+Round+Rock%2C+TX+78664!5e0!3m2!1sen!2sus!4v1525381025642" allowfullscreen />
+            <Iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=200%20millard%20st%20georgetown%20tx%2078628+(Your%20Business%20Name)&amp;t=k&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></Iframe>
         </FormAndMapContainer>
         </ContactSectionViewContainer>
       </ContactSectionView>
@@ -256,12 +256,12 @@ const ContactSectionView = styled.div`
 `
 
 const ContactSectionViewContainer = styled.div`
-  width: 76%;
+  width: 74%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-top: -14px;
-  padding-bottom: 85px;
+  padding-bottom: 160px;
   @media(max-width: 1000px) {
     // padding-bottom: 55px;
     margin-top: -30px;
@@ -324,7 +324,8 @@ const Input = styled.input`
 
   &::placeholder{
     color: #bbb;
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: 400;
   }
 `
 
@@ -344,7 +345,8 @@ const TextArea = styled.textarea`
   
   &::placeholder{
     color: #bbb;
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: 400;
   }
 `
 
@@ -360,8 +362,7 @@ const FormSubmitButton = styled.input`
   border-radius: 2px;
   font-size: 13px;
   text-shadow: none;
-  background: ;
-  background: ${({ isShown }) => isShown ? "#637970" : GREEN };
+  background: ${({ isShown }) => isShown ? "#637970" : BLACK };
   border: none;
   font-weight: 500;
   color: white;
@@ -406,7 +407,8 @@ const LabelAstericContainer = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   box-sizing: border-box;
-  padding-left: 11px;
+  // padding-left: 0px;
+  // padding-left: 9px;
   padding-bottom: 3px;
 `
 
@@ -414,7 +416,7 @@ const FormLabel = styled.label`
   padding: 0;
   margin: 0;
   color: ${ GREYACCENT };
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 400;
 `
 

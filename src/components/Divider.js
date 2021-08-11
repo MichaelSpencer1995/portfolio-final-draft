@@ -11,9 +11,10 @@ const Divider = () => {
 
 const DividerContainer = styled.div`
   width: 63%;
-  margin-top: 55px;  
+  margin-top: 28px;  
   img{
     width: 100%;
+    opacity: 0.75;
   }
 `
 

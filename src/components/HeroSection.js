@@ -153,8 +153,9 @@ const HeroSectionView = styled.div`
   display: flex;
   align-items: flex-end;
   background: url(/assets/img/heroimagemain.jpg) no-repeat;
-  background-size: cover;
-  background-position: 20% 0%;
+  // background: url(/assets/img/hero2.png) no-repeat;
+  background-size: 112%;
+  background-position: 78% 23%;
   background-attachment: ${ fixedBackground };
 `
 
@@ -177,7 +178,7 @@ const NavBarContainer = styled.div`
 `
 
 const NavItemsContainer = styled.div`
-  padding-right: 12%;
+  padding-right: 13%;
   width: 288px;
   display: flex;
   justify-content: space-between;
@@ -209,27 +210,9 @@ const NavItem = styled.button`
   }
 `
 
-const HeroImg = styled.div`
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-  background: url(/assets/img/heroimagemain.jpg) no-repeat;
-  background-size: cover;
-  background-position: 20% 0%;
-  background-attachment: ${ fixedBackground };
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  @media(max-width: 406px){
-    background-size: 260%;
-    background-position: 50% 0%;
-  }
-`
-
 const HeroImgOverlay = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 96%);
-  background: linear-gradient(rgb(144 204 206 / 35%) -17%, ${ BLACK } 86%);
+  background: linear-gradient(rgb(206 194 144 / 35%) -17%, ${ BLACK } 86%);
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -240,7 +223,7 @@ const HeroContentContainer = styled.div`
   font-size: 18px;
   letter-spacing: 0.2rem;
   color: white;
-  margin-left: 12%;
+  margin-left: 13%;
   margin-bottom: 90px;
   width: 45%;
   display: flex;
@@ -285,7 +268,7 @@ const HeroP = styled.p`
   line-height: 1.8em;
   color: #bbb;
   position: relative;
-  top: -5px;
+  top: -8px;
   @media (max-width: 1000px) {
     font-size: 14px;
   }
