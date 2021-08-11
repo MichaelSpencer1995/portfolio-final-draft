@@ -32,7 +32,7 @@ export const UITEXT = {
         subParagraphs: {
             sp1: "Imagine, wireframe, sketch, and create simple, aesthetic, user-friendly, and fully functional user interfaces.",
             sp2: "HTML(5), CSS(3), Javascript(ES6), and related tools, libraries, frameworks.",
-            sp3: `I'll take care of "how it would look attractive" and "how it would work effectively`
+            sp3: `I'll take care of "how it is going to look attractive" and "how it is going to work effectively`
         }
     },
     recentWork: {

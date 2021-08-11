@@ -229,7 +229,7 @@ const HeroImg = styled.div`
 
 const HeroImgOverlay = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 96%);
-  background: linear-gradient(rgba(0,0,0,0) -17%, ${ BLACK } 86%);
+  background: linear-gradient(rgb(144 204 206 / 35%) -17%, ${ BLACK } 86%);
   width: 100%;
   height: 100vh;
   position: absolute;
