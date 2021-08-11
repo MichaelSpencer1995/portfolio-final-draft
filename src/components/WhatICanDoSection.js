@@ -149,7 +149,7 @@ const StepContainer = styled.div`
   align-items: center;
   justify-content: flex-start;  
   width: 29%;
-  text-align: center;
+  text-align: stretch;
   @media(max-width: 1000px) {
     width: 76%;
     margin-top: 55px;

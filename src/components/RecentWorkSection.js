@@ -125,7 +125,7 @@ class RecentWorkSection extends Component {
               </ProjectInfoContainer>
             </WorkItemContainer>
 
-            <WorkItemContainer>
+            {/* <WorkItemContainer>
               <ImageWrapper>
                 <img alt="photo of my free code camp certification" src="/assets/img/certificate.png" />
               </ImageWrapper>
@@ -171,7 +171,7 @@ class RecentWorkSection extends Component {
                   { UITEXT.recentWork.works.linkToExternal.generic }
                 </a>
               </ProjectInfoContainer>
-            </WorkItemContainer>
+            </WorkItemContainer> */}
           </RecentWorkTriFold>
 
           <Divider />
@@ -215,7 +215,7 @@ const RecentWorkP = styled.p`
 
 const RecentWorkTriFold = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 76%;
   margin-top: 38px;
   flex-wrap: wrap;
@@ -235,7 +235,7 @@ const ImageWrapper = styled.div`
 `
 
 const WorkItemContainer = styled.div`
-  margin: 10px 10px;
+  margin: 10px 0px;
   width: 30%;
   border-radius: 4px;
   display: flex;
