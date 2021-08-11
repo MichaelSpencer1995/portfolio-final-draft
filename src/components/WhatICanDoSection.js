@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from "styled-components"
 import '../../node_modules/font-awesome/css/font-awesome.min.css'
 import { isMobile, isSafari } from "react-device-detect"
-import { GREEN, GREYACCENT } from "../constants/"
+import { GREEN, GREYACCENT, BLACK } from "../constants/"
 import { UITEXT } from "../uitext/"
 import Divider from "./Divider"
 let mobileBackgroundNotFixed = 'fixed'
@@ -105,6 +105,7 @@ const Overlay2 = styled.div`
   height: 500px;
   background: rgba(0, 0, 0, .86);
   background: beige;
+  background: #f5f5f5;
   position: absolute;
 
   @media(max-width: 1000px) {
@@ -117,7 +118,7 @@ const Overlay2 = styled.div`
 
 const WhatICanDoH1 = styled.h1`
   z-index: 10;
-  color: rgb(11 23 27);
+  color: ${ BLACK };
   margin-top: 90px;
 `
 
@@ -184,7 +185,7 @@ const StepSubHeader = styled.h3`
   font-weight: 700;
   font-size: 18px;
   z-index: 10;
-  color: rgb(11 23 27);
+  color: ${ BLACK };
   margin-top: 15px;
 `
 

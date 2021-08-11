@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
 import Divider from './Divider'
-import { GREYACCENT } from "../constants/"
+import { GREYACCENT, BLACK } from "../constants/"
 import { UITEXT } from "../uitext/"
 
 class RecentWorkSection extends Component {
@@ -201,6 +201,7 @@ const RecentWorkSectionViewContainer = styled.div`
 `
 
 const RecentWorkH1 = styled.h1`
+  color: ${ BLACK };
 `
 
 const RecentWorkP = styled.p`
@@ -217,10 +218,7 @@ const RecentWorkTriFold = styled.div`
   justify-content: center;
   width: 76%;
   margin-top: 38px;
-
-
   flex-wrap: wrap;
-
   @media(max-width: 1000px) {
     flex-direction: column;
     align-items: center;
@@ -269,9 +267,10 @@ const ExpandLinks = styled.button`
   background: none;
   border: none;
   text-decoration: underline;
-  color: #2196f3;
   letter-spacing: 0.04rem;
   padding: 0;
+  color: #259fff;
+  font-family: 'Montserrat', sans-serif;
 `
 
 const CodeCampProjectsExpander = styled.div`
@@ -301,7 +300,7 @@ const ProjectInfoContainer = styled.div`
     height: 25px;
     font-size: 14px;
     font-weight: 400;
-    color: #0c9ecc;
+    color: #259fff;
   }
   @media(max-width: 1000px) {
     height: auto;
@@ -310,12 +309,14 @@ const ProjectInfoContainer = styled.div`
 
 const ProjectSubHeader = styled.h3`
   margin-top: 30px;
+  color: ${ BLACK };
 `
 
 const ProjectDescription = styled.p`
   margin-top: 7px;
   line-height: 1em;
   font-size: 12px;
+  color: ${ GREYACCENT };
 `
 
 const ProjectTechsUsed = styled.p`
@@ -323,6 +324,7 @@ const ProjectTechsUsed = styled.p`
   font-style: italic;
   margin-top: 5px;
   line-height: 1em;
+  color: ${ GREYACCENT };
 `
 
 const AwardWinningUIP = styled.p`

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
-import { GREEN, GREYACCENT } from "../constants/"
+import { GREEN, GREYACCENT, BLACK } from "../constants/"
 import { UITEXT } from "../uitext/"
 
 class ContactSection extends Component {
@@ -269,6 +269,7 @@ const ContactSectionViewContainer = styled.div`
 `
 
 const ContactSectionH1 = styled.h1`
+  color: ${ BLACK };
 `
 
 const ContactSectionP = styled.p`
@@ -316,7 +317,7 @@ const Input = styled.input`
   height: 36px;
   padding-left: 10px;
   box-sizing: border-box;
-  background: #fbfbfb;
+  background: #f5f5f5;
   border: none;
   border-radius: 0;
   -webkit-appearance: none;
@@ -336,7 +337,7 @@ const TextArea = styled.textarea`
   padding-left: 9px;
   padding-top: 6px;
   box-sizing: border-box;
-  background: #fbfbfb;
+  background: #f5f5f5;
   border: none;
   border-radius: 0;
   -webkit-appearance: none;

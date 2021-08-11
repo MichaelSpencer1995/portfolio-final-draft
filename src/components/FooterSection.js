@@ -16,7 +16,7 @@ class FooterSection extends Component {
 }
 
 const FooterView = styled.div`
-  height: 82px;
+  height: 90px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
 import Divider from './Divider';
-import { GREYACCENT } from "../constants/"
+import { GREYACCENT, BLACK } from "../constants/"
 import { UITEXT } from "../uitext/"
 
 class AboutSection extends Component {
@@ -106,6 +106,7 @@ const AboutSectionViewContainer = styled.div`
 `
 
 const AboutH1 = styled.h1`
+  color: ${ BLACK };
 `
 
 const AboutP = styled.p`
@@ -153,6 +154,7 @@ const SubHeader = styled.h3`
   font-size: 15px;
   font-weight: 700;
   margin-top: 0px;
+  color: ${ BLACK };
 `
 
 export default AboutSection

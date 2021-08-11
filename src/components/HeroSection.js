@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
 import { isMobile, isSafari, isChrome } from "react-device-detect"
-import { GREEN } from "../constants/"
+import { GREEN, BLACK } from "../constants/"
 import { UITEXT } from "../uitext/"
 
 let fixedBackground = 'fixed'
@@ -28,7 +28,9 @@ if(isMobile || isSafari) {
 class HeroSection extends Component {
   componentDidMount() {
     const heroImg = new Image()
-    heroImg.src = '/assets/img/heroimagemain.jpg'
+    // heroImg.src = '/assets/img/heroimagemain.jpg'
+    heroImg.src = '/assets/img/hero2.png'
+    // heroImg.src = '/assets/img/divider.svg'
     heroImg.onload = () => {
       this.props.heroLoaded()
     }
@@ -227,7 +229,7 @@ const HeroImg = styled.div`
 
 const HeroImgOverlay = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 96%);
-  background: linear-gradient(rgba(0,0,0,0) -17%,rgba(0,0,0,1) 86%);
+  background: linear-gradient(rgba(0,0,0,0) -17%, ${ BLACK } 86%);
   width: 100%;
   height: 100vh;
   position: absolute;
