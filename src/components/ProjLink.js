@@ -9,15 +9,6 @@ class ProjLink extends Component {
     }
 
     setColor(color) {
-        // if(color == 'purple') {
-        //     this.state.color = '#e4c0ffd0'
-        // }
-        // if(color == 'green') {
-        //     this.state.color = '#c0ffc2d0'
-        // }
-        // if(color == 'yellow') {
-        //     this.state.color = '#fff7c0d0'
-        // }
         switch(color) {
             case 'purple':
                 this.state.color = '#e4c0ffd0'
