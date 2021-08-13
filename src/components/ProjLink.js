@@ -43,13 +43,15 @@ class ProjLink extends Component {
                 <ImgWrap bool={bool}>
                     <img src={ this.props.imgSrc }></img>
                 </ImgWrap>
-                <OL1
-                    color={color}
+                <HoverTarget 
+                    bool={bool}
                     onMouseOver={() => this.setState({ bool: true })} onMouseOut={() => this.setState({ bool: false })}/>
-                <OL2
+                <Overlay
                     color={color}
-                    onMouseOver={() => this.setState({ bool: true })} onMouseOut={() => this.setState({ bool: false })}/>
-                <ProjName>
+                    bool={bool}
+                    />
+                <ProjName
+                    bool={bool}>
                     <h3>{ this.props.projName }</h3>
                 </ProjName>
             </Work>
@@ -59,18 +61,19 @@ class ProjLink extends Component {
 
 
 const Work = styled.div`
-    width: 22vw;
-    height: 22vw;
+    width: 15vw;
+    height: 15vw;
     margin-bottom: 3.5vw;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 `
   
 const ProjName = styled.div`
-    width: 100%;
+    width: ${({ bool }) => bool ? "110%" : "100%"};
     height: 40px;
     background: #24292e80;
     z-index: 1;
@@ -78,6 +81,7 @@ const ProjName = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease-in;
     h3 {
         z-index: 1;
         color: white;
@@ -87,35 +91,36 @@ const ProjName = styled.div`
 
 const ImgWrap = styled.div`
     overflow: hidden;
-    width: 100%;
-    height: 100%;
+    width: ${({ bool }) => bool ? "110%" : "100%"};
+    height: ${({ bool }) => bool ? "110%" : "100%"};
     position: absolute;
+    transition: all 0.3s ease-in;
     img {
-        width: 164%;
-        // background-size: ${({ bool }) => bool ? "164%" : "144%"};
+        width: ${({ bool }) => bool ? "200%" : "144%"};
         position: relative;
+        transition: all 0.3s ease-in;
         left: -57px;
         top: -79px;
     }
-    div {
-        height
+`
+
+const Overlay = styled.div`
+    width: ${({ bool }) => bool ? "110%" : "100%"};
+    height: ${({ bool }) => bool ? "110%" : "100%"};
+    background: ${({ color }) => color};
+    position: absolute;
+    transition: all 0.3s ease-in;
+`
+const HoverTarget = styled.div`
+    width: ${({ bool }) => bool ? "110%" : "100%"};
+    height: ${({ bool }) => bool ? "110%" : "100%"};
+    background: transparent;
+    position: absolute;
+    z-index: 10;
+    &:hover {
+        cursor: pointer;
     }
 `
 
-const OL1 = styled.div`
-    width: 22vw;
-    height: 11vw;
-    background: ${({ color }) => color};
-    position: absolute;
-    bottom: 0;
-`
-
-const OL2 = styled.div`
-    width: 22vw;
-    height: 11vw;
-    background: ${({ color }) => color};
-    position: absolute;
-    top: 0;
-`
 
 export default ProjLink

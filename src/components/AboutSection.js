@@ -86,14 +86,14 @@ const AboutSectionView = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 90px;
+  padding-bottom: 62px;
   @media(max-width: 1000px) {
     padding-bottom: 76px;
   }
 `
 
 const AboutSectionViewContainer = styled.div`
-  margin-top: 90px;
+  margin-top: 77px
   width: 74%;
   display: flex;
   flex-direction: column;

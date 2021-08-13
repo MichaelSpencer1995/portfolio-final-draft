@@ -29,9 +29,11 @@ class RecentWorkSection extends Component {
             <ProjLink color="red" imgSrc="/assets/img/w1.png" projName="2048 Clone" />
             <ProjLink color="green" imgSrc="/assets/img/w2.png" projName="Moove-It Clone" />
             <ProjLink color="blue" imgSrc="/assets/img/w5.png" projName="Pomodoro Clock" />
-            <ProjLink color="yellow" imgSrc="/assets/img/w3.png" projName="Twitch Viewer" />
+            <ProjLink color="orange" imgSrc="/assets/img/w3.png" projName="Twitch Viewer" />
             <ProjLink color="purple" imgSrc="/assets/img/w4.png" projName="Real Estate" />
-            <ProjLink color="orange" imgSrc="/assets/img/w6.png" projName="Simon" />
+            <ProjLink color="yellow" imgSrc="/assets/img/w6.png" projName="Simon" />
+            <ProjLink color="red" imgSrc="/assets/img/w6.png" projName="Another" />
+            <ProjLink color="blue" imgSrc="/assets/img/w6.png" projName="Game" />
 
             {/* <WorkItemContainer>
               <ImageWrapper>
@@ -177,8 +179,7 @@ const RecentWorkSectionViewContainer = styled.div`
   align-items: center;
   text-align: center;
   width: 100%;
-  margin-top: 110px;
-  padding-bottom: 100px;
+  padding: 100px 0;
   @media(max-width: 1000px) {
     margin-top: 65px;
   }

@@ -10,8 +10,8 @@ const Divider = () => {
 }
 
 const DividerContainer = styled.div`
-  width: 63%;
-  margin-top: 28px;  
+  width: 30%;
+  margin-top: 14px;
   img{
     width: 100%;
     opacity: 0.75;

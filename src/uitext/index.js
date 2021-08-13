@@ -25,9 +25,9 @@ export const UITEXT = {
         main: "What I Can Do",
         sub: "Creating an aesthetically pleasing and easy user experience.",
         subHeaders: {
-            sh1: "UX/UI",
-            sh2: "Coding",
-            sh3: "Problem Solving"
+            sh1: "UX/UI Design",
+            sh2: "Build and Deploy",
+            sh3: "Business Solutions"
         },
         subParagraphs: {
             sp1: "Imagine, wireframe, sketch, and create simple, aesthetic, user-friendly, and fully functional user interfaces.",
@@ -88,7 +88,7 @@ export const UITEXT = {
                 p4: "message"
             },
             errorMessages: {
-                m1: "*Name field cannot be blank",
+                m1: "*Name field cannot be left blank",
                 m2: "*Invalid phone number",
                 m3: "*Invalid email address",
                 m4: "*Message field cannot be left blank."

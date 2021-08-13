@@ -32,19 +32,6 @@ class WhatICanDoSection extends Component {
             </StepContainer>
 
             <StepContainer>
-              <CodingIcon />
-
-
-              <StepSubHeader>
-                { UITEXT.whatICanDo.subHeaders.sh2 }
-              </StepSubHeader>
-
-              <StepParagraph>
-                { UITEXT.whatICanDo.subParagraphs.sp2 }
-              </StepParagraph>
-            </StepContainer>
-
-            <StepContainer>
               <LearningIcon />
 
 
@@ -54,6 +41,19 @@ class WhatICanDoSection extends Component {
 
               <StepParagraph>
                 { UITEXT.whatICanDo.subParagraphs.sp3 }
+              </StepParagraph>
+            </StepContainer>
+
+            <StepContainer>
+              <CodingIcon />
+
+
+              <StepSubHeader>
+                { UITEXT.whatICanDo.subHeaders.sh2 }
+              </StepSubHeader>
+
+              <StepParagraph>
+                { UITEXT.whatICanDo.subParagraphs.sp2 }
               </StepParagraph>
             </StepContainer>
           </WhatICanDoTrifold>
@@ -73,7 +73,7 @@ const WhatICanDoSectionView = styled.div`
   background-position: 1% 40%;
   width: 100%;
   box-sizing: border-box;
-  padding: 51px 0;
+  padding: 53px 0;
   @media(max-width: 1000px) {
     height: 900px;
   }
@@ -87,6 +87,7 @@ const WhatICanDoSectionViewContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 28px;
 `
 
 const WhatICanDoH1 = styled.h1`

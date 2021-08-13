@@ -369,6 +369,7 @@ const FormSubmitButton = styled.input`
 
   &:hover{
     transform: scale(1.01);
+    background: ${ GREEN };
   }
 
   &:hover{
