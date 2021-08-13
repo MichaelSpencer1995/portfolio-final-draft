@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Divider from './Divider'
 import { GREYACCENT, BLACK } from "../constants/"
 import { UITEXT } from "../uitext/"
+import ProjLink from './ProjLink'
 
 class RecentWorkSection extends Component {
   state = {
@@ -25,31 +26,14 @@ class RecentWorkSection extends Component {
           </RecentWorkP>
 
           <RecentWorkTriFold>
-            <WorkItemContainer1>
-              <ImageWrapper>
-                <img alt="photo of a website on different screen sizes" src="/assets/img/bitmap2.png" />
-              </ImageWrapper>
-                
-              <ProjectInfoContainer>
-                <ProjectSubHeader>
-                  { UITEXT.recentWork.works.headers.h1 }
-                </ProjectSubHeader>
-                    
-                <ProjectDescription>
-                  { UITEXT.recentWork.works.descriptions.d1 }
-                </ProjectDescription>
-                    
-                <ProjectTechsUsed>
-                  { UITEXT.recentWork.works.subHeaders.s1 }
-                </ProjectTechsUsed>
-                    
-                <a style={{ marginTop: '10px' }} href="https://jacobwestrealestate1995.herokuapp.com/" target="blank">
-                  { UITEXT.recentWork.works.linkToExternal.generic }
-                </a>
-              </ProjectInfoContainer>
-            </WorkItemContainer1>
+            <ProjLink color="red" imgSrc="/assets/img/w1.png" projName="2048 Clone" />
+            <ProjLink color="green" imgSrc="/assets/img/w2.png" projName="Moove-It Clone" />
+            <ProjLink color="blue" imgSrc="/assets/img/w5.png" projName="Pomodoro Clock" />
+            <ProjLink color="yellow" imgSrc="/assets/img/w3.png" projName="Twitch Viewer" />
+            <ProjLink color="purple" imgSrc="/assets/img/w4.png" projName="Real Estate" />
+            <ProjLink color="orange" imgSrc="/assets/img/w6.png" projName="Simon" />
 
-            <WorkItemContainer>
+            {/* <WorkItemContainer>
               <ImageWrapper>
                 <img alt="photo of a website on different screen sizes" src="/assets/img/bitmap.png" />
               </ImageWrapper>
@@ -123,7 +107,7 @@ class RecentWorkSection extends Component {
                   { UITEXT.recentWork.works.linkToExternal.generic }
                 </ExpandLinks>
               </ProjectInfoContainer>
-            </WorkItemContainer>
+            </WorkItemContainer> */}
 
             {/* <WorkItemContainer>
               <ImageWrapper>
@@ -216,6 +200,7 @@ const RecentWorkP = styled.p`
 const RecentWorkTriFold = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   width: 74%;
   margin-top: 30px;
   flex-wrap: wrap;
@@ -235,7 +220,6 @@ const ImageWrapper = styled.div`
 `
 
 const WorkItemContainer = styled.div`
-  margin: 10px 0px;
   width: 30%;
   border-radius: 4px;
   display: flex;
