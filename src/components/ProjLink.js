@@ -81,7 +81,7 @@ const ProjName = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease-in;
+    transition: all 0.25s ease-in;
     h3 {
         z-index: 1;
         color: white;
@@ -94,11 +94,11 @@ const ImgWrap = styled.div`
     width: ${({ bool }) => bool ? "110%" : "100%"};
     height: ${({ bool }) => bool ? "110%" : "100%"};
     position: absolute;
-    transition: all 0.3s ease-in;
+    transition: all 0.25s ease-in;
     img {
         width: ${({ bool }) => bool ? "200%" : "144%"};
         position: relative;
-        transition: all 0.3s ease-in;
+        transition: all 0.25s ease-in;
         left: -57px;
         top: -79px;
     }
@@ -109,7 +109,7 @@ const Overlay = styled.div`
     height: ${({ bool }) => bool ? "110%" : "100%"};
     background: ${({ color }) => color};
     position: absolute;
-    transition: all 0.3s ease-in;
+    transition: all 0.25s ease-in;
 `
 const HoverTarget = styled.div`
     width: ${({ bool }) => bool ? "110%" : "100%"};
