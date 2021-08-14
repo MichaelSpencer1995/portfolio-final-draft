@@ -75,7 +75,7 @@ const Work = styled.div`
 const ProjName = styled.div`
     width: ${({ bool }) => bool ? "110%" : "100%"};
     height: 40px;
-    background: #24292e80;
+    // background: #24292e80;
     z-index: 1;
     display: flex;
     flex-direction: column;
